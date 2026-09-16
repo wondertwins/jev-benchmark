@@ -1,0 +1,207 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . . . . r k .\n7 p b q . b p p .\n6 . . n . . n . p\n5 . N . . . . . .\n4 . P . . N . . .\n3 . . P . . . . .\n2 . . . . B P P P\n1 R Q B . . R K .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r4rk1/pbq1bpp1/2n2n1p/1N6/1P2N3/2P5/4BPPP/RQB2RK1 b - - 0 16",
+   "move_history": "1. e4 e6 2. c3 Nf6 3. d3 Be7 4. a3 c5 5. Be2 Nc6 6. Nd2 Qc7 7. b4 cxb4 8. axb4 b5 9. Ngf3 O-O 10. Qc2 h6 11. O-O d5 12. Qb1 e5 13. d4 exd4 14. Nxd4 dxe4 15. Nxe4 Bb7 16. Nxb5",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "queen": [
+      "b1"
+     ],
+     "rook": [
+      "a1",
+      "f1"
+     ],
+     "bishop": [
+      "c1",
+      "e2"
+     ],
+     "knight": [
+      "e4",
+      "b5"
+     ],
+     "pawn": [
+      "f2",
+      "g2",
+      "h2",
+      "c3",
+      "b4"
+     ],
+     "king": [
+      "g1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "c7"
+     ],
+     "rook": [
+      "a8",
+      "f8"
+     ],
+     "knight": [
+      "c6",
+      "f6"
+     ],
+     "bishop": [
+      "b7",
+      "e7"
+     ],
+     "pawn": [
+      "h6",
+      "a7",
+      "f7",
+      "g7"
+     ],
+     "king": [
+      "g8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "queen on c7 (attacked by knight, undefended)"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 36,
+     "black": 35,
+     "white_minus_black": 1
+    }
+   },
+   "how_to_read_move_options": "Each move option ends with exact facts computed by a chess program: whether it delivers or allows checkmate, the material outcome of the exchange on the destination square (positive = we win material), which of our pieces it leaves hanging, which enemy pieces it newly attacks, and whether it repeats a position. Never choose a move that allows checkmate. Avoid moves that lose material or leave pieces hanging unless they deliver checkmate. Prefer moves that win material, attack undefended pieces, or improve the position. Avoid repeating positions when a good alternative exists."
+  },
+  "questions": {
+   "move": {
+    "type": "choice",
+    "criteria": {
+     "Kh8": "king g8 to h8; moved piece is safe; leaves hanging: queen on c7",
+     "Kh7": "king g8 to h7; moved piece is safe; leaves hanging: queen on c7",
+     "Rfe8": "rook f8 to e8; moved piece is safe; leaves hanging: queen on c7",
+     "Rfd8": "rook f8 to d8; moved piece is safe; leaves hanging: queen on c7",
+     "Rfc8": "rook f8 to c8; moved piece is safe; leaves hanging: queen on c7",
+     "Rfb8": "rook f8 to b8; moved piece is safe; leaves hanging: queen on c7",
+     "Rae8": "rook a8 to e8; moved piece is safe; leaves hanging: queen on c7",
+     "Rad8": "rook a8 to d8; moved piece is safe; leaves hanging: queen on c7",
+     "Rac8": "rook a8 to c8; moved piece is safe; leaves hanging: queen on c7",
+     "Rab8": "rook a8 to b8; moved piece is safe; leaves hanging: queen on c7",
+     "Bd8": "bishop e7 to d8; moved piece is safe; leaves hanging: queen on c7",
+     "Bd6": "bishop e7 to d6; exchange on d6 loses 3 point(s) of material; leaves hanging: queen on c7",
+     "Bc5": "bishop e7 to c5; exchange on c5 loses 3 point(s) of material; leaves hanging: queen on c7",
+     "Bxb4": "bishop e7 to b4, captures pawn; exchange on b4 loses 2 point(s) of material; leaves hanging: queen on c7",
+     "Qd8": "queen c7 to d8; moved piece is safe",
+     "Qc8": "queen c7 to c8; moved piece is safe",
+     "Qb8": "queen c7 to b8; moved piece is safe",
+     "Qd7": "queen c7 to d7; moved piece is safe",
+     "Qd6": "queen c7 to d6; exchange on d6 loses 9 point(s) of material",
+     "Qb6": "queen c7 to b6; moved piece is safe",
+     "Qe5": "queen c7 to e5; moved piece is safe",
+     "Qa5": "queen c7 to a5; exchange on a5 loses 9 point(s) of material",
+     "Qf4": "queen c7 to f4; exchange on f4 loses 9 point(s) of material",
+     "Qg3": "queen c7 to g3; exchange on g3 loses 9 point(s) of material",
+     "Qxh2+": "queen c7 to h2, captures pawn, gives check; exchange on h2 loses 8 point(s) of material",
+     "Bc8": "bishop b7 to c8; moved piece is safe; leaves hanging: queen on c7",
+     "Ba6": "bishop b7 to a6; exchange on a6 loses 3 point(s) of material; leaves hanging: queen on c7",
+     "Ne8": "knight f6 to e8; moved piece is safe; leaves hanging: queen on c7",
+     "Nh7": "knight f6 to h7; moved piece is safe; leaves hanging: queen on c7",
+     "Nd7": "knight f6 to d7; moved piece is safe; leaves hanging: queen on c7",
+     "Nh5": "knight f6 to h5; exchange on h5 loses 3 point(s) of material; leaves hanging: queen on c7",
+     "Nd5": "knight f6 to d5; moved piece is safe; leaves hanging: queen on c7",
+     "Ng4": "knight f6 to g4; exchange on g4 loses 3 point(s) of material; leaves hanging: queen on c7",
+     "Nxe4": "knight f6 to e4, captures knight; exchange on e4 is even; leaves hanging: queen on c7",
+     "Nd8": "knight c6 to d8; moved piece is safe; leaves hanging: queen on c7",
+     "Nb8": "knight c6 to b8; moved piece is safe; leaves hanging: queen on c7",
+     "Ne5": "knight c6 to e5; moved piece is safe; leaves hanging: queen on c7",
+     "Na5": "knight c6 to a5; exchange on a5 loses 3 point(s) of material; leaves hanging: queen on c7",
+     "Nd4": "knight c6 to d4; exchange on d4 loses 3 point(s) of material; leaves hanging: queen on c7; attacks bishop on e2 (can be won next move)",
+     "Nxb4": "knight c6 to b4, captures pawn; exchange on b4 loses 2 point(s) of material; leaves hanging: queen on c7",
+     "g6": "pawn g7 to g6; moved piece is safe; leaves hanging: queen on c7, pawn on h6",
+     "a6": "pawn a7 to a6; moved piece is safe; leaves hanging: queen on c7; attacks knight on b5 (can be won next move)",
+     "h5": "pawn h6 to h5; moved piece is safe; leaves hanging: queen on c7",
+     "g5": "pawn g7 to g5; moved piece is safe; leaves hanging: queen on c7",
+     "a5": "pawn a7 to a5; moved piece is safe; leaves hanging: queen on c7"
+    },
+    "instructions": {
+     "question": "Which legal move should Black play now?",
+     "goal": "Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.",
+     "options": "Every option is a legal move in standard algebraic notation with a plain description."
+    }
+   }
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "tactical",
+  "pos": "real_002"
+ },
+ "latency_s": 0.7716265000053681,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qd7",
+    "confidence": 0.16,
+    "probabilities": {
+     "Rfb8": 0.01,
+     "g5": 0.0,
+     "Qc8": 0.12,
+     "Rab8": 0.01,
+     "Ne8": 0.0,
+     "Qa5": 0.0,
+     "g6": 0.0,
+     "Nd8": 0.01,
+     "Rae8": 0.0,
+     "Qe5": 0.04,
+     "Nh7": 0.0,
+     "a5": 0.0,
+     "Kh8": 0.0,
+     "Qd7": 0.18000000000000002,
+     "Qxh2+": 0.01,
+     "Nd4": 0.03,
+     "Nxb4": 0.01,
+     "Rfe8": 0.0,
+     "Rfd8": 0.0,
+     "Ng4": 0.0,
+     "h5": 0.0,
+     "Bd6": 0.0,
+     "Rad8": 0.0,
+     "Bd8": 0.01,
+     "Nh5": 0.0,
+     "Qd6": 0.01,
+     "Rfc8": 0.01,
+     "Qb8": 0.14,
+     "Nxe4": 0.03,
+     "Bc5": 0.0,
+     "Rac8": 0.02,
+     "Nd5": 0.0,
+     "Ba6": 0.01,
+     "Kh7": 0.0,
+     "Bxb4": 0.0,
+     "a6": 0.13,
+     "Qb6": 0.09,
+     "Nd7": 0.01,
+     "Bc8": 0.0,
+     "Nb8": 0.0,
+     "Qd8": 0.1,
+     "Qf4": 0.0,
+     "Na5": 0.0,
+     "Qg3": 0.0,
+     "Ne5": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2664,
+   "output_tokens": 396
+  }
+ }
+}

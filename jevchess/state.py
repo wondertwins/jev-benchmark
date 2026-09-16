@@ -148,7 +148,12 @@ def legal_move_options(board: chess.Board, level: str) -> dict[str, str | None]:
     opts: dict[str, str | None] = {}
     for mv in board.legal_moves:
         san = sanitize_san(board.san(mv))
-        opts[san] = None if level == "fen" else move_description(board, mv, annotate=(level == "rich"))
+        if level == "fen":
+            opts[san] = None
+        elif level == "tactical":
+            opts[san] = tactical_description(board, mv)
+        else:
+            opts[san] = move_description(board, mv, annotate=(level == "rich"))
     return opts
 
 
@@ -165,9 +170,17 @@ def build_state(board: chess.Board, sans: list[str], level: str) -> dict[str, An
         "move_history": history_text(sans),
         "castling_rights": board.fen().split(" ")[2] if board.castling_rights else "none",
     }
-    if level == "rich":
+    if level in ("rich", "tactical"):
         st["pieces"] = piece_lists(board)
         st["facts_for_side_to_move"] = tactical_facts(board)
+    if level == "tactical":
+        st["how_to_read_move_options"] = (
+            "Each move option ends with exact facts computed by a chess program. Priority order: (1) a move that "
+            "DELIVERS CHECKMATE wins immediately; (2) never choose a move that ALLOWS THE OPPONENT TO CHECKMATE; "
+            "(3) a move that LOSES material or EXPOSES a piece is bad even if it gives check or threatens something, "
+            "because the opponent simply takes the piece; (4) among safe moves, prefer WINS material, then rescues, "
+            "then threatens/forks, then quiet moves that develop or improve the position. Avoid repeating positions "
+            "when a good alternative exists.")
     return st
 
 
@@ -177,3 +190,140 @@ def san_to_move(board: chess.Board, san: str) -> chess.Move | None:
         if sanitize_san(board.san(mv)) == san:
             return mv
     return None
+
+
+# ---------------------------------------------------------------------------
+# "tactical" level: one-ply exact facts per move that any chess program computes
+# in microseconds. Still no search; Jev still chooses.
+# ---------------------------------------------------------------------------
+
+def static_exchange(board: chess.Board, move: chess.Move, max_depth: int = 10) -> int:
+    """Net material for the mover after the best capture sequence on the destination square (SEE).
+
+    Uses real board pushes so pins, x-rays, and legality are handled by python-chess.
+    """
+    target = move.to_square
+    captured = board.piece_at(target)
+    gain = [1 if board.is_en_passant(move) else (VALUES[captured.piece_type] if captured else 0)]
+    b = board.copy(stack=False)
+    b.push(move)
+    mover = b.piece_at(target)
+    attacker_value = VALUES[mover.piece_type] if mover else 0
+    d = 0
+    while d < max_depth:
+        side = b.turn
+        best_mv, best_val = None, 99
+        for sq in b.attackers(side, target):
+            p = b.piece_at(sq)
+            if p is None or VALUES[p.piece_type] >= best_val:
+                continue
+            cand = chess.Move(sq, target)
+            if p.piece_type == chess.PAWN and chess.square_rank(target) in (0, 7):
+                cand = chess.Move(sq, target, promotion=chess.QUEEN)
+            if b.is_legal(cand):
+                best_mv, best_val = cand, VALUES[p.piece_type]
+        if best_mv is None:
+            break
+        d += 1
+        gain.append(attacker_value - gain[d - 1])
+        attacker_value = best_val
+        b.push(best_mv)
+    while d > 0:
+        gain[d - 1] = -max(-gain[d - 1], gain[d])
+        d -= 1
+    return gain[0]
+
+
+def hanging_pieces(board: chess.Board, color: chess.Color, exclude: chess.Square | None = None) -> list[str]:
+    """Pieces of `color` (not king) attacked by the enemy and undefended, or attacked by something cheaper."""
+    out = []
+    them = not color
+    for sq, p in board.piece_map().items():
+        if p.color != color or p.piece_type == chess.KING or sq == exclude:
+            continue
+        if not board.is_attacked_by(them, sq):
+            continue
+        lva = least_valuable_attacker(board, them, sq)
+        defended = board.is_attacked_by(color, sq)
+        if not defended or (lva is not None and VALUES[lva.piece_type] < VALUES[p.piece_type]):
+            out.append(f"{NAMES[p.piece_type]} on {chess.square_name(sq)}")
+    return out
+
+
+def allows_mate_in_one(board_after: chess.Board) -> bool:
+    for reply in board_after.legal_moves:
+        board_after.push(reply)
+        mate = board_after.is_checkmate()
+        board_after.pop()
+        if mate:
+            return True
+    return False
+
+
+def tactical_move_facts(board: chess.Board, move: chess.Move) -> dict[str, Any]:
+    """Facts are *deltas* caused by this move, so they differ between options instead of repeating
+    position-wide truths (which already sit in facts_for_side_to_move)."""
+    us = board.turn
+    hanging_before = set(hanging_pieces(board, us))
+    attacked_before = set(hanging_pieces(board, not us))
+    b = board.copy(stack=True)  # keep history so repetition can be detected
+    b.push(move)
+    hanging_after = set(hanging_pieces(b, us, exclude=move.to_square))
+    attacked_after = set(hanging_pieces(b, not us))
+    # a piece we moved away from a square no longer "exists" there; treat pieces by description string
+    facts: dict[str, Any] = {
+        "delivers_checkmate": b.is_checkmate(),
+        "gives_check": b.is_check(),
+        "allows_mate_in_one": False if b.is_game_over() else allows_mate_in_one(b),
+        "exchange_on_target": static_exchange(board, move),
+        "newly_exposes": sorted(hanging_after - hanging_before),
+        "rescues": sorted(x for x in hanging_before - hanging_after
+                          if not x.endswith(chess.square_name(move.from_square))),  # moving the piece itself counts too
+        "moved_piece_was_in_danger": any(x.endswith(chess.square_name(move.from_square)) for x in hanging_before),
+        "still_hanging": sorted(hanging_before & hanging_after),
+        "newly_attacks": sorted(attacked_after - attacked_before),
+        "repeats_position": b.is_repetition(2),
+        "is_capture": board.is_capture(move),
+    }
+    return facts
+
+
+def tactical_description(board: chess.Board, move: chess.Move) -> str:
+    base = move_description(board, move, annotate=False)
+    f = tactical_move_facts(board, move)
+    notes = []
+    x = f["exchange_on_target"]
+    if f["delivers_checkmate"]:
+        notes.append("DELIVERS CHECKMATE")
+    if f["allows_mate_in_one"]:
+        notes.append("ALLOWS THE OPPONENT TO CHECKMATE US NEXT MOVE")
+    # material verdict first, in plain words; it should dominate everything below it
+    if x < 0:
+        notes.append(f"LOSES {-x} point(s) of material: the moved piece gets captured on {chess.square_name(move.to_square)}")
+    elif x > 0:
+        notes.append(f"WINS {x} point(s) of material on {chess.square_name(move.to_square)}")
+    elif f["is_capture"]:
+        notes.append(f"even trade on {chess.square_name(move.to_square)}")
+    else:
+        notes.append("moved piece is safe")
+    if f["newly_exposes"]:
+        notes.append("EXPOSES " + ", ".join(f["newly_exposes"]) + " to capture")
+    if f["rescues"]:
+        notes.append("rescues " + ", ".join(f["rescues"]))
+    elif f["moved_piece_was_in_danger"]:
+        notes.append("moves a piece that was in danger")
+    # a threat only counts if the threatening piece survives
+    if f["newly_attacks"] and x >= 0 and not f["newly_exposes"]:
+        tag = "forks " if len(f["newly_attacks"]) >= 2 else "threatens "
+        notes.append(tag + ", ".join(f["newly_attacks"]))
+    if f["repeats_position"]:
+        notes.append("repeats an earlier position")
+    return base + "; " + "; ".join(notes)
+
+
+def is_obvious_blunder(board: chess.Board, move: chess.Move) -> bool:
+    """Hard rule for the optional code-side filter: never allow mate-in-one, never lose ≥3 material for nothing."""
+    f = tactical_move_facts(board, move)
+    if f["delivers_checkmate"]:
+        return False
+    return f["allows_mate_in_one"] or f["exchange_on_target"] <= -3

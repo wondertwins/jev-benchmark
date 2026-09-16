@@ -1,0 +1,86 @@
+{
+ "experiment": "G_play_game",
+ "level": "tactical",
+ "opponent": "random",
+ "filter_blunders": false,
+ "seed": 6,
+ "code_forced_moves": 0,
+ "adjudicated_result": null,
+ "jev_color": "black",
+ "summary": {
+  "result": "0-1",
+  "termination": "CHECKMATE",
+  "plies": 14,
+  "jev_mean_cp_loss": 87,
+  "jev_pct_best_move": 28.6,
+  "jev_blunders_200cp": 1,
+  "final_eval_cp_white": null
+ },
+ "pgn_moves": "1. Nc3 Nf6 2. h3 Nc6 3. Nb1 Nd4 4. c4 d5 5. f3 dxc4 6. Rh2 Qd6 7. Na3 Qg3#",
+ "final_fen": "r1b1kb1r/ppp1pppp/5n2/8/2pn4/N4PqP/PP1PP1PR/R1BQKBN1 w Qkq - 4 8",
+ "jev_moves": [
+  {
+   "ply": 1,
+   "san": "Nf6",
+   "cp_loss": 26,
+   "rank": 2,
+   "confidence": 0.32,
+   "n_legal": 20,
+   "n_offered": 20
+  },
+  {
+   "ply": 3,
+   "san": "Nc6",
+   "cp_loss": 71,
+   "rank": 4,
+   "confidence": 0.41,
+   "n_legal": 22,
+   "n_offered": 22
+  },
+  {
+   "ply": 5,
+   "san": "Nd4",
+   "cp_loss": 127,
+   "rank": 17,
+   "confidence": 0.21,
+   "n_legal": 24,
+   "n_offered": 24
+  },
+  {
+   "ply": 7,
+   "san": "d5",
+   "cp_loss": 12,
+   "rank": 2,
+   "confidence": 0.42,
+   "n_legal": 29,
+   "n_offered": 29
+  },
+  {
+   "ply": 9,
+   "san": "dxc4",
+   "cp_loss": 373,
+   "rank": 18,
+   "confidence": 0.99,
+   "n_legal": 36,
+   "n_offered": 36
+  },
+  {
+   "ply": 11,
+   "san": "Qd6",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.29,
+   "n_legal": 38,
+   "n_offered": 38
+  },
+  {
+   "ply": 13,
+   "san": "Qg3#",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.81,
+   "n_legal": 50,
+   "n_offered": 50
+  }
+ ]
+}

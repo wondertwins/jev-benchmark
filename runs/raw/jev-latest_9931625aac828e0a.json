@@ -1,0 +1,162 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 . . . . . . . Q\n7 . . . . . . p .\n6 . . . p k . . .\n5 . . . N p . . p\n4 . . . . . . q P\n3 . . . . . . . .\n2 P P P . . P . P\n1 R . B . . R . K\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "7Q/6p1/3pk3/3Np2p/6qP/8/PPP2P1P/R1B2R1K w - - 1 31",
+   "move_history": "1. e4 Nc6 2. Nf3 d6 3. Nc3 e5 4. Bc4 Be6 5. Bxe6 fxe6 6. O-O Qf6 7. Nb5 Qd8 8. d4 Qd7 9. d5 exd5 10. exd5 Nce7 11. Nc3 Ng6 12. Ng5 h6 13. Ne6 Rc8 14. Nxf8 Kxf8 15. Qf3+ Ke8 16. Qe4 N8e7 17. Qb4 c6 18. dxc6 Rxc6 19. Qa5 Nh4 20. Qxa7 Qg4 21. Qb8+ Nc8 22. g3 h5 23. Qxb7 Ne7 24. Qa8+ Kd7 25. Qxh8 Rc8 26. Qh7 Rh8 27. Qxh8 Qh3 28. gxh4 Qg4+ 29. Kh1 Nd5 30. Nxd5 Ke6",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "queen": [
+      "h8"
+     ],
+     "rook": [
+      "a1",
+      "f1"
+     ],
+     "bishop": [
+      "c1"
+     ],
+     "knight": [
+      "d5"
+     ],
+     "pawn": [
+      "a2",
+      "b2",
+      "c2",
+      "f2",
+      "h2",
+      "h4"
+     ],
+     "king": [
+      "h1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "g4"
+     ],
+     "pawn": [
+      "e5",
+      "h5",
+      "d6",
+      "g7"
+     ],
+     "king": [
+      "e6"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "knight on d5 (attacked by king, undefended)",
+     "pawn on h4 (attacked by queen, undefended)"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 31,
+     "black": 13,
+     "white_minus_black": 18
+    }
+   },
+   "how_to_read_move_options": "Each move option ends with exact facts computed by a chess program. Priority order: (1) a move that DELIVERS CHECKMATE wins immediately; (2) never choose a move that ALLOWS THE OPPONENT TO CHECKMATE; (3) a move that LOSES material or EXPOSES a piece is bad even if it gives check or threatens something, because the opponent simply takes the piece; (4) among safe moves, prefer WINS material, then rescues, then threatens/forks, then quiet moves that develop or improve the position. Avoid repeating positions when a good alternative exists."
+  },
+  "questions": {
+   "move": {
+    "type": "choice",
+    "criteria": {
+     "Qg8+": "queen h8 to g8, gives check; moved piece is safe",
+     "Qf8": "queen h8 to f8; moved piece is safe",
+     "Qe8+": "queen h8 to e8, gives check; moved piece is safe",
+     "Qd8": "queen h8 to d8; moved piece is safe; rescues pawn on h4",
+     "Qc8+": "queen h8 to c8, gives check; moved piece is safe",
+     "Qb8": "queen h8 to b8; moved piece is safe",
+     "Qa8": "queen h8 to a8; moved piece is safe",
+     "Qh7": "queen h8 to h7; moved piece is safe",
+     "Nc7+": "knight d5 to c7, gives check; moved piece is safe; moves a piece that was in danger",
+     "Nb6": "knight d5 to b6; moved piece is safe; moves a piece that was in danger",
+     "Ne3": "knight d5 to e3; moved piece is safe; moves a piece that was in danger; threatens queen on g4",
+     "Nc3": "knight d5 to c3; moved piece is safe; moves a piece that was in danger",
+     "Rg1": "rook f1 to g1; moved piece is safe; threatens queen on g4",
+     "Re1": "rook f1 to e1; moved piece is safe",
+     "Bh6": "bishop c1 to h6; LOSES 2 point(s) of material: the moved piece gets captured on h6",
+     "Bg5": "bishop c1 to g5; moved piece is safe; rescues pawn on h4; threatens pawn on g7",
+     "Be3": "bishop c1 to e3; moved piece is safe",
+     "Bd2": "bishop c1 to d2; moved piece is safe",
+     "Rb1": "rook a1 to b1; moved piece is safe",
+     "h3": "pawn h2 to h3; LOSES 1 point(s) of material: the moved piece gets captured on h3",
+     "f3": "pawn f2 to f3; moved piece is safe; threatens queen on g4",
+     "c3": "pawn c2 to c3; moved piece is safe",
+     "b3": "pawn b2 to b3; moved piece is safe",
+     "a3": "pawn a2 to a3; moved piece is safe",
+     "f4": "pawn f2 to f4; moved piece is safe",
+     "c4": "pawn c2 to c4; LOSES 1 point(s) of material: the moved piece gets captured on c4",
+     "b4": "pawn b2 to b4; moved piece is safe",
+     "a4": "pawn a2 to a4; moved piece is safe"
+    },
+    "instructions": {
+     "question": "Which legal move should White play now?",
+     "goal": "Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.",
+     "options": "Every option is a legal move in standard algebraic notation with a plain description."
+    }
+   }
+  }
+ },
+ "meta": {
+  "exp": "G",
+  "ply": 60,
+  "level": "tactical",
+  "filter": true
+ },
+ "latency_s": 0.22531662497203797,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Nc7+",
+    "confidence": 0.36,
+    "probabilities": {
+     "Bh6": 0.0,
+     "h3": 0.0,
+     "Qb8": 0.01,
+     "Rg1": 0.03,
+     "f4": 0.0,
+     "Rb1": 0.0,
+     "Qe8+": 0.11,
+     "Re1": 0.0,
+     "Qh7": 0.0,
+     "Ne3": 0.2,
+     "b3": 0.0,
+     "c3": 0.0,
+     "a3": 0.0,
+     "Bg5": 0.05,
+     "Qg8+": 0.03,
+     "Nc3": 0.060000000000000005,
+     "Qa8": 0.01,
+     "Qd8": 0.04,
+     "f3": 0.01,
+     "Nc7+": 0.39,
+     "Qf8": 0.0,
+     "b4": 0.0,
+     "c4": 0.0,
+     "a4": 0.0,
+     "Qc8+": 0.04,
+     "Be3": 0.0,
+     "Bd2": 0.0,
+     "Nb6": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2054,
+   "output_tokens": 248
+  }
+ }
+}

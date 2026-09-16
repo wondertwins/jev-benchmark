@@ -83,15 +83,20 @@ def main() -> None:
 
     games = [(k, v) for k, v in R.items() if k.startswith("G_")]
     if games:
-        lines += ["## Full games (Jev = White, rich state, Choice over legal moves)", "",
-                  "| opponent | result | termination | plies | Jev mean cp loss | Jev % best | Jev blunders | final eval (cp, white) |",
-                  "|---|---|---|---|---|---|---|---|"]
+        lines += ["## Full games (Choice over legal moves)", "",
+                  "| opponent | Jev plays | state | code filter | Jev result | termination | moves | Jev mean cp loss | Jev % best | Jev blunders |",
+                  "|---|---|---|---|---|---|---|---|---|---|"]
         for k, v in games:
             s = v["summary"]
-            lines.append(f"| {v['opponent']} | {s['result']} | {s['termination']} | {s['plies']} | {fmt(s['jev_mean_cp_loss'])} | "
-                         f"{fmt(s['jev_pct_best_move'])} | {s['jev_blunders_200cp']} | {fmt(s['final_eval_cp_white'])} |")
+            jw = v.get("jev_color", "white") == "white"
+            result = s["result"] if s["result"] != "unfinished" else (v.get("adjudicated_result") or
+                     ("1-0" if (s.get("final_eval_cp_white") or 0) > 300 else "0-1" if (s.get("final_eval_cp_white") or 0) < -300 else "1/2-1/2"))
+            outcome = "draw" if result == "1/2-1/2" else ("**win**" if result == ("1-0" if jw else "0-1") else "loss")
+            term = s["termination"].lower() if s["result"] != "unfinished" else f"adjudicated at {s['final_eval_cp_white']} cp"
+            lines.append(f"| {v['opponent']} | {'white' if jw else 'black'} | {v.get('level', 'rich')} | {'yes' if v.get('filter_blunders') else 'no'} | "
+                         f"{outcome} | {term} | {(s['plies'] + 1) // 2} | {fmt(s['jev_mean_cp_loss'])} | {fmt(s['jev_pct_best_move'])} | {s['jev_blunders_200cp']} |")
         for k, v in games:
-            lines += ["", f"**vs {v['opponent']}**: `{v['pgn_moves']}`"]
+            lines += ["", f"**vs {v['opponent']}** ({v.get('level', 'rich')}{', filter' if v.get('filter_blunders') else ''}, Jev {v.get('jev_color', 'white')}): `{v['pgn_moves']}`"]
         lines.append("")
 
     # --- confidence vs blunders, on the best configuration

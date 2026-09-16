@@ -38,6 +38,10 @@ async def main() -> None:
     ap.add_argument("--levels", default="fen,ascii,rich", help="state levels for A and E")
     ap.add_argument("--games", default="random,sf0", help="opponents for G, comma list (random | sfN)")
     ap.add_argument("--max-plies", type=int, default=120)
+    ap.add_argument("--game-level", default="rich", help="state level Jev gets when playing games (rich | tactical)")
+    ap.add_argument("--seeds", default="3", help="comma list of seeds, one game per seed per opponent")
+    ap.add_argument("--filter-blunders", action="store_true", help="code plays mates and removes obvious blunders before Jev chooses")
+    ap.add_argument("--jev-color", default="white", help="white | black | alternate (by seed parity)")
     args = ap.parse_args()
     if not os.environ.get("TYPESAFE_API_KEY"):
         raise SystemExit("TYPESAFE_API_KEY not set; run: set -a; source ~/.env; set +a")
@@ -90,8 +94,14 @@ async def main() -> None:
                 print(f"F: {r['summary']}  -> {save(r, 'F_eval_score', args.model).name}")
             if "G" in exps:
                 for opp in [o.strip() for o in args.games.split(",") if o.strip()]:
-                    r = await X.exp_play_game(client, eng, "rich", opp, max_plies=args.max_plies)
-                    print(f"G vs {opp}: {r['summary']}\n   {r['pgn_moves']}\n   -> {save(r, f'G_game_vs_{opp}', args.model).name}")
+                    for seed in [int(x) for x in args.seeds.split(",")]:
+                        color = chess.WHITE if args.jev_color == "white" or (args.jev_color == "alternate" and seed % 2 == 1) else chess.BLACK
+                        r = await X.exp_play_game(client, eng, args.game_level, opp, jev_color=color, max_plies=args.max_plies,
+                                                  seed=seed, filter_blunders=args.filter_blunders)
+                        suffix = "" if (args.game_level == "rich" and not args.filter_blunders and seed == 3 and color == chess.WHITE) else \
+                            f"_{args.game_level}{'_filter' if args.filter_blunders else ''}_s{seed}{'' if color == chess.WHITE else 'b'}"
+                        print(f"G vs {opp} [{args.game_level}{' +filter' if args.filter_blunders else ''} seed {seed}]: {r['summary']}\n"
+                              f"   {r['pgn_moves']}\n   -> {save(r, f'G_game_vs_{opp}{suffix}', args.model).name}")
             print("usage:", client.usage.summary(), f"elapsed {time.time()-t0:.0f}s")
 
 

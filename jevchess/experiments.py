@@ -393,46 +393,73 @@ async def exp_eval_score(client: JevClient, eng: chess.engine.SimpleEngine, posi
 
 
 # ---------------------------------------------------------------- G: play full games
+def _is_mate(board: chess.Board, mv: chess.Move) -> bool:
+    board.push(mv)
+    try:
+        return board.is_checkmate()
+    finally:
+        board.pop()
+
+
 async def exp_play_game(client: JevClient, eng: chess.engine.SimpleEngine, level: str, opponent: str,
-                        jev_color: chess.Color = chess.WHITE, max_plies: int = 120, seed: int = 3) -> dict:
+                        jev_color: chess.Color = chess.WHITE, max_plies: int = 120, seed: int = 3,
+                        filter_blunders: bool = False) -> dict:
+    """Jev plays a full game. With filter_blunders, code enforces two hard rules before Jev chooses:
+    play a checkmate if one exists, and remove moves that allow mate-in-one or lose >=3 material for nothing."""
+    from .opponents import Opponent
     rng = random.Random(seed)
     board = chess.Board()
     sans: list[str] = []
     jev_moves: list[dict[str, Any]] = []
-    opp_eng: chess.engine.SimpleEngine | None = None
-    if opponent.startswith("sf"):
-        import shutil
-        opp_eng = chess.engine.SimpleEngine.popen_uci(shutil.which("stockfish"))
-        opp_eng.configure({"Skill Level": int(opponent[2:]) if opponent[2:].isdigit() else 0})
+    opp = Opponent(opponent, rng)
     try:
         while not board.is_game_over() and len(sans) < max_plies:
             if board.turn == jev_color:
                 gt = ground_truth(eng, board, depth=10)
                 losses = cp_loss_table(gt)
                 opts = legal_move_options(board, level)
-                resp = await client.ask(build_state(board, sans, level),
-                                        {"move": Choice(instructions=choice_instructions(board), criteria=opts)},
-                                        meta={"exp": "G", "ply": len(sans)})
-                mv = san_to_move(board, resp.choices["move"].choice) if resp else None
-                if mv is None:
+                forced: chess.Move | None = None
+                if filter_blunders:
+                    from .state import is_obvious_blunder
+                    mates = [m for m in board.legal_moves if board.gives_check(m) and _is_mate(board, m)]
+                    if mates:
+                        forced = mates[0]
+                    else:
+                        safe = {san: d for san, d in opts.items()
+                                if not is_obvious_blunder(board, san_to_move(board, san))}
+                        if safe:
+                            opts = safe
+                resp = None
+                if forced is None:
+                    resp = await client.ask(build_state(board, sans, level),
+                                            {"move": Choice(instructions=choice_instructions(board), criteria=opts)},
+                                            meta={"exp": "G", "ply": len(sans), "level": level, "filter": filter_blunders})
+                mv = forced if forced is not None else (san_to_move(board, resp.choices["move"].choice) if resp else None)
+                if forced is not None:
+                    jev_moves.append({"ply": len(sans), "san": board.san(mv), "cp_loss": losses[mv.uci()],
+                                      "rank": _rank_of(gt, mv.uci()), "forced_mate_by_code": True, "n_legal": len(losses)})
+                elif mv is None:
                     mv = rng.choice(list(board.legal_moves))
                     jev_moves.append({"ply": len(sans), "san": board.san(mv), "fallback_random": True})
                 else:
                     jev_moves.append({"ply": len(sans), "san": board.san(mv), "cp_loss": losses[mv.uci()],
                                       "rank": _rank_of(gt, mv.uci()), "confidence": resp.choices["move"].confidence,
-                                      "n_legal": len(opts)})
-            elif opp_eng is not None:
-                mv = opp_eng.play(board, chess.engine.Limit(depth=1)).move
+                                      "n_legal": len(losses), "n_offered": len(opts)})
             else:
-                mv = rng.choice(list(board.legal_moves))
+                mv = opp.move(board)
             sans.append(board.san(mv))
             board.push(mv)
     finally:
-        if opp_eng:
-            opp_eng.quit()
+        opp.close()
     losses = [m["cp_loss"] for m in jev_moves if "cp_loss" in m]
     outcome = board.result(claim_draw=True) if board.is_game_over(claim_draw=True) else "unfinished"
-    return {"experiment": "G_play_game", "level": level, "opponent": opponent,
+    adjudicated = None
+    if outcome == "unfinished":
+        final_cp = eval_cp(eng, board, 12)
+        adjudicated = "1-0" if final_cp > 300 else "0-1" if final_cp < -300 else "1/2-1/2"
+    return {"experiment": "G_play_game", "level": level, "opponent": opponent, "filter_blunders": filter_blunders, "seed": seed,
+            "code_forced_moves": sum(1 for m in jev_moves if m.get("forced_mate_by_code")),
+            "adjudicated_result": adjudicated,
             "jev_color": "white" if jev_color == chess.WHITE else "black",
             "summary": {"result": outcome, "termination": board.outcome(claim_draw=True).termination.name if board.outcome(claim_draw=True) else "ply_cap",
                         "plies": len(sans), "jev_mean_cp_loss": round(statistics.mean(losses), 1) if losses else None,

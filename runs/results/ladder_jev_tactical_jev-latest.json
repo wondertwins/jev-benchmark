@@ -1,0 +1,96 @@
+{
+ "config": "tactical",
+ "games": [
+  [
+   "G_game_vs_greedy_tactical_s5_jev-latest.json",
+   "greedy",
+   "white",
+   "1-0",
+   1.0
+  ],
+  [
+   "G_game_vs_greedy_tactical_s6b_jev-latest.json",
+   "greedy",
+   "black",
+   "0-1",
+   1.0
+  ],
+  [
+   "G_game_vs_mix25_tactical_s7_jev-latest.json",
+   "mix25",
+   "white",
+   "1-0",
+   1.0
+  ],
+  [
+   "G_game_vs_mix25_tactical_s8b_jev-latest.json",
+   "mix25",
+   "black",
+   "0-1",
+   1.0
+  ],
+  [
+   "G_game_vs_mix50_tactical_s5_jev-latest.json",
+   "mix50",
+   "white",
+   "1-0",
+   1.0
+  ],
+  [
+   "G_game_vs_mix50_tactical_s6b_jev-latest.json",
+   "mix50",
+   "black",
+   "0-1",
+   1.0
+  ],
+  [
+   "G_game_vs_mix75_tactical_s5_jev-latest.json",
+   "mix75",
+   "white",
+   "1-0",
+   1.0
+  ],
+  [
+   "G_game_vs_mix75_tactical_s6b_jev-latest.json",
+   "mix75",
+   "black",
+   "0-1",
+   1.0
+  ],
+  [
+   "G_game_vs_random_tactical_s6b_jev-latest.json",
+   "random",
+   "black",
+   "0-1",
+   1.0
+  ],
+  [
+   "G_game_vs_sf0_tactical_s3_jev-latest.json",
+   "sf0",
+   "white",
+   "0-1",
+   0.0
+  ],
+  [
+   "G_game_vs_sf0_tactical_s4_jev-latest.json",
+   "sf0",
+   "white",
+   "0-1",
+   0.0
+  ]
+ ],
+ "elo": 968,
+ "interval_80": [
+  879,
+  1412
+ ],
+ "bot_elo": {
+  "elo1320": 1320,
+  "sf0": 1166,
+  "mix25": 650,
+  "greedy": 484,
+  "mix50": 388,
+  "mix75": 169,
+  "random": -73
+ }
+}

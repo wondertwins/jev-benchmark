@@ -1,0 +1,206 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 . n . q . . k r\n7 . Q p p . n . p\n6 . p . . p . . .\n5 p . . . . . . .\n4 . . B . . . . .\n3 . . N . . . . .\n2 P P P P . P P P\n1 R . B . K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "1n1q2kr/1Qpp1n1p/1p2p3/p7/2B5/2N5/PPPP1PPP/R1B1K2R w KQ - 1 15",
+   "move_history": "1. e4 a5 2. Nf3 f6 3. Nc3 b6 4. Bc4 g5 5. Bd5 Nh6 6. Bxa8 f5 7. Nxg5 fxe4 8. Ngxe4 Bg7 9. Qh5+ Kf8 10. Qf3+ Kg8 11. Bd5+ e6 12. Bc4 Bxc3 13. Nxc3 Bb7 14. Qxb7 Nf7",
+   "castling_rights": "KQ",
+   "pieces": {
+    "white": {
+     "queen": [
+      "b7"
+     ],
+     "rook": [
+      "a1",
+      "h1"
+     ],
+     "bishop": [
+      "c1",
+      "c4"
+     ],
+     "knight": [
+      "c3"
+     ],
+     "pawn": [
+      "a2",
+      "b2",
+      "c2",
+      "d2",
+      "f2",
+      "g2",
+      "h2"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "d8"
+     ],
+     "rook": [
+      "h8"
+     ],
+     "knight": [
+      "f7",
+      "b8"
+     ],
+     "pawn": [
+      "a5",
+      "b6",
+      "e6",
+      "c7",
+      "d7",
+      "h7"
+     ],
+     "king": [
+      "g8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 35,
+     "black": 26,
+     "white_minus_black": 9
+    }
+   },
+   "how_to_read_move_options": "Each move option ends with exact facts computed by a chess program. Priority order: (1) a move that DELIVERS CHECKMATE wins immediately; (2) never choose a move that ALLOWS THE OPPONENT TO CHECKMATE; (3) a move that LOSES material or EXPOSES a piece is bad even if it gives check or threatens something, because the opponent simply takes the piece; (4) among safe moves, prefer WINS material, then rescues, then threatens/forks, then quiet moves that develop or improve the position. Avoid repeating positions when a good alternative exists."
+  },
+  "questions": {
+   "move": {
+    "type": "choice",
+    "criteria": {
+     "Qc8": "queen b7 to c8; LOSES 9 point(s) of material: the moved piece gets captured on c8",
+     "Qxb8": "queen b7 to b8, captures knight; LOSES 6 point(s) of material: the moved piece gets captured on b8",
+     "Qa8": "queen b7 to a8; moved piece is safe",
+     "Qxc7": "queen b7 to c7, captures pawn; LOSES 8 point(s) of material: the moved piece gets captured on c7",
+     "Qa7": "queen b7 to a7; moved piece is safe",
+     "Qc6": "queen b7 to c6; LOSES 9 point(s) of material: the moved piece gets captured on c6",
+     "Qxb6": "queen b7 to b6, captures pawn; LOSES 8 point(s) of material: the moved piece gets captured on b6",
+     "Qa6": "queen b7 to a6; LOSES 6 point(s) of material: the moved piece gets captured on a6",
+     "Qd5": "queen b7 to d5; LOSES 8 point(s) of material: the moved piece gets captured on d5",
+     "Qe4": "queen b7 to e4; moved piece is safe",
+     "Qf3": "queen b7 to f3; moved piece is safe",
+     "Bxe6": "bishop c4 to e6, captures pawn; LOSES 2 point(s) of material: the moved piece gets captured on e6",
+     "Ba6": "bishop c4 to a6; moved piece is safe",
+     "Bd5": "bishop c4 to d5; LOSES 2 point(s) of material: the moved piece gets captured on d5",
+     "Bb5": "bishop c4 to b5; moved piece is safe",
+     "Bd3": "bishop c4 to d3; moved piece is safe",
+     "Bb3": "bishop c4 to b3; moved piece is safe",
+     "Be2": "bishop c4 to e2; moved piece is safe",
+     "Bf1": "bishop c4 to f1; moved piece is safe",
+     "Nd5": "knight c3 to d5; LOSES 2 point(s) of material: the moved piece gets captured on d5",
+     "Nb5": "knight c3 to b5; moved piece is safe",
+     "Ne4": "knight c3 to e4; moved piece is safe",
+     "Na4": "knight c3 to a4; moved piece is safe",
+     "Ne2": "knight c3 to e2; moved piece is safe",
+     "Nd1": "knight c3 to d1; moved piece is safe",
+     "Nb1": "knight c3 to b1; moved piece is safe",
+     "Rg1": "rook h1 to g1; moved piece is safe",
+     "Rf1": "rook h1 to f1; moved piece is safe",
+     "Ke2": "king e1 to e2; moved piece is safe",
+     "Kf1": "king e1 to f1; moved piece is safe",
+     "Kd1": "king e1 to d1; moved piece is safe",
+     "Rb1": "rook a1 to b1; moved piece is safe",
+     "O-O": "castles kingside; moved piece is safe",
+     "h3": "pawn h2 to h3; moved piece is safe",
+     "g3": "pawn g2 to g3; moved piece is safe",
+     "f3": "pawn f2 to f3; moved piece is safe",
+     "d3": "pawn d2 to d3; moved piece is safe",
+     "b3": "pawn b2 to b3; moved piece is safe",
+     "a3": "pawn a2 to a3; moved piece is safe",
+     "h4": "pawn h2 to h4; moved piece is safe",
+     "g4": "pawn g2 to g4; moved piece is safe",
+     "f4": "pawn f2 to f4; moved piece is safe",
+     "d4": "pawn d2 to d4; moved piece is safe",
+     "b4": "pawn b2 to b4; LOSES 1 point(s) of material: the moved piece gets captured on b4",
+     "a4": "pawn a2 to a4; moved piece is safe"
+    },
+    "instructions": {
+     "question": "Which legal move should White play now?",
+     "goal": "Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.",
+     "options": "Every option is a legal move in standard algebraic notation with a plain description."
+    }
+   }
+  }
+ },
+ "meta": {
+  "exp": "G",
+  "ply": 28,
+  "level": "tactical",
+  "filter": false
+ },
+ "latency_s": 0.22900245897471905,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "O-O",
+    "confidence": 0.29,
+    "probabilities": {
+     "g3": 0.01,
+     "b4": 0.0,
+     "f4": 0.01,
+     "b3": 0.0,
+     "Nb1": 0.0,
+     "Nd5": 0.01,
+     "h3": 0.0,
+     "f3": 0.01,
+     "Bxe6": 0.01,
+     "Qa7": 0.02,
+     "Qd5": 0.01,
+     "O-O": 0.29,
+     "Qxb6": 0.01,
+     "a3": 0.01,
+     "Qa6": 0.0,
+     "Qf3": 0.05,
+     "a4": 0.0,
+     "Qxb8": 0.04,
+     "Bf1": 0.01,
+     "Bb3": 0.01,
+     "Qxc7": 0.01,
+     "Bd3": 0.03,
+     "d3": 0.01,
+     "Qc6": 0.01,
+     "Na4": 0.01,
+     "Ne2": 0.01,
+     "Nd1": 0.0,
+     "Kd1": 0.01,
+     "Qa8": 0.07,
+     "Ba6": 0.02,
+     "Ke2": 0.01,
+     "Bb5": 0.02,
+     "d4": 0.02,
+     "Qc8": 0.01,
+     "Rf1": 0.01,
+     "Nb5": 0.05,
+     "Rg1": 0.01,
+     "g4": 0.01,
+     "Be2": 0.01,
+     "Rb1": 0.0,
+     "Ne4": 0.11,
+     "Qe4": 0.05,
+     "Bd5": 0.01,
+     "Kf1": 0.0,
+     "h4": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2368,
+   "output_tokens": 387
+  }
+ }
+}

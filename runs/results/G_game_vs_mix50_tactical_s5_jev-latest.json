@@ -1,0 +1,320 @@
+{
+ "experiment": "G_play_game",
+ "level": "tactical",
+ "opponent": "mix50",
+ "filter_blunders": false,
+ "seed": 5,
+ "code_forced_moves": 0,
+ "adjudicated_result": null,
+ "jev_color": "white",
+ "summary": {
+  "result": "1-0",
+  "termination": "CHECKMATE",
+  "plies": 65,
+  "jev_mean_cp_loss": 198.5,
+  "jev_pct_best_move": 54.5,
+  "jev_blunders_200cp": 6,
+  "final_eval_cp_white": null
+ },
+ "pgn_moves": "1. e4 c5 2. d4 Nf6 3. dxc5 Nxe4 4. Qd4 d5 5. cxd6 Nxd6 6. Nf3 Nc6 7. Qd5 f5 8. Qc5 Bd7 9. Ne5 Qc8 10. Nxd7 Qxd7 11. Nc3 e5 12. Qd5 a6 13. Qc5 Rc8 14. Nd5 Nd4 15. Nb6 Qe7 16. Nxc8 Qh4 17. Nxd6+ Bxd6 18. Qxd6 Qxh2 19. Rxh2 Kf7 20. Qc7+ Kf6 21. Qxb7 Rc8 22. Qxc8 Kf7 23. Rxh7 Ne6 24. Bxa6 Kg6 25. Qxe6+ Kxh7 26. Qxf5+ Kh8 27. Qxe5 Kg8 28. Qe8+ Kh7 29. Qh5+ Kg8 30. Qe8+ Kh7 31. Bd3+ g6 32. Qxg6+ Kh8 33. Qh7#",
+ "final_fen": "7k/7Q/8/8/8/3B4/PPP2PP1/R1B1K3 b Q - 2 33",
+ "jev_moves": [
+  {
+   "ply": 0,
+   "san": "e4",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.58,
+   "n_legal": 20,
+   "n_offered": 20
+  },
+  {
+   "ply": 2,
+   "san": "d4",
+   "cp_loss": 11,
+   "rank": 4,
+   "confidence": 0.24,
+   "n_legal": 30,
+   "n_offered": 30
+  },
+  {
+   "ply": 4,
+   "san": "dxc5",
+   "cp_loss": 187,
+   "rank": 7,
+   "confidence": 0.8,
+   "n_legal": 39,
+   "n_offered": 39
+  },
+  {
+   "ply": 6,
+   "san": "Qd4",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.35,
+   "n_legal": 40,
+   "n_offered": 40
+  },
+  {
+   "ply": 8,
+   "san": "cxd6",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.4,
+   "n_legal": 45,
+   "n_offered": 45
+  },
+  {
+   "ply": 10,
+   "san": "Nf3",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.13,
+   "n_legal": 51,
+   "n_offered": 51
+  },
+  {
+   "ply": 12,
+   "san": "Qd5",
+   "cp_loss": 52,
+   "rank": 10,
+   "confidence": 0.1,
+   "n_legal": 52,
+   "n_offered": 52
+  },
+  {
+   "ply": 14,
+   "san": "Qc5",
+   "cp_loss": 119,
+   "rank": 22,
+   "confidence": 0.08,
+   "n_legal": 50,
+   "n_offered": 50
+  },
+  {
+   "ply": 16,
+   "san": "Ne5",
+   "cp_loss": 77,
+   "rank": 6,
+   "confidence": 0.13,
+   "n_legal": 48,
+   "n_offered": 48
+  },
+  {
+   "ply": 18,
+   "san": "Nxd7",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.36,
+   "n_legal": 50,
+   "n_offered": 50
+  },
+  {
+   "ply": 20,
+   "san": "Nc3",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.13,
+   "n_legal": 44,
+   "n_offered": 44
+  },
+  {
+   "ply": 22,
+   "san": "Qd5",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.16,
+   "n_legal": 45,
+   "n_offered": 45
+  },
+  {
+   "ply": 24,
+   "san": "Qc5",
+   "cp_loss": 263,
+   "rank": 24,
+   "confidence": 0.11,
+   "n_legal": 48,
+   "n_offered": 48
+  },
+  {
+   "ply": 26,
+   "san": "Nd5",
+   "cp_loss": 667,
+   "rank": 27,
+   "confidence": 0.24,
+   "n_legal": 45,
+   "n_offered": 45
+  },
+  {
+   "ply": 28,
+   "san": "Nb6",
+   "cp_loss": 121,
+   "rank": 3,
+   "confidence": 0.74,
+   "n_legal": 47,
+   "n_offered": 47
+  },
+  {
+   "ply": 30,
+   "san": "Nxc8",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.97,
+   "n_legal": 45,
+   "n_offered": 45
+  },
+  {
+   "ply": 32,
+   "san": "Nxd6+",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.83,
+   "n_legal": 41,
+   "n_offered": 41
+  },
+  {
+   "ply": 34,
+   "san": "Qxd6",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.49,
+   "n_legal": 38,
+   "n_offered": 38
+  },
+  {
+   "ply": 36,
+   "san": "Rxh2",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.98,
+   "n_legal": 44,
+   "n_offered": 44
+  },
+  {
+   "ply": 38,
+   "san": "Qc7+",
+   "cp_loss": 618,
+   "rank": 3,
+   "confidence": 0.42,
+   "n_legal": 48,
+   "n_offered": 48
+  },
+  {
+   "ply": 40,
+   "san": "Qxb7",
+   "cp_loss": 2000,
+   "rank": 7,
+   "confidence": 0.36,
+   "n_legal": 45,
+   "n_offered": 45
+  },
+  {
+   "ply": 42,
+   "san": "Qxc8",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.98,
+   "n_legal": 47,
+   "n_offered": 47
+  },
+  {
+   "ply": 44,
+   "san": "Rxh7",
+   "cp_loss": 429,
+   "rank": 29,
+   "confidence": 0.42,
+   "n_legal": 46,
+   "n_offered": 46
+  },
+  {
+   "ply": 46,
+   "san": "Bxa6",
+   "cp_loss": 2000,
+   "rank": 13,
+   "confidence": 0.46,
+   "n_legal": 48,
+   "n_offered": 48
+  },
+  {
+   "ply": 48,
+   "san": "Qxe6+",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.94,
+   "n_legal": 49,
+   "n_offered": 49
+  },
+  {
+   "ply": 50,
+   "san": "Qxf5+",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.65,
+   "n_legal": 44,
+   "n_offered": 44
+  },
+  {
+   "ply": 52,
+   "san": "Qxe5",
+   "cp_loss": 2,
+   "rank": 36,
+   "confidence": 0.62,
+   "n_legal": 44,
+   "n_offered": 44
+  },
+  {
+   "ply": 54,
+   "san": "Qe8+",
+   "cp_loss": 1,
+   "rank": 2,
+   "confidence": 0.15,
+   "n_legal": 50,
+   "n_offered": 50
+  },
+  {
+   "ply": 56,
+   "san": "Qh5+",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.53,
+   "n_legal": 47,
+   "n_offered": 47
+  },
+  {
+   "ply": 58,
+   "san": "Qe8+",
+   "cp_loss": 2,
+   "rank": 7,
+   "confidence": 0.23,
+   "n_legal": 48,
+   "n_offered": 48
+  },
+  {
+   "ply": 60,
+   "san": "Bd3+",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.23,
+   "n_legal": 47,
+   "n_offered": 47
+  },
+  {
+   "ply": 62,
+   "san": "Qxg6+",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.49,
+   "n_legal": 47,
+   "n_offered": 47
+  },
+  {
+   "ply": 64,
+   "san": "Qh7#",
+   "cp_loss": 0,
+   "rank": 1,
+   "confidence": 0.99,
+   "n_legal": 45,
+   "n_offered": 45
+  }
+ ]
+}

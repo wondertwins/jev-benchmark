@@ -16,7 +16,7 @@ Everything is here: the code, the labeled data, every raw request and response (
 | | Chess | NPC addressee detection |
 |---|---|---|
 | Task shape | Pick a move from 20 to 40 legal options; needs lookahead | Read one utterance, decide per NPC: spoken to, or merely mentioned? |
-| Result | **No better than random** from a raw board. Beats random by ~65% once code supplies the tactical facts. Finds mate-in-one 24% of the time. Beats a random mover, loses to Stockfish level 0. | **F1 0.96** on clean text, **0.93** on lowercase, punctuation-free, misheard-name transcripts. **Precision 1.0** across the board. Exact-set accuracy 92% vs 64% for a fuzzy name-matching heuristic. |
+| Result | **No better than random** from a raw board. Beats random by ~65% with code-supplied facts and ~78% with one-ply tactical facts. Finds mate-in-one 24% of the time. With tactical facts it plays at roughly **950 Elo** on a Stockfish-anchored ladder: checkmates every bot up to ~650, loses to depth-1 Stockfish (~1166). | **F1 0.96** on clean text, **0.93** on lowercase, punctuation-free, misheard-name transcripts. **Precision 1.0** across the board. Exact-set accuracy 92% vs 64% for a fuzzy name-matching heuristic. |
 | Latency | 0.2 s median, even with 40 options | 0.17 s median with 8 to 10 questions per call |
 | Cost | ~2,100 input tokens per move (rich state) | ~1,700 input tokens per utterance |
 
@@ -37,11 +37,32 @@ Same question ("which legal move should White play?"), same 30 positions, three 
 | *Random move (baseline)* | 403 | | | |
 | FEN string only | 533 | 13 | 17 | 73 |
 | ASCII board + move history | 409 | 20 | 27 | 57 |
-| ASCII board + **code-computed facts** | **144** | **27** | **50** | **20** |
+| ASCII board + **code-computed facts** ("rich") | 144 | 27 | 50 | 20 |
+| rich + **one-ply tactical facts** ("tactical") | **90** | **37** | **57** | **13** |
 
 "Code-computed facts" means python-chess did the arithmetic first: piece lists, material count, which of our pieces are attacked and whether they're defended, which enemy pieces we can take, and for every legal move, whether the moved piece can be captured afterwards and by what. Jev's job shrank from "read this grid of letters and play chess" to "given that this bishop will hang, which move is sensible?"
 
+The "tactical" level adds what a static exchange evaluator computes in microseconds: the net material of the capture sequence on the landing square, which pieces the move newly exposes or rescues, whether it delivers mate or allows mate-in-one, what it newly threatens, and whether it repeats a position. Still one ply, still no search, and Jev still picks among all 20 to 40 legal moves.
+
 From a FEN string, Jev is *worse* than random. With the facts spelled out, it's a different model.
+
+### Is the harness doing the playing?
+
+Fair question, so here is the literal text Jev receives for one move in one position, at each level:
+
+```
+ascii     Bxd5 -> bishop b3 to d5, captures pawn
+rich      Bxd5 -> bishop b3 to d5, captures pawn; afterwards this bishop can be captured by a pawn (undefended)
+tactical  Bxd5 -> bishop b3 to d5, captures pawn; LOSES 2 point(s) of material: the moved piece gets captured on d5
+```
+
+Every fact is one-ply exact and cheap. None of it says which move to play. Jev still has to weigh "loses 2 points" against "gives check" against "develops a piece" across ~30 options, and it does that imperfectly (see the blunder rate). Where the line gets crossed is the optional `--filter-blunders` mode used in some games below, where code plays a checkmate if one exists and removes moves that hang a piece or allow mate before Jev chooses. That's a hybrid, and it's labeled as such wherever it appears.
+
+### Phrasing the facts matters as much as computing them
+
+My first version of the tactical level scored *worse* than rich (241 cp mean loss). The facts were right; the wording was wrong. Every move carried "leaves hanging: pawn on e4" when that pawn was already hanging before the move, so the note was constant noise. And a losing capture read "loses 3 points; attacks queen (can be won next move)", and Jev kept taking the bait: Qxf5 was labeled "loses 8 points" and it still chose it for the pawn it attacked.
+
+Three changes fixed it: report only *deltas* the move causes (newly exposes, rescues), lead with the material verdict in plain words, and suppress threat notes on moves whose piece doesn't survive. Same model, same facts: 241 → 90 cp.
 
 ### Other ways of asking
 
@@ -59,12 +80,60 @@ Mate-in-one puzzles: 6 of 25 solved, at every state level. Random baseline is 3%
 
 ### Full games (rich state, Jev as White)
 
-![Jev vs random mover: every move with Jev's probability distribution and Stockfish's verdict](runs/media/jev_vs_random_jev-latest.gif)
+![Jev beats Stockfish skill 0: every move with Jev's probability distribution, a live eval bar, and Stockfish's verdict](runs/media/v2_jev_vs_sf0_tactical_filter_s4_jev-latest.gif)
+
+*Jev (White, tactical facts + code filter) checkmates Stockfish skill 0 in 38 moves. Rendered with `jevchess/gif2.py`; MP4s in `runs/media/`.*
 
 - vs random mover: **won by checkmate** in 23 moves, mean cp loss 90.
-- vs Stockfish skill level 0: **lost by checkmate** in 36 moves. Sacrificed a bishop on move 5 and later shuffled its queen into four losing squares. My "is the moved piece safe?" annotation only looked at direct attackers of the landing square, so forks and discovered attacks slipped through. That's the obvious next lever: more exact computation in code, zero extra tokens.
+- vs Stockfish skill level 0 (depth 1), rich state: **lost by checkmate** in 36 moves. Sacrificed a bishop on move 5 and later shuffled its queen into four losing squares. The rich annotation only looked at direct attackers of the landing square, so forks and discovered attacks slipped through.
 
-The loss is animated too: [`runs/media/jev_vs_sf0_jev-latest.gif`](runs/media/jev_vs_sf0_jev-latest.gif). Watch the flat distribution on move 5 when it sacrifices the bishop. MP4 versions sit alongside.
+Rematch at the tactical level, two seeds each:
+
+| Configuration | Result | Jev mean cp loss | Blunders |
+|---|---|---|---|
+| tactical facts, seed 3 | lost by checkmate (44 moves) | 242 | 8 |
+| tactical facts, seed 4 | unfinished at 60 moves, Stockfish +559 (adjudicated loss) | 217 | 12 |
+| tactical + code filter, seed 3 | lost by checkmate (46 moves) | 469 | 16 |
+| tactical + code filter, seed 4 | **won by checkmate (38 moves)** | 186 | 10 |
+
+Facts alone were not enough to beat even depth-1 Stockfish. The one win needed the hybrid: code enforcing "never allow mate, never hang a piece for nothing" and Jev choosing among what's left. The gap between 90 cp on isolated positions and 200+ cp in full games is the endgame: with no plan and no lookahead, Jev shuffles pieces, repeats positions, and gets ground down.
+
+### Against weaker bots (tactical facts, no filter, both colors)
+
+| Opponent | As White | As Black |
+|---|---|---|
+| Random mover | win (23 moves, rich state) | **win in 7 moves** |
+| Greedy capture bot | win (40 moves) | win (32 moves) |
+| Stockfish skill 0 depth 1, 50% random moves | win (33 moves) | win (31 moves) |
+| Stockfish skill 0 depth 1, 75% random moves | win (33 moves) | win (28 moves) |
+| Stockfish skill 0 depth 1, 25% random moves | **win in 5 moves** | win (38 moves) |
+| Stockfish skill 0 depth 1 | loss | loss (adjudicated) |
+
+![Random mover vs Jev: checkmate in 7 moves as Black](runs/media/v2_jev_vs_random_tactical_s6b_jev-latest.gif)
+
+Every win was by checkmate. Jev with one-ply facts sits clearly above "beginner bot" and clearly below depth-1 Stockfish. The Elo estimate below puts a number on that.
+
+### How strong is that? An Elo estimate
+
+Stockfish's calibrated strength floor is `UCI_Elo 1320`, and Jev is below it, so there is no off-the-shelf opponent with a known rating in Jev's range. I built a ladder instead. Seven bots played 40 games per pair against each other (440 bot-vs-bot games, no Jev tokens), and their ratings were fitted by maximum likelihood under the Elo model with Stockfish-at-1320 pinned as the anchor:
+
+| Bot | Fitted Elo |
+|---|---|
+| Stockfish limited to 1320 Elo | 1320 |
+| Stockfish skill 0, depth 1 | 1166 |
+| Stockfish skill 0 depth 1, 25% random moves | 650 |
+| Greedy capture bot | 484 |
+| Stockfish skill 0 depth 1, 50% random moves | 388 |
+| Stockfish skill 0 depth 1, 75% random moves | 169 |
+| Random mover | -73 |
+
+Jev (tactical facts, no code filter) then played 11 games up the ladder, alternating colors, and scored 9/11: every game against a bot rated 650 or below was a win by checkmate, and both games against depth-1 Stockfish (1166) were losses.
+
+**Performance rating: about 968.** Because the results separate perfectly (all wins below 650, all losses at 1166), the maximum-likelihood point is soft. Read it as "somewhere between roughly 700 and 1150, most likely around 950", or in human terms: a club beginner who never hangs a piece outright but has no plan. Caveats that matter: the anchor is Stockfish's own Elo calibration at a fast time control, the sub-1320 scale is extrapolated through bots, and 11 games is a small sample. More games against the 650 and 1166 bots would narrow it; the code is one command.
+
+With the code filter on (hybrid: code plays mates, prunes suicidal moves), it went 1 and 1 against the 1166 bot, which suggests the hybrid sits closer to 1100, but two games is not an estimate.
+
+The original rich-state loss is animated too: [`runs/media/jev_vs_sf0_jev-latest.gif`](runs/media/jev_vs_sf0_jev-latest.gif). Watch the flat distribution on move 5 when it sacrifices the bishop. `gif.py` is the simple renderer; `gif2.py` adds sliding pieces, an eval bar, and title cards.
 
 Confidence was only weakly predictive of blunders (Spearman -0.24). `jev-preview` scored marginally better than `jev-latest` (129 vs 144 mean cp loss), within noise at n=30.
 
@@ -162,6 +231,7 @@ In a game loop: NPCs above 0.5 turn to face the player; `urgency` near 2 trigger
 ## What this says about building with Jev
 
 - **Feed it facts, not puzzles.** The single biggest lever in both benchmarks was what code put in the state. Chess went from worse-than-random to clearly-better-than-random with zero model changes.
+- **Phrase the facts like a checklist, not a data dump.** Deltas over constants, verdict first, no misleading upside on a losing move. The same computed facts scored 241 cp or 90 cp depending only on wording.
 - **Ask everything at once.** 40 Score questions in one call cost about the same wall-clock as one. Speculative questions are free in latency, only tokens.
 - **Precision is the strong suit.** In the addressee task it never once flagged an NPC that wasn't being spoken to. Misses were hedges near 0.5, which is what calibration should look like.
 - **Try more than one formulation.** The per-NPC Nouls handle multi-addressee; the primary Choice was more robust on context-only cases. Run both, they're in the same request.
@@ -191,8 +261,15 @@ uv run python -m npcaddress.run --model jev-latest
 # interactive playground
 uv run python -m npcaddress.demo tavern
 
-# animate a recorded game (needs the optional media group: pillow + cairosvg, and ffmpeg for MP4)
-uv run --group media python -m jevchess.gif --game random
+# play Jev against graded bots (random | greedy | mixNN | sfN | eloNNNN), alternating colors
+uv run python -m jevchess.run --exp G --games mix50,greedy --seeds 5,6 --game-level tactical --jev-color alternate
+
+# Elo ladder: calibrate the bots against each other (no Jev tokens), then fit Jev's performance rating
+uv run python -m jevchess.ladder calibrate --games 40
+uv run python -m jevchess.ladder fit --config tactical
+
+# animate a recorded game (needs the optional media group: pillow + cairosvg, and ffmpeg)
+uv run --group media python -m jevchess.gif2 --game sf0_tactical_filter_s4
 ```
 
 Every request and response is written to `runs/raw/` keyed by request hash, so nothing needs re-fetching to re-analyze.
@@ -206,7 +283,8 @@ jevchess/                chess benchmark
   experiments.py         A–G: Choice, Score fan-out, hierarchical, perception, mate-in-1, eval, full games
   engine.py positions.py Stockfish ground truth; position generation
   run.py report.py       CLI and Markdown report
-  gif.py                 animate a recorded game with per-move probabilities
+  opponents.py ladder.py graded opponent bots; Elo ladder calibration and Jev's performance rating
+  gif.py gif2.py         animate a recorded game (simple / social-media polish)
 npcaddress/              addressee benchmark
   dataset.py             79 labeled utterances, scenes, transcript variants
   questions.py           state + questions for one utterance

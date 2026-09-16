@@ -1,0 +1,119 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . b . . r . .\n7 p p n p . k p p\n6 . . . . P . . .\n5 . . . . . . . .\n4 . . . . . . q .\n3 . . . . . . . .\n2 . . . . . K . .\n1 . . . . . . N .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r1b2r2/ppnp1kpp/4P3/8/6q1/8/5K2/6N1 b - - 0 23",
+   "move_history": "1. b4 Nc6 2. Ba3 Nf6 3. f4 e5 4. fxe5 Nxe5 5. Bc1 Bxb4 6. Nh3 O-O 7. Rg1 Bc5 8. d4 Bb4+ 9. c3 Neg4 10. cxb4 Nxh2 11. Qc2 Nxf1 12. Rxf1 Nd5 13. Qxc7 Nxc7 14. Rxf7 Kxf7 15. a4 Qh4+ 16. Kf1 Qxd4 17. Na3 Qxa1 18. Ng1 Qxc1+ 19. Kf2 Qxa3 20. e4 Qxb4 21. e5 Qxa4 22. g4 Qxg4 23. e6+",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "knight": [
+      "g1"
+     ],
+     "pawn": [
+      "e6"
+     ],
+     "king": [
+      "f2"
+     ]
+    },
+    "black": {
+     "queen": [
+      "g4"
+     ],
+     "rook": [
+      "a8",
+      "f8"
+     ],
+     "knight": [
+      "c7"
+     ],
+     "bishop": [
+      "c8"
+     ],
+     "pawn": [
+      "a7",
+      "b7",
+      "d7",
+      "g7",
+      "h7"
+     ],
+     "king": [
+      "f7"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": true,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "pawn on e6 (can be taken by our king, undefended)"
+    ],
+    "material": {
+     "white": 4,
+     "black": 30,
+     "white_minus_black": -26
+    }
+   },
+   "how_to_read_move_options": "Each move option ends with exact facts computed by a chess program. Priority order: (1) a move that DELIVERS CHECKMATE wins immediately; (2) never choose a move that ALLOWS THE OPPONENT TO CHECKMATE; (3) a move that LOSES material or EXPOSES a piece is bad even if it gives check or threatens something, because the opponent simply takes the piece; (4) among safe moves, prefer WINS material, then rescues, then threatens/forks, then quiet moves that develop or improve the position. Avoid repeating positions when a good alternative exists."
+  },
+  "questions": {
+   "move": {
+    "type": "choice",
+    "criteria": {
+     "Kg8+": "king f7 to g8, gives check; moved piece is safe",
+     "Ke8+": "king f7 to e8, gives check; moved piece is safe",
+     "Ke7+": "king f7 to e7, gives check; moved piece is safe",
+     "Kg6+": "king f7 to g6, gives check; moved piece is safe",
+     "Kf6": "king f7 to f6; moved piece is safe",
+     "Kxe6+": "king f7 to e6, captures pawn, gives check; WINS 1 point(s) of material on e6",
+     "Nxe6": "knight c7 to e6, captures pawn; WINS 1 point(s) of material on e6",
+     "Qxe6": "queen g4 to e6, captures pawn; WINS 1 point(s) of material on e6",
+     "dxe6": "pawn d7 to e6, captures pawn; WINS 1 point(s) of material on e6"
+    },
+    "instructions": {
+     "question": "Which legal move should Black play now?",
+     "goal": "Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.",
+     "options": "Every option is a legal move in standard algebraic notation with a plain description."
+    }
+   }
+  }
+ },
+ "meta": {
+  "exp": "G",
+  "ply": 45,
+  "level": "tactical",
+  "filter": false
+ },
+ "latency_s": 0.16838816704694182,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Kxe6+",
+    "confidence": 0.66,
+    "probabilities": {
+     "Kg6+": 0.03,
+     "Kf6": 0.01,
+     "Kg8+": 0.01,
+     "Qxe6": 0.12,
+     "Ke8+": 0.02,
+     "dxe6": 0.04,
+     "Nxe6": 0.04,
+     "Kxe6+": 0.7,
+     "Ke7+": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1443,
+   "output_tokens": 97
+  }
+ }
+}

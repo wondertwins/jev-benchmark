@@ -60,6 +60,8 @@ def load_probabilities(tag: str) -> dict[str, dict]:
         d = json.load(open(p))
         if (d.get("meta") or {}).get("exp") != "G" or "response" not in d:
             continue
+        if "move" not in d["response"].get("answers", {}):
+            continue
         ans = d["response"]["answers"]["move"]
         out[d["request"]["state"]["fen"]] = {"probabilities": ans["probabilities"], "confidence": ans["confidence"]}
     return out
@@ -98,6 +100,9 @@ def frame(board: chess.Board, lastmove: chess.Move | None, ply: int, san: str | 
         d.text((x0, 152), who, font=F_TXT, fill=DIM)
         y = 190
 
+    if mover == "jev" and jev_info and jev_info.get("forced_mate_by_code") and not final:
+        d.text((x0, y), "Code found a checkmate and played it (hard rule)", font=F_SMALL, fill=GREEN)
+        y += 26
     if mover == "jev" and probs and not final:
         d.text((x0, y), "Jev's probability over legal moves (top 5)", font=F_SMALL, fill=DIM)
         y += 22
@@ -146,7 +151,10 @@ def frame(board: chess.Board, lastmove: chess.Move | None, ply: int, san: str | 
 
 def render(game: str, model: str, jev_ms: int, opp_ms: int, hold_ms: int) -> tuple[Path, Path | None]:
     res = json.load(open(RUNS / "results" / f"G_game_vs_{game}_{model}.json"))
-    opponent_label = {"random": "random mover", "sf0": "Stockfish (skill 0)"}.get(game, game)
+    opp = res.get("opponent", game)
+    opponent_label = {"random": "random mover", "sf0": "Stockfish (skill 0)"}.get(opp, opp)
+    if res.get("level") == "tactical":
+        opponent_label += "  ·  tactical facts"
     sans = [tok for tok in res["pgn_moves"].split() if not tok.endswith(".")]
     jev_by_ply = {m["ply"]: m for m in res["jev_moves"]}
     probs_by_fen = load_probabilities(model)
@@ -160,7 +168,7 @@ def render(game: str, model: str, jev_ms: int, opp_ms: int, hold_ms: int) -> tup
     for ply, san in enumerate(sans):
         fen_before = board.fen()
         mv = board.parse_san(san)
-        mover = "jev" if ply % 2 == 0 else "opp"
+        mover = "jev" if (ply % 2 == 0) == (res.get("jev_color", "white") == "white") else "opp"
         board.push(mv)
         played.append(san)
         info = jev_by_ply.get(ply) if mover == "jev" else None
@@ -168,7 +176,10 @@ def render(game: str, model: str, jev_ms: int, opp_ms: int, hold_ms: int) -> tup
         frames.append(frame(board, mv, ply, san, mover, opponent_label, info, probs, played))
         durations.append(jev_ms if mover == "jev" else opp_ms)
     s = res["summary"]
-    outcome = {"1-0": "Checkmate. Jev wins 1-0", "0-1": "Checkmate. Jev loses 0-1", "1/2-1/2": "Draw"}.get(s["result"], s["result"])
+    jev_white = res.get("jev_color", "white") == "white"
+    jev_won = s["result"] == ("1-0" if jev_white else "0-1")
+    outcome = {"1-0": f"Checkmate. Jev {'wins' if jev_won else 'loses'} 1-0", "0-1": f"Checkmate. Jev {'wins' if jev_won else 'loses'} 0-1",
+               "1/2-1/2": "Draw"}.get(s["result"], s["result"])
     if s["termination"] != "CHECKMATE" and s["result"] in ("1-0", "0-1"):
         outcome = f"{s['termination'].title()}. {s['result']}"
     final_text = f"{outcome.split('.')[0]}.|{outcome.split('. ', 1)[-1] if '. ' in outcome else ''} in {len(sans) // 2 + len(sans) % 2} moves"
@@ -202,7 +213,7 @@ def render(game: str, model: str, jev_ms: int, opp_ms: int, hold_ms: int) -> tup
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--game", default="random", help="random | sf0")
+    ap.add_argument("--game", default="random", help="suffix of a runs/results/G_game_vs_<suffix>_<model>.json file")
     ap.add_argument("--model", default="jev-latest")
     ap.add_argument("--jev-ms", type=int, default=1000)
     ap.add_argument("--opp-ms", type=int, default=450)
