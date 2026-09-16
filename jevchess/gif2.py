@@ -160,7 +160,7 @@ def pill(d: ImageDraw.ImageDraw, xy: tuple[int, int], text: str, color: tuple, f
 
 
 def draw_panel(im: Image.Image, title: str, ply: int | None, san: str | None, mover: str, opp_label: str, probs: dict | None,
-               info: dict | None, bar_t: float, moves: list[str], label_alpha: float) -> None:
+               info: dict | None, bar_t: float, moves: list[str], label_alpha: float, result_line: str | None = None) -> None:
     d = ImageDraw.Draw(im)
     d.text((PX, 56), title, font=F_H1, fill=FG)
     d.text((PX, 104), "TypeSafe's System One model. No lookahead, no reasoning:", font=F_H2, fill=DIM)
@@ -174,13 +174,20 @@ def draw_panel(im: Image.Image, title: str, ply: int | None, san: str | None, mo
         d.text((PX + 24, 190), f"{num} {san}", font=F_SAN, fill=col)
         who = "Jev" if mover == "jev" else opp_label
         d.text((PX + 24, 256), f"{who} plays", font=F_TXT, fill=DIM)
-        if info and info.get("forced_mate_by_code"):
+        if info and info.get("forced_mate_by_code") and result_line is None:
             pill(d, (PX + 300, 214), "code played the mate (hard rule)", GREEN)
     else:
         d.text((PX + 24, 200), "Jev to move", font=F_SAN, fill=FG)
     # probability card
     y = 318
-    d.rounded_rectangle([PX, y, W - 48, y + 262], 18, fill=(26, 32, 45))
+    if result_line is not None:
+        y = 478  # below the poster headline and subline
+        d.rounded_rectangle([PX, y, W - 48, y + 96], 18, fill=(26, 32, 45))
+        d.text((PX + 24, y + 18), "Result", font=F_SM, fill=DIM)
+        d.text((PX + 24, y + 44), result_line, font=F_TXT, fill=GOLD)
+        probs = None
+    else:
+        d.rounded_rectangle([PX, y, W - 48, y + 262], 18, fill=(26, 32, 45))
     if mover == "jev" and probs:
         d.text((PX + 24, y + 16), "Jev's probability over legal moves", font=F_SM, fill=DIM)
         top = sorted(probs["probabilities"].items(), key=lambda kv: -kv[1])[:5]
@@ -241,6 +248,30 @@ def card(text_big: str, text_small: str, alpha: float) -> Image.Image:
     return im
 
 
+def poster(base: Image.Image, headline: str, subline: str) -> Image.Image:
+    """Dim a rendered game frame and stamp a large headline over it: this is the video's first frame,
+    which X/Twitter uses as the thumbnail."""
+    im = base.convert("RGBA")
+    dim = Image.new("RGBA", (W, H), (6, 8, 12, 125))
+    im = Image.alpha_composite(im, dim)
+    d = ImageDraw.Draw(im)
+    f_head, f_sub = _font(66, True), _font(28, True)
+    lines = headline.split("\n")
+    total = len(lines) * 76 + 50
+    y = (H - total) // 2 - 10
+    for ln in lines:
+        w = d.textlength(ln, font=f_head)
+        x = (W - w) // 2
+        for dx, dy in ((3, 4), (-2, 2), (2, -2)):  # soft shadow
+            d.text((x + dx, y + dy), ln, font=f_head, fill=(0, 0, 0, 170))
+        d.text((x, y), ln, font=f_head, fill=(255, 255, 255, 255))
+        y += 76
+    w = d.textlength(subline, font=f_sub)
+    d.rounded_rectangle([(W - w) // 2 - 22, y + 14, (W + w) // 2 + 22, y + 60], 23, fill=(250, 204, 77, 235))
+    d.text(((W - w) // 2, y + 20), subline, font=f_sub, fill=(20, 16, 6, 255))
+    return im.convert("RGB")
+
+
 # ----------------------------------------------------------------------------- data
 def load_probs(tag: str, level: str, filt: bool) -> dict[tuple[str, int], dict]:
     out: dict[tuple[str, int], dict] = {}
@@ -256,7 +287,7 @@ def load_probs(tag: str, level: str, filt: bool) -> dict[tuple[str, int], dict]:
 
 
 # ----------------------------------------------------------------------------- render
-def render(game: str, model: str) -> tuple[Path, Path]:
+def render(game: str, model: str, headline: str = "Can a model that can't think\nplay chess?", poster_seconds: float = 1.6) -> tuple[Path, Path]:
     global BG, BG_PLAIN
     BG = background()
     BG_PLAIN = background(glow=False)
@@ -280,10 +311,35 @@ def render(game: str, model: str) -> tuple[Path, Path]:
         im.convert("RGB").save(tmp / f"{n:05d}.png", compress_level=1)
         n += 1
 
-    sub = ("Jev sees the board plus exact one-ply facts computed in code." if level == "tactical"
-           else "Jev sees the board plus which pieces are attacked and defended.")
-    for i in range(int(FPS * 2.2)):
-        emit(card("Can a model that can't think\nplay chess?", f"{title}.  {sub}", ease(min(1, i / (FPS * 0.7)))))
+    # --- poster / thumbnail: the final position with Jev's last decision, under a big headline
+    pre = chess.Board()
+    last_mv, last_pr, last_info, last_ply = None, None, None, None
+    for ply, san in enumerate(sans):
+        fen_before = pre.fen()
+        mv = pre.parse_san(san)
+        is_jev = (ply % 2 == 0) == (res.get("jev_color", "white") == "white")
+        if is_jev:
+            last_mv, last_ply = mv, ply
+            last_pr, last_info = probs.get((fen_before, ply)), by_ply.get(ply)
+        pre.push(mv)
+    s_ = res["summary"]
+    jev_won = s_["result"] == ("1-0" if res.get("jev_color", "white") == "white" else "0-1")
+    n_moves = len(sans) // 2 + len(sans) % 2
+    forced = bool(last_info and last_info.get("forced_mate_by_code"))
+    verb = "beats" if forced else "checkmates"
+    subline = (f"Jev {verb} {opp_label} in {n_moves} moves" if jev_won and s_["termination"] == "CHECKMATE"
+               else f"Jev vs {opp_label}")
+    result_line = (f"Checkmate  ·  {s_['result']}  ·  {n_moves} moves" if s_["termination"] == "CHECKMATE"
+                   else f"{s_['termination'].replace('_', ' ').title()}  ·  {s_['result']}  ·  {n_moves} moves")
+    base = BG.copy()
+    draw_board(base, dict(pre.piece_map()), [], [], last_mv, pre.king(pre.turn) if pre.is_check() else None, 1)
+    draw_eval_bar(base, 0.97 if jev_won else 0.03)
+    draw_panel(base, title, last_ply, sans[-1] if last_ply == len(sans) - 1 else None, "jev", opp_label, last_pr, last_info, 1, sans, 1,
+               result_line=result_line)
+    post = poster(base, headline, subline)
+    post.save(MEDIA / f"v2_jev_vs_{game}_{model}_poster.png")
+    for _ in range(int(FPS * poster_seconds)):
+        emit(post)
 
     board = chess.Board()
     played: list[str] = []
@@ -381,7 +437,10 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--game", default="random", help="suffix of runs/results/G_game_vs_<suffix>_<model>.json")
     ap.add_argument("--model", default="jev-latest")
+    ap.add_argument("--headline", default="Can a model that can't think\nplay chess?", help="poster headline; use \\n for a line break")
+    ap.add_argument("--poster-seconds", type=float, default=1.6)
     a = ap.parse_args()
-    g, m = render(a.game, a.model)
+    g, m = render(a.game, a.model, a.headline.replace("\\n", "\n"), a.poster_seconds)
+    print("poster:", MEDIA / f"v2_jev_vs_{a.game}_{a.model}_poster.png")
     print("gif:", g, f"{g.stat().st_size / 1e6:.1f} MB")
     print("mp4:", m, f"{m.stat().st_size / 1e6:.1f} MB")

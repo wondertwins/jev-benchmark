@@ -113,6 +113,8 @@ Facts alone were not enough to beat even depth-1 Stockfish. The one win needed t
 
 Every win was by checkmate. Jev with one-ply facts sits clearly above "beginner bot" and clearly below depth-1 Stockfish. The Elo estimate below puts a number on that.
 
+**Speed.** Over 425 game moves at the tactical level, the API call (one Choice over a median of 32 legal moves, ~2,100 input tokens) took a median of 166 ms, p90 256 ms, p99 403 ms. Computing all the tactical facts in python-chess adds about 9 ms. So Jev plays a move in roughly 175 ms end to end and a 40-move game in about 7 seconds of its own thinking time. It would be legal in bullet.
+
 ### How strong is that? An Elo estimate
 
 Stockfish's calibrated strength floor is `UCI_Elo 1320`, and Jev is below it, so there is no off-the-shelf opponent with a known rating in Jev's range. I built a ladder instead. Seven bots played 40 games per pair against each other (440 bot-vs-bot games, no Jev tokens), and their ratings were fitted by maximum likelihood under the Elo model with Stockfish-at-1320 pinned as the anchor:
