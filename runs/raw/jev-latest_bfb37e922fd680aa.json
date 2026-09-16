@@ -1,0 +1,78 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "2r1kb1r/8/n2P1npN/4p1P1/P4N1p/p1RP1p1B/1P3P1P/3Q1K1R w - - 0 41",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Ng8': None, 'Nf7': None, 'Nf5': None, 'Ng4': None, 'Nxg6': None, 'Ne6': None, 'Nh5': None, 'Nd5': None, 'Ng2': None, 'Ne2': None, 'Bxc8': None, 'Bd7+': None, 'Be6': None, 'Bf5': None, 'Bg4': None, 'Bg2': None, 'Rxc8+': None, 'Rc7': None, 'Rc6': None, 'Rc5': None, 'Rc4': None, 'Rb3': None, 'Rxa3': None, 'Rc2': None, 'Rc1': None, 'Rg1': None, 'Kg1': None, 'Ke1': None, 'Qxf3': None, 'Qb3': None, 'Qe2': None, 'Qd2': None, 'Qc2': None, 'Qe1': None, 'Qc1': None, 'Qb1': None, 'Qa1': None, 'gxf6': None, 'bxa3': None, 'd7+': None, 'a5': None, 'd4': None, 'b3': None, 'b4': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_023"
+ },
+ "latency_s": 0.23144437500741333,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "d7+",
+    "confidence": 0.19,
+    "probabilities": {
+     "Qxf3": 0.08,
+     "Nd5": 0.01,
+     "Qe1": 0.0,
+     "Ng8": 0.01,
+     "Bg2": 0.01,
+     "b4": 0.0,
+     "Rc7": 0.01,
+     "Qc2": 0.01,
+     "Nf7": 0.02,
+     "Qd2": 0.0,
+     "a5": 0.0,
+     "Qb3": 0.02,
+     "d4": 0.01,
+     "Nf5": 0.03,
+     "b3": 0.0,
+     "Rxa3": 0.07,
+     "Qb1": 0.0,
+     "Rc5": 0.01,
+     "Qa1": 0.01,
+     "Rc1": 0.02,
+     "Ke1": 0.0,
+     "Bg4": 0.0,
+     "bxa3": 0.03,
+     "Rb3": 0.01,
+     "Qe2": 0.01,
+     "Kg1": 0.0,
+     "Rxc8+": 0.09,
+     "Nh5": 0.01,
+     "Rg1": 0.01,
+     "Qc1": 0.01,
+     "d7+": 0.21,
+     "Rc6": 0.01,
+     "Rc2": 0.0,
+     "Rc4": 0.01,
+     "Bd7+": 0.06,
+     "Nxg6": 0.09,
+     "Ne2": 0.0,
+     "Ne6": 0.02,
+     "Ng2": 0.0,
+     "Bxc8": 0.04,
+     "Ng4": 0.01,
+     "gxf6": 0.04,
+     "Bf5": 0.01,
+     "Be6": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 761,
+   "output_tokens": 386
+  }
+ }
+}

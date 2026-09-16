@@ -1,0 +1,73 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r1b1kb1r/1p3p2/2p3p1/2npP3/p2N1P1p/4B3/PPP1B1PP/R4RK1 w kq - 0 18",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Ne6': None, 'Nxc6': None, 'Nf5': None, 'Nb5': None, 'Nf3': None, 'Nb3': None, 'Bf2': None, 'Bd2': None, 'Bc1': None, 'Ba6': None, 'Bh5': None, 'Bb5': None, 'Bg4': None, 'Bc4': None, 'Bf3': None, 'Bd3': None, 'Bd1': None, 'Kf2': None, 'Kh1': None, 'Rf3': None, 'Rf2': None, 'Rfe1': None, 'Rfd1': None, 'Rfc1': None, 'Rfb1': None, 'Rae1': None, 'Rad1': None, 'Rac1': None, 'Rab1': None, 'e6': None, 'f5': None, 'h3': None, 'g3': None, 'c3': None, 'b3': None, 'a3': None, 'g4': None, 'c4': None, 'b4': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "fen",
+  "pos": "real_018"
+ },
+ "latency_s": 0.6519014589721337,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Nxc6",
+    "confidence": 0.18,
+    "probabilities": {
+     "Nb5": 0.03,
+     "Rfe1": 0.01,
+     "Rfb1": 0.02,
+     "Bd1": 0.0,
+     "Rab1": 0.01,
+     "Bd3": 0.02,
+     "Bb5": 0.02,
+     "Bc4": 0.02,
+     "Nf3": 0.01,
+     "Nb3": 0.01,
+     "a3": 0.0,
+     "e6": 0.09,
+     "g3": 0.01,
+     "Rf3": 0.01,
+     "Rfd1": 0.02,
+     "Rad1": 0.01,
+     "Bf3": 0.01,
+     "b3": 0.01,
+     "c3": 0.01,
+     "f5": 0.03,
+     "Rf2": 0.0,
+     "Bd2": 0.01,
+     "Bg4": 0.02,
+     "Nxc6": 0.21000000000000002,
+     "Rae1": 0.02,
+     "Kf2": 0.01,
+     "Rfc1": 0.01,
+     "c4": 0.02,
+     "Nf5": 0.06,
+     "Bh5": 0.03,
+     "Kh1": 0.01,
+     "g4": 0.02,
+     "h3": 0.0,
+     "Bc1": 0.01,
+     "Rac1": 0.01,
+     "Bf2": 0.01,
+     "Ba6": 0.04,
+     "Ne6": 0.15,
+     "b4": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 720,
+   "output_tokens": 343
+  }
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r n b q k . . r\n7 . p p p b p p p\n6 p . . . p . . .\n5 . . n . P . . .\n4 . . . . . . . .\n3 . . P . . N . .\n2 P P . P B P P P\n1 R N B Q K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "rnbqk2r/1pppbppp/p3p3/2n1P3/8/2P2N2/PP1PBPPP/RNBQK2R b KQkq - 1 7",
+   "move_history": "1. e4 e6 2. c3 Be7 3. Nf3 Nf6 4. e5 Ne4 5. Bd3 Nc5 6. Bb5 a6 7. Be2",
+   "castling_rights": "KQkq"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': 'rook h8 to g8', 'Rf8': 'rook h8 to f8', 'Kf8': 'king e8 to f8', 'Nc6': 'knight b8 to c6', 'Ra7': 'rook a8 to a7', 'Bf8': 'bishop e7 to f8', 'Bf6': 'bishop e7 to f6', 'Bd6': 'bishop e7 to d6', 'Bg5': 'bishop e7 to g5', 'Bh4': 'bishop e7 to h4', 'Ne4': 'knight c5 to e4', 'Na4': 'knight c5 to a4', 'Nd3+': 'knight c5 to d3, gives check', 'Nb3': 'knight c5 to b3', 'O-O': 'castles kingside', 'h6': 'pawn h7 to h6', 'g6': 'pawn g7 to g6', 'f6': 'pawn f7 to f6', 'd6': 'pawn d7 to d6', 'c6': 'pawn c7 to c6', 'b6': 'pawn b7 to b6', 'a5': 'pawn a6 to a5', 'h5': 'pawn h7 to h5', 'g5': 'pawn g7 to g5', 'f5': 'pawn f7 to f5', 'd5': 'pawn d7 to d5', 'b5': 'pawn b7 to b5'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_005"
+ },
+ "latency_s": 0.1409808750031516,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Nd3+",
+    "confidence": 0.59,
+    "probabilities": {
+     "b6": 0.01,
+     "Bd6": 0.02,
+     "Bf8": 0.0,
+     "f5": 0.01,
+     "d5": 0.06,
+     "Bh4": 0.01,
+     "a5": 0.01,
+     "Ne4": 0.04,
+     "O-O": 0.09,
+     "h5": 0.0,
+     "c6": 0.01,
+     "Bg5": 0.01,
+     "g5": 0.0,
+     "Na4": 0.01,
+     "h6": 0.0,
+     "f6": 0.02,
+     "Rf8": 0.0,
+     "Nd3+": 0.61,
+     "Nb3": 0.03,
+     "Rg8": 0.0,
+     "g6": 0.01,
+     "Kf8": 0.0,
+     "Nc6": 0.01,
+     "Ra7": 0.0,
+     "d6": 0.02,
+     "b5": 0.01,
+     "Bf6": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1151,
+   "output_tokens": 238
+  }
+ }
+}

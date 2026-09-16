@@ -1,0 +1,119 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 . r . . k b n r\n7 p . . q . p . p\n6 . p n p . . p .\n5 . . p N p . . .\n4 P . P . P . . .\n3 . . . P . N . .\n2 . P . B . P P P\n1 R . . Q K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "1r2kbnr/p2q1p1p/1pnp2p1/2pNp3/P1P1P3/3P1N2/1P1B1PPP/R2QK2R w KQk - 0 11",
+   "move_history": "1. e4 c5 2. Nc3 d6 3. Nf3 e5 4. Bb5+ Bd7 5. Bxd7+ Qxd7 6. a4 Nc6 7. d3 Rd8 8. Nd5 b6 9. Bd2 Rb8 10. c4 g6",
+   "castling_rights": "KQk",
+   "pieces": {
+    "white": {
+     "queen": [
+      "d1"
+     ],
+     "rook": [
+      "a1",
+      "h1"
+     ],
+     "bishop": [
+      "d2"
+     ],
+     "knight": [
+      "f3",
+      "d5"
+     ],
+     "pawn": [
+      "b2",
+      "f2",
+      "g2",
+      "h2",
+      "d3",
+      "a4",
+      "c4",
+      "e4"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "d7"
+     ],
+     "rook": [
+      "b8",
+      "h8"
+     ],
+     "knight": [
+      "c6",
+      "g8"
+     ],
+     "bishop": [
+      "f8"
+     ],
+     "pawn": [
+      "c5",
+      "e5",
+      "b6",
+      "d6",
+      "g6",
+      "a7",
+      "f7",
+      "h7"
+     ],
+     "king": [
+      "e8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 36,
+     "black": 36,
+     "white_minus_black": 0
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Ne7': 'knight d5 to e7; afterwards this knight can be captured by a king (undefended)', 'Nc7+': 'knight d5 to c7, gives check; afterwards this knight can be captured by a queen (undefended)', 'Nf6+': 'knight d5 to f6, gives check; afterwards this knight can be captured by a knight (undefended)', 'Nxb6': 'knight d5 to b6, captures pawn; afterwards this knight can be captured by a pawn (undefended)', 'Nf4': 'knight d5 to f4; afterwards this knight can be captured by a pawn (defended)', 'Nb4': 'knight d5 to b4; afterwards this knight can be captured by a pawn (defended)', 'Ne3': 'knight d5 to e3; the moved piece is safe from immediate capture', 'Nc3': 'knight d5 to c3; the moved piece is safe from immediate capture'}, instructions={'question': 'White has decided to move the knight on d5. Which move should it make?', 'goal': 'Pick the destination that gives White the best chance to win.'})"
+  }
+ },
+ "meta": {
+  "exp": "C2",
+  "pos": "real_029"
+ },
+ "latency_s": 0.1961891669780016,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Ne3",
+    "confidence": 0.27,
+    "probabilities": {
+     "Nxb6": 0.12,
+     "Ne7": 0.05,
+     "Nc3": 0.18,
+     "Nf6+": 0.07,
+     "Nc7+": 0.07,
+     "Ne3": 0.35,
+     "Nb4": 0.05,
+     "Nf4": 0.11
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1225,
+   "output_tokens": 85
+  }
+ }
+}

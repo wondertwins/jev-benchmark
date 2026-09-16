@@ -1,0 +1,1006 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r . b q k b . r\n7 p p . . n . p p\n6 . . n . . p . .\n5 . Q p p p . . .\n4 . . P . . . . .\n3 . . N P . N P .\n2 P P . . P P B P\n1 R . B . K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r1bqkb1r/pp2n1pp/2n2p2/1Qppp3/2P5/2NP1NP1/PP2PPBP/R1B1K2R w KQkq - 4 9",
+   "move_history": "1. c4 c5 2. Nf3 Nc6 3. g3 e5 4. Nc3 Nge7 5. d3 f6 6. Bg2 d5 7. Qb3 Na5 8. Qb5+ Nac6",
+   "castling_rights": "KQkq",
+   "pieces": {
+    "white": {
+     "queen": [
+      "b5"
+     ],
+     "rook": [
+      "a1",
+      "h1"
+     ],
+     "bishop": [
+      "c1",
+      "g2"
+     ],
+     "knight": [
+      "c3",
+      "f3"
+     ],
+     "pawn": [
+      "a2",
+      "b2",
+      "e2",
+      "f2",
+      "h2",
+      "d3",
+      "g3",
+      "c4"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "d8"
+     ],
+     "rook": [
+      "a8",
+      "h8"
+     ],
+     "knight": [
+      "c6",
+      "e7"
+     ],
+     "bishop": [
+      "c8",
+      "f8"
+     ],
+     "pawn": [
+      "c5",
+      "d5",
+      "e5",
+      "f6",
+      "a7",
+      "b7",
+      "g7",
+      "h7"
+     ],
+     "king": [
+      "e8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "pawn on c5 (can be taken by our queen, undefended)"
+    ],
+    "material": {
+     "white": 39,
+     "black": 39,
+     "white_minus_black": 0
+    }
+   }
+  },
+  "questions": {
+   "m0": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qxb7 (queen b5 to b7, captures pawn; afterwards this queen can be captured by a bishop (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m1": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qxc6+ (queen b5 to c6, captures knight, gives check; afterwards this queen can be captured by a pawn (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m2": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qb6 (queen b5 to b6; afterwards this queen can be captured by a pawn (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m3": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qa6 (queen b5 to a6; afterwards this queen can be captured by a pawn (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m4": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qxc5 (queen b5 to c5, captures pawn; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m5": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qa5 (queen b5 to a5; afterwards this queen can be captured by a knight (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m6": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qb4 (queen b5 to b4; afterwards this queen can be captured by a pawn (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m7": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qa4 (queen b5 to a4; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m8": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Qb3 (queen b5 to b3; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m9": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Ng5 (knight f3 to g5; afterwards this knight can be captured by a pawn (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m10": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Nxe5 (knight f3 to e5, captures pawn; afterwards this knight can be captured by a pawn (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m11": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Nh4 (knight f3 to h4; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m12": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Nd4 (knight f3 to d4; afterwards this knight can be captured by a pawn (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m13": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Nd2 (knight f3 to d2; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m14": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Ng1 (knight f3 to g1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m15": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Nxd5 (knight c3 to d5, captures pawn; afterwards this knight can be captured by a knight (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m16": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Ne4 (knight c3 to e4; afterwards this knight can be captured by a pawn (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m17": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Na4 (knight c3 to a4; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m18": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Nd1 (knight c3 to d1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m19": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Nb1 (knight c3 to b1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m20": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Bh3 (bishop g2 to h3; afterwards this bishop can be captured by a bishop (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m21": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Bf1 (bishop g2 to f1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m22": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Rg1 (rook h1 to g1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m23": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Rf1 (rook h1 to f1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m24": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Kd2 (king e1 to d2; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m25": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Kf1 (king e1 to f1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m26": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Kd1 (king e1 to d1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m27": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Bh6 (bishop c1 to h6; afterwards this bishop can be captured by a pawn (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m28": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Bg5 (bishop c1 to g5; afterwards this bishop can be captured by a pawn (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m29": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Bf4 (bishop c1 to f4; afterwards this bishop can be captured by a pawn (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m30": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Be3 (bishop c1 to e3; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m31": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Bd2 (bishop c1 to d2; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m32": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move Rb1 (rook a1 to b1; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m33": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move O-O (castles kingside) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m34": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move cxd5 (pawn c4 to d5, captures pawn; afterwards this pawn can be captured by a knight (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m35": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move g4 (pawn g3 to g4; afterwards this pawn can be captured by a bishop (undefended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m36": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move d4 (pawn d3 to d4; afterwards this pawn can be captured by a pawn (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m37": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move h3 (pawn h2 to h3; afterwards this pawn can be captured by a bishop (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m38": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move e3 (pawn e2 to e3; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m39": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move b3 (pawn b2 to b3; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m40": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move a3 (pawn a2 to a3; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m41": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move h4 (pawn h2 to h4; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m42": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move e4 (pawn e2 to e4; afterwards this pawn can be captured by a pawn (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m43": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move b4 (pawn b2 to b4; afterwards this pawn can be captured by a pawn (defended)) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})",
+   "m44": "Score(criteria=['Loses material for nothing, or lets the opponent deliver checkmate or win material immediately', 'Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure', 'Sound and normal: develops a piece, defends, castles, or improves the position without changing material', 'Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage', 'Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack'], instructions={'question': 'How good is the move a4 (pawn a2 to a4; the moved piece is safe from immediate capture) for White in this position?', 'focus': 'Judge the consequences of this specific move for White, assuming the opponent replies well.'})"
+  }
+ },
+ "meta": {
+  "exp": "B",
+  "level": "rich",
+  "pos": "real_025"
+ },
+ "latency_s": 0.2370123749715276,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "m0": {
+    "type": "score",
+    "score": 0.44,
+    "confidence": 0.64,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.77,
+     "1": 0.1,
+     "2": 0.06,
+     "3": 0.07,
+     "4": 0.0
+    }
+   },
+   "m1": {
+    "type": "score",
+    "score": 0.7,
+    "confidence": 0.42,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.64,
+     "1": 0.13,
+     "2": 0.1,
+     "3": 0.12,
+     "4": 0.01
+    }
+   },
+   "m2": {
+    "type": "score",
+    "score": 0.26,
+    "confidence": 0.78,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.83,
+     "1": 0.11,
+     "2": 0.03,
+     "3": 0.03,
+     "4": 0.0
+    }
+   },
+   "m3": {
+    "type": "score",
+    "score": 0.21,
+    "confidence": 0.82,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.85,
+     "1": 0.11,
+     "2": 0.02,
+     "3": 0.02,
+     "4": 0.0
+    }
+   },
+   "m4": {
+    "type": "score",
+    "score": 2.39,
+    "confidence": 0.48,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.12,
+     "1": 0.11,
+     "2": 0.03,
+     "3": 0.73,
+     "4": 0.01
+    }
+   },
+   "m5": {
+    "type": "score",
+    "score": 0.24,
+    "confidence": 0.8,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.84,
+     "1": 0.12,
+     "2": 0.02,
+     "3": 0.02,
+     "4": 0.0
+    }
+   },
+   "m6": {
+    "type": "score",
+    "score": 0.28,
+    "confidence": 0.77,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.8,
+     "1": 0.16,
+     "2": 0.02,
+     "3": 0.02,
+     "4": 0.0
+    }
+   },
+   "m7": {
+    "type": "score",
+    "score": 1.42,
+    "confidence": 0.5,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.09,
+     "1": 0.61,
+     "2": 0.08,
+     "3": 0.21,
+     "4": 0.01
+    }
+   },
+   "m8": {
+    "type": "score",
+    "score": 1.64,
+    "confidence": 0.33,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.08,
+     "1": 0.51,
+     "2": 0.1,
+     "3": 0.3,
+     "4": 0.01
+    }
+   },
+   "m9": {
+    "type": "score",
+    "score": 0.92,
+    "confidence": 0.23,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.42,
+     "1": 0.34,
+     "2": 0.13,
+     "3": 0.1,
+     "4": 0.01
+    }
+   },
+   "m10": {
+    "type": "score",
+    "score": 0.56,
+    "confidence": 0.54,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.7,
+     "1": 0.13,
+     "2": 0.09,
+     "3": 0.08,
+     "4": 0.0
+    }
+   },
+   "m11": {
+    "type": "score",
+    "score": 1.26,
+    "confidence": 0.68,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.06,
+     "1": 0.72,
+     "2": 0.14,
+     "3": 0.08,
+     "4": 0.0
+    }
+   },
+   "m12": {
+    "type": "score",
+    "score": 0.62,
+    "confidence": 0.48,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.66,
+     "1": 0.14,
+     "2": 0.12,
+     "3": 0.08,
+     "4": 0.0
+    }
+   },
+   "m13": {
+    "type": "score",
+    "score": 1.28,
+    "confidence": 0.69,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.05,
+     "1": 0.71,
+     "2": 0.16,
+     "3": 0.08,
+     "4": 0.0
+    }
+   },
+   "m14": {
+    "type": "score",
+    "score": 1.0,
+    "confidence": 0.89,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.07,
+     "1": 0.89,
+     "2": 0.02,
+     "3": 0.02,
+     "4": 0.0
+    }
+   },
+   "m15": {
+    "type": "score",
+    "score": 1.22,
+    "confidence": 0.0,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.37,
+     "1": 0.24,
+     "2": 0.21,
+     "3": 0.18,
+     "4": 0.0
+    }
+   },
+   "m16": {
+    "type": "score",
+    "score": 1.13,
+    "confidence": 0.06,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.36,
+     "1": 0.29,
+     "2": 0.24,
+     "3": 0.11,
+     "4": 0.0
+    }
+   },
+   "m17": {
+    "type": "score",
+    "score": 1.44,
+    "confidence": 0.5,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.08,
+     "1": 0.6,
+     "2": 0.13,
+     "3": 0.18,
+     "4": 0.01
+    }
+   },
+   "m18": {
+    "type": "score",
+    "score": 1.1,
+    "confidence": 0.83,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.06,
+     "1": 0.84,
+     "2": 0.06,
+     "3": 0.04,
+     "4": 0.0
+    }
+   },
+   "m19": {
+    "type": "score",
+    "score": 1.04,
+    "confidence": 0.86,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.07,
+     "1": 0.87,
+     "2": 0.03,
+     "3": 0.03,
+     "4": 0.0
+    }
+   },
+   "m20": {
+    "type": "score",
+    "score": 0.34,
+    "confidence": 0.72,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.72,
+     "1": 0.23,
+     "2": 0.04,
+     "3": 0.01,
+     "4": 0.0
+    }
+   },
+   "m21": {
+    "type": "score",
+    "score": 1.12,
+    "confidence": 0.81,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.05,
+     "1": 0.81,
+     "2": 0.12,
+     "3": 0.02,
+     "4": 0.0
+    }
+   },
+   "m22": {
+    "type": "score",
+    "score": 1.42,
+    "confidence": 0.59,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.04,
+     "1": 0.55,
+     "2": 0.38,
+     "3": 0.03,
+     "4": 0.0
+    }
+   },
+   "m23": {
+    "type": "score",
+    "score": 1.58,
+    "confidence": 0.57,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.04,
+     "1": 0.4,
+     "2": 0.51,
+     "3": 0.05,
+     "4": 0.0
+    }
+   },
+   "m24": {
+    "type": "score",
+    "score": 1.26,
+    "confidence": 0.67,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.07,
+     "1": 0.65,
+     "2": 0.24,
+     "3": 0.04,
+     "4": 0.0
+    }
+   },
+   "m25": {
+    "type": "score",
+    "score": 1.2,
+    "confidence": 0.71,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.07,
+     "1": 0.69,
+     "2": 0.22,
+     "3": 0.02,
+     "4": 0.0
+    }
+   },
+   "m26": {
+    "type": "score",
+    "score": 1.19,
+    "confidence": 0.72,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.07,
+     "1": 0.7,
+     "2": 0.2,
+     "3": 0.03,
+     "4": 0.0
+    }
+   },
+   "m27": {
+    "type": "score",
+    "score": 0.44,
+    "confidence": 0.63,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.72,
+     "1": 0.17,
+     "2": 0.05,
+     "3": 0.05,
+     "4": 0.01
+    }
+   },
+   "m28": {
+    "type": "score",
+    "score": 1.0,
+    "confidence": 0.17,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.38,
+     "1": 0.32,
+     "2": 0.22,
+     "3": 0.08,
+     "4": 0.0
+    }
+   },
+   "m29": {
+    "type": "score",
+    "score": 0.95,
+    "confidence": 0.21,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.4,
+     "1": 0.32,
+     "2": 0.23,
+     "3": 0.05,
+     "4": 0.0
+    }
+   },
+   "m30": {
+    "type": "score",
+    "score": 1.83,
+    "confidence": 0.53,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.07,
+     "1": 0.22,
+     "2": 0.51,
+     "3": 0.19,
+     "4": 0.01
+    }
+   },
+   "m31": {
+    "type": "score",
+    "score": 1.63,
+    "confidence": 0.58,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.04,
+     "1": 0.36,
+     "2": 0.54,
+     "3": 0.06,
+     "4": 0.0
+    }
+   },
+   "m32": {
+    "type": "score",
+    "score": 1.63,
+    "confidence": 0.43,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.07,
+     "1": 0.38,
+     "2": 0.4,
+     "3": 0.15,
+     "4": 0.0
+    }
+   },
+   "m33": {
+    "type": "score",
+    "score": 1.83,
+    "confidence": 0.81,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.06,
+     "1": 0.08,
+     "2": 0.83,
+     "3": 0.03,
+     "4": 0.0
+    }
+   },
+   "m34": {
+    "type": "score",
+    "score": 1.07,
+    "confidence": 0.36,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.35,
+     "1": 0.37,
+     "2": 0.15,
+     "3": 0.13,
+     "4": 0.0
+    }
+   },
+   "m35": {
+    "type": "score",
+    "score": 0.43,
+    "confidence": 0.64,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.62,
+     "1": 0.34,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    }
+   },
+   "m36": {
+    "type": "score",
+    "score": 1.4,
+    "confidence": 0.4,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.16,
+     "1": 0.39,
+     "2": 0.35,
+     "3": 0.1,
+     "4": 0.0
+    }
+   },
+   "m37": {
+    "type": "score",
+    "score": 1.02,
+    "confidence": 0.75,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.14,
+     "1": 0.71,
+     "2": 0.14,
+     "3": 0.01,
+     "4": 0.0
+    }
+   },
+   "m38": {
+    "type": "score",
+    "score": 1.5,
+    "confidence": 0.51,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.05,
+     "1": 0.47,
+     "2": 0.42,
+     "3": 0.06,
+     "4": 0.0
+    }
+   },
+   "m39": {
+    "type": "score",
+    "score": 1.34,
+    "confidence": 0.62,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.06,
+     "1": 0.63,
+     "2": 0.23,
+     "3": 0.08,
+     "4": 0.0
+    }
+   },
+   "m40": {
+    "type": "score",
+    "score": 1.3,
+    "confidence": 0.72,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.02,
+     "1": 0.68,
+     "2": 0.29,
+     "3": 0.01,
+     "4": 0.0
+    }
+   },
+   "m41": {
+    "type": "score",
+    "score": 1.35,
+    "confidence": 0.68,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.02,
+     "1": 0.64,
+     "2": 0.31,
+     "3": 0.03,
+     "4": 0.0
+    }
+   },
+   "m42": {
+    "type": "score",
+    "score": 1.27,
+    "confidence": 0.45,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.2,
+     "1": 0.43,
+     "2": 0.28,
+     "3": 0.09,
+     "4": 0.0
+    }
+   },
+   "m43": {
+    "type": "score",
+    "score": 1.2,
+    "confidence": 0.54,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.17,
+     "1": 0.54,
+     "2": 0.2,
+     "3": 0.08,
+     "4": 0.0
+    }
+   },
+   "m44": {
+    "type": "score",
+    "score": 1.41,
+    "confidence": 0.61,
+    "legend": {
+     "0": "Loses material for nothing, or lets the opponent deliver checkmate or win material immediately",
+     "1": "Passive or pointless: shuffles or retreats without purpose, or weakens the king or pawn structure",
+     "2": "Sound and normal: develops a piece, defends, castles, or improves the position without changing material",
+     "3": "Strong: wins material safely, creates a serious threat the opponent must answer, or gains a clear advantage",
+     "4": "Decisive: delivers checkmate now, or forces a large material gain or an unstoppable mating attack"
+    },
+    "probabilities": {
+     "0": 0.03,
+     "1": 0.58,
+     "2": 0.34,
+     "3": 0.05,
+     "4": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 10076,
+   "output_tokens": 669
+  }
+ }
+}

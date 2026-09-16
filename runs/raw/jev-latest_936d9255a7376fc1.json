@@ -1,0 +1,71 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r . b q k . . r\n7 . p p n b . p p\n6 . . . p . . . n\n5 p . . P p p . .\n4 . . P . . . . .\n3 P . N . P N . .\n2 . P . . B P P P\n1 R . B Q . R K .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r1bqk2r/1ppnb1pp/3p3n/p2Ppp2/2P5/P1N1PN2/1P2BPPP/R1BQ1RK1 w kq - 1 10",
+   "move_history": "1. e3 e5 2. c4 Nc6 3. Nc3 Be7 4. Nf3 d6 5. Be2 f5 6. d4 a5 7. d5 Nb8 8. O-O Nh6 9. a3 Nd7",
+   "castling_rights": "kq"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Ng5': 'knight f3 to g5', 'Nxe5': 'knight f3 to e5, captures pawn', 'Nh4': 'knight f3 to h4', 'Nd4': 'knight f3 to d4', 'Nd2': 'knight f3 to d2', 'Ne1': 'knight f3 to e1', 'Nb5': 'knight c3 to b5', 'Ne4': 'knight c3 to e4', 'Na4': 'knight c3 to a4', 'Na2': 'knight c3 to a2', 'Nb1': 'knight c3 to b1', 'Bd3': 'bishop e2 to d3', 'Kh1': 'king g1 to h1', 'Re1': 'rook f1 to e1', 'Qd4': 'queen d1 to d4', 'Qa4': 'queen d1 to a4', 'Qd3': 'queen d1 to d3', 'Qb3': 'queen d1 to b3', 'Qd2': 'queen d1 to d2', 'Qc2': 'queen d1 to c2', 'Qe1': 'queen d1 to e1', 'Bd2': 'bishop c1 to d2', 'Ra2': 'rook a1 to a2', 'Rb1': 'rook a1 to b1', 'c5': 'pawn c4 to c5', 'e4': 'pawn e3 to e4', 'a4': 'pawn a3 to a4', 'h3': 'pawn h2 to h3', 'g3': 'pawn g2 to g3', 'b3': 'pawn b2 to b3', 'h4': 'pawn h2 to h4', 'g4': 'pawn g2 to g4', 'b4': 'pawn b2 to b4'}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_004"
+ },
+ "latency_s": 0.1701138750067912,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Nxe5",
+    "confidence": 0.29,
+    "probabilities": {
+     "Qb3": 0.04,
+     "g3": 0.0,
+     "Nb5": 0.03,
+     "h4": 0.01,
+     "h3": 0.01,
+     "Ne1": 0.01,
+     "Rb1": 0.01,
+     "Na2": 0.0,
+     "e4": 0.05,
+     "Ng5": 0.07,
+     "a4": 0.02,
+     "Nb1": 0.0,
+     "Qc2": 0.01,
+     "Qd4": 0.07,
+     "Nxe5": 0.32,
+     "b3": 0.01,
+     "Bd2": 0.01,
+     "Bd3": 0.03,
+     "Ne4": 0.04,
+     "Kh1": 0.0,
+     "Qd3": 0.03,
+     "Na4": 0.02,
+     "Nd4": 0.04,
+     "Nd2": 0.01,
+     "Ra2": 0.01,
+     "b4": 0.01,
+     "g4": 0.02,
+     "Nh4": 0.01,
+     "Qe1": 0.01,
+     "Qd2": 0.01,
+     "Qa4": 0.03,
+     "c5": 0.05,
+     "Re1": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1285,
+   "output_tokens": 289
+  }
+ }
+}

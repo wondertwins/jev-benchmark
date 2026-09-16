@@ -1,0 +1,185 @@
+{
+ "request": {
+  "model": "jev-preview",
+  "state": {
+   "setting": "A fantasy village in a video game. The player speaks out loud and a speech-to-text system transcribes it. The characters listed are the non-player characters within earshot.",
+   "characters_present": [
+    {
+     "name": "Jeff",
+     "role": "guard"
+    },
+    {
+     "name": "Biscuit",
+     "role": "dog"
+    }
+   ],
+   "recent_context": "no prior conversation; the player just walked up",
+   "transcript": "geoff hannah's inn is on fire",
+   "transcript_quality": "Raw speech-to-text output: lowercase, no punctuation, and names may be spelled the way they sound."
+  },
+  "questions": {
+   "addr_Jeff": {
+    "type": "noul",
+    "instructions": {
+     "question": "Is the player speaking to Jeff, the guard?",
+     "speaking_to_means": "Jeff is an intended listener who should pay attention or respond. That includes being addressed by name, nickname, role, or description; being the character the player faces when saying 'you'; being part of a group the player addresses; or being the natural continuation of an ongoing conversation with Jeff.",
+     "not_speaking_to": "Jeff is merely the topic, a third party the player talks about, someone the player asks another character to relay a message to, or a name that only appears inside quoted speech."
+    },
+    "criteria": {
+     "true": "Jeff is an intended listener of this utterance.",
+     "false": "Jeff is not being spoken to."
+    }
+   },
+   "addr_Biscuit": {
+    "type": "noul",
+    "instructions": {
+     "question": "Is the player speaking to Biscuit, the dog?",
+     "speaking_to_means": "Biscuit is an intended listener who should pay attention or respond. That includes being addressed by name, nickname, role, or description; being the character the player faces when saying 'you'; being part of a group the player addresses; or being the natural continuation of an ongoing conversation with Biscuit.",
+     "not_speaking_to": "Biscuit is merely the topic, a third party the player talks about, someone the player asks another character to relay a message to, or a name that only appears inside quoted speech."
+    },
+    "criteria": {
+     "true": "Biscuit is an intended listener of this utterance.",
+     "false": "Biscuit is not being spoken to."
+    }
+   },
+   "group_address": {
+    "type": "noul",
+    "instructions": "The player is addressing all the characters present as a group, for example with 'everyone', 'all of you', 'you lot', or a plural role like 'guards' when speaking to the room.",
+    "criteria": {
+     "true": "The utterance is aimed at everyone present.",
+     "false": "The utterance is aimed at specific people or nobody."
+    }
+   },
+   "nobody": {
+    "type": "noul",
+    "instructions": "The player is not talking to any of the characters present: they are talking to themself, thinking aloud, speaking to someone who is not here, or saying something out-of-game such as a remark about their microphone or needing to step away.",
+    "criteria": {
+     "true": "None of the listed characters is an intended listener.",
+     "false": "At least one listed character is being spoken to."
+    }
+   },
+   "intent": {
+    "type": "choice",
+    "criteria": {
+     "greeting": "Saying hello or opening a conversation",
+     "farewell": "Saying goodbye or closing a conversation",
+     "request_or_command": "Asking or telling someone to do something, including calling them over or ordering goods",
+     "question": "Asking for information",
+     "statement_or_smalltalk": "Sharing information, an opinion, or chit-chat",
+     "threat_or_insult": "Threatening, insulting, or intimidating someone",
+     "none_or_unclear": "Not directed at the characters, or no clear purpose (self-talk, out-of-game remarks)"
+    },
+    "instructions": "What is the player mainly doing with this utterance?"
+   },
+   "urgency": {
+    "type": "score",
+    "criteria": [
+     "No response is needed soon: casual remark, greeting, or thinking aloud",
+     "A reply or action is expected, but it can wait a moment",
+     "Immediate attention or action is needed: danger, an emergency, or an urgent command"
+    ],
+    "instructions": "How urgently do the people being spoken to need to react?"
+   },
+   "attitude": {
+    "type": "choice",
+    "criteria": {
+     "friendly": "Warm, polite, playful, or grateful",
+     "neutral": "Matter-of-fact or businesslike",
+     "hostile": "Angry, rude, threatening, or contemptuous"
+    },
+    "instructions": "What is the player's attitude toward the person or people they are speaking to?"
+   },
+   "primary": {
+    "type": "choice",
+    "criteria": {
+     "Jeff": "Jeff the guard",
+     "Biscuit": "Biscuit the dog",
+     "everyone": "All characters present, as a group",
+     "nobody": "None of the characters present"
+    },
+    "instructions": "Who is the main person the player is speaking to? Pick 'everyone' for a group address and 'nobody' if the player is not talking to any character present."
+   }
+  }
+ },
+ "meta": {
+  "exp": "npc",
+  "variant": "stt_misheard",
+  "item": "u026"
+ },
+ "latency_s": 0.2431748749804683,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "addr_Jeff": {
+    "type": "noul",
+    "noul": 0.39
+   },
+   "addr_Biscuit": {
+    "type": "noul",
+    "noul": 0.04
+   },
+   "group_address": {
+    "type": "noul",
+    "noul": 0.22
+   },
+   "nobody": {
+    "type": "noul",
+    "noul": 0.5
+   },
+   "intent": {
+    "type": "choice",
+    "choice": "statement_or_smalltalk",
+    "confidence": 0.93,
+    "probabilities": {
+     "greeting": 0.0,
+     "threat_or_insult": 0.0,
+     "statement_or_smalltalk": 0.94,
+     "farewell": 0.0,
+     "question": 0.0,
+     "request_or_command": 0.05,
+     "none_or_unclear": 0.01
+    }
+   },
+   "urgency": {
+    "type": "score",
+    "score": 2.0,
+    "confidence": 1.0,
+    "legend": {
+     "0": "No response is needed soon: casual remark, greeting, or thinking aloud",
+     "1": "A reply or action is expected, but it can wait a moment",
+     "2": "Immediate attention or action is needed: danger, an emergency, or an urgent command"
+    },
+    "probabilities": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 1.0
+    }
+   },
+   "attitude": {
+    "type": "choice",
+    "choice": "neutral",
+    "confidence": 0.99,
+    "probabilities": {
+     "hostile": 0.0,
+     "friendly": 0.0,
+     "neutral": 1.0
+    }
+   },
+   "primary": {
+    "type": "choice",
+    "choice": "everyone",
+    "confidence": 0.21,
+    "probabilities": {
+     "Jeff": 0.3,
+     "nobody": 0.29,
+     "everyone": 0.41,
+     "Biscuit": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1440,
+   "output_tokens": 254
+  }
+ }
+}

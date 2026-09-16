@@ -1,0 +1,118 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . . q . r k .\n7 . p p n . p p p\n6 p . . . b n . .\n5 . P . . . . . .\n4 P . P . p b . .\n3 . . . P N . . P\n2 . . Q . B P P .\n1 R . B . N R K .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r2q1rk1/1ppn1ppp/p3bn2/1P6/P1P1pb2/3PN2P/2Q1BPP1/R1B1NRK1 b - - 0 16",
+   "move_history": "1. e4 e5 2. Nc3 Nc6 3. Be2 Nf6 4. Nf3 d5 5. Nxd5 Nxe4 6. Ne3 Nf6 7. O-O e4 8. Ne1 Be7 9. c3 Be6 10. Qc2 O-O 11. b4 Bd6 12. b5 Nb8 13. c4 Nbd7 14. d3 Bf4 15. h3 a6 16. a4",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "queen": [
+      "c2"
+     ],
+     "rook": [
+      "a1",
+      "f1"
+     ],
+     "bishop": [
+      "c1",
+      "e2"
+     ],
+     "knight": [
+      "e1",
+      "e3"
+     ],
+     "pawn": [
+      "f2",
+      "g2",
+      "d3",
+      "h3",
+      "a4",
+      "c4",
+      "b5"
+     ],
+     "king": [
+      "g1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "d8"
+     ],
+     "rook": [
+      "a8",
+      "f8"
+     ],
+     "bishop": [
+      "f4",
+      "e6"
+     ],
+     "knight": [
+      "f6",
+      "d7"
+     ],
+     "pawn": [
+      "e4",
+      "a6",
+      "b7",
+      "c7",
+      "f7",
+      "g7",
+      "h7"
+     ],
+     "king": [
+      "g8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 38,
+     "black": 38,
+     "white_minus_black": 0
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Bh6': 'bishop f4 to h6; the moved piece is safe from immediate capture', 'Bd6': 'bishop f4 to d6; the moved piece is safe from immediate capture', 'Bg5': 'bishop f4 to g5; the moved piece is safe from immediate capture', 'Be5': 'bishop f4 to e5; the moved piece is safe from immediate capture', 'Bg3': 'bishop f4 to g3; afterwards this bishop can be captured by a pawn (undefended)', 'Bxe3': 'bishop f4 to e3, captures knight; afterwards this bishop can be captured by a pawn (undefended)', 'Bh2+': 'bishop f4 to h2, gives check; afterwards this bishop can be captured by a king (undefended)'}, instructions={'question': 'Black has decided to move the bishop on f4. Which move should it make?', 'goal': 'Pick the destination that gives Black the best chance to win.'})"
+  }
+ },
+ "meta": {
+  "exp": "C2",
+  "pos": "real_020"
+ },
+ "latency_s": 0.22443404095247388,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Bxe3",
+    "confidence": 0.41,
+    "probabilities": {
+     "Bh2+": 0.04,
+     "Bg3": 0.03,
+     "Bg5": 0.04,
+     "Bh6": 0.1,
+     "Bxe3": 0.5,
+     "Bd6": 0.14,
+     "Be5": 0.15
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1207,
+   "output_tokens": 76
+  }
+ }
+}

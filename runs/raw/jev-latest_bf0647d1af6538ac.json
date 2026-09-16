@@ -1,0 +1,66 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "2Bk1bnr/6p1/2ppQp1p/7P/1PPP1p2/PR2PP2/6q1/2n1K1NR w - - 9 49",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Bd7': None, 'Bb7': None, 'Ba6': None, 'Qxg8': None, 'Qe8+': None, 'Qf7': None, 'Qe7+': None, 'Qd7+': None, 'Qxf6+': None, 'Qxd6+': None, 'Qf5': None, 'Qe5': None, 'Qd5': None, 'Qg4': None, 'Qe4': None, 'Qh3': None, 'Rd3': None, 'Rc3': None, 'Rb2': None, 'Rb1': None, 'Rh4': None, 'Rh3': None, 'Rh2': None, 'Nh3': None, 'Ne2': None, 'Kd1': None, 'exf4': None, 'd5': None, 'c5': None, 'b5': None, 'e4': None, 'a4': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_011"
+ },
+ "latency_s": 0.17411495797568932,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxf6+",
+    "confidence": 0.1,
+    "probabilities": {
+     "Rh4": 0.01,
+     "d5": 0.01,
+     "Qd5": 0.02,
+     "Qe4": 0.01,
+     "Bd7": 0.03,
+     "Qxd6+": 0.1,
+     "Rb1": 0.01,
+     "Rh3": 0.02,
+     "Rd3": 0.01,
+     "Qf7": 0.04,
+     "b5": 0.01,
+     "Qg4": 0.02,
+     "c5": 0.01,
+     "exf4": 0.02,
+     "Qd7+": 0.08,
+     "Kd1": 0.01,
+     "Qe8+": 0.12,
+     "Rh2": 0.02,
+     "Ba6": 0.01,
+     "Qf5": 0.02,
+     "Bb7": 0.01,
+     "Rc3": 0.01,
+     "Ne2": 0.01,
+     "Qxf6+": 0.13,
+     "Qe7+": 0.05,
+     "Nh3": 0.01,
+     "Rb2": 0.01,
+     "e4": 0.01,
+     "a4": 0.01,
+     "Qh3": 0.02,
+     "Qe5": 0.02,
+     "Qxg8": 0.13
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 673,
+   "output_tokens": 290
+  }
+ }
+}

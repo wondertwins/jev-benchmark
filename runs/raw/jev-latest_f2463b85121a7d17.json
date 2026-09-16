@@ -1,0 +1,69 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "2b1k3/8/3p2r1/1p2P2p/pPp1BP1b/2PN2r1/P1N5/B4R1K b - - 27 68",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Kf8': None, 'Kd8': None, 'Kf7': None, 'Ke7': None, 'Kd7': None, 'Bd7': None, 'Bb7': None, 'Be6': None, 'Ba6': None, 'Bf5': None, 'Bg4': None, 'Bh3': None, 'Rg8': None, 'Rg7': None, 'Rh6': None, 'Rf6': None, 'Re6': None, 'R6g5': None, 'R6g4': None, 'Bd8': None, 'Be7': None, 'Bf6': None, 'Bg5': None, 'R3g5': None, 'R3g4': None, 'Rh3+': None, 'Rf3': None, 'Re3': None, 'Rxd3': None, 'Rg2': None, 'Rg1+': None, 'dxe5': None, 'cxd3': None, 'd5': None, 'a3': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_006"
+ },
+ "latency_s": 0.2764539169729687,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Rg1+",
+    "confidence": 0.14,
+    "probabilities": {
+     "R6g4": 0.02,
+     "Bd8": 0.0,
+     "Rh3+": 0.12000000000000001,
+     "Kd7": 0.01,
+     "Bg5": 0.01,
+     "Ke7": 0.01,
+     "cxd3": 0.12000000000000001,
+     "d5": 0.02,
+     "Re6": 0.02,
+     "Be6": 0.01,
+     "Bg4": 0.02,
+     "Rg1+": 0.16,
+     "Bb7": 0.01,
+     "R3g4": 0.02,
+     "Rg7": 0.01,
+     "Rxd3": 0.11,
+     "R3g5": 0.02,
+     "Bf6": 0.01,
+     "Ba6": 0.01,
+     "Kd8": 0.01,
+     "Re3": 0.02,
+     "Rg2": 0.02,
+     "Bd7": 0.01,
+     "dxe5": 0.06,
+     "Bh3": 0.02,
+     "Kf8": 0.01,
+     "Kf7": 0.01,
+     "Rf3": 0.03,
+     "Rh6": 0.01,
+     "Be7": 0.0,
+     "R6g5": 0.03,
+     "Rg8": 0.01,
+     "a3": 0.01,
+     "Bf5": 0.02,
+     "Rf6": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 694,
+   "output_tokens": 314
+  }
+ }
+}

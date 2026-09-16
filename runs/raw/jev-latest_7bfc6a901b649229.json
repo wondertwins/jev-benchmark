@@ -1,0 +1,67 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r n b q . r k .\n7 p p . . b p p p\n6 . . . . p n . .\n5 . . p p . . . .\n4 . . . P . . . .\n3 P P . B P N . .\n2 . . P . Q P P P\n1 R N B . K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "rnbq1rk1/pp2bppp/4pn2/2pp4/3P4/PP1BPN2/2P1QPPP/RNB1K2R b KQ - 0 7",
+   "move_history": "1. e3 d5 2. d4 Nf6 3. Nf3 e6 4. b3 Be7 5. Bd3 c5 6. Qe2 O-O 7. a3",
+   "castling_rights": "KQ"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Kh8': 'king g8 to h8', 'Re8': 'rook f8 to e8', 'Qe8': 'queen d8 to e8', 'Qd7': 'queen d8 to d7', 'Qc7': 'queen d8 to c7', 'Qd6': 'queen d8 to d6', 'Qb6': 'queen d8 to b6', 'Qa5+': 'queen d8 to a5, gives check', 'Bd7': 'bishop c8 to d7', 'Nbd7': 'knight b8 to d7', 'Nc6': 'knight b8 to c6', 'Na6': 'knight b8 to a6', 'Bd6': 'bishop e7 to d6', 'Ne8': 'knight f6 to e8', 'Nfd7': 'knight f6 to d7', 'Nh5': 'knight f6 to h5', 'Ng4': 'knight f6 to g4', 'Ne4': 'knight f6 to e4', 'cxd4': 'pawn c5 to d4, captures pawn', 'h6': 'pawn h7 to h6', 'g6': 'pawn g7 to g6', 'b6': 'pawn b7 to b6', 'a6': 'pawn a7 to a6', 'e5': 'pawn e6 to e5', 'c4': 'pawn c5 to c4', 'h5': 'pawn h7 to h5', 'g5': 'pawn g7 to g5', 'b5': 'pawn b7 to b5', 'a5': 'pawn a7 to a5'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_028"
+ },
+ "latency_s": 0.15760224999394268,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "cxd4",
+    "confidence": 0.4,
+    "probabilities": {
+     "b5": 0.01,
+     "b6": 0.0,
+     "Qb6": 0.06,
+     "Na6": 0.0,
+     "Nbd7": 0.01,
+     "Qd6": 0.01,
+     "Ne4": 0.09,
+     "a5": 0.0,
+     "Bd7": 0.01,
+     "Kh8": 0.0,
+     "Qe8": 0.0,
+     "Nfd7": 0.0,
+     "Nc6": 0.07,
+     "Qd7": 0.0,
+     "Re8": 0.0,
+     "Nh5": 0.0,
+     "Qc7": 0.01,
+     "Ne8": 0.0,
+     "Qa5+": 0.21000000000000002,
+     "h6": 0.0,
+     "Bd6": 0.01,
+     "a6": 0.0,
+     "h5": 0.0,
+     "c4": 0.02,
+     "e5": 0.02,
+     "Ng4": 0.04,
+     "g6": 0.0,
+     "g5": 0.0,
+     "cxd4": 0.43
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1194,
+   "output_tokens": 258
+  }
+ }
+}

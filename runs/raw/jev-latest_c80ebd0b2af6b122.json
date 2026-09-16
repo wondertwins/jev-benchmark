@@ -1,0 +1,71 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r1bqk2r/ppp2ppp/1bn5/3Pp3/1P1P4/P3B3/2P1NPPP/R2QKB1R b KQkq - 0 9",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': None, 'Rf8': None, 'Kf8': None, 'Ke7': None, 'Kd7': None, 'Qe7': None, 'Qd7': None, 'Qf6': None, 'Qd6': None, 'Qg5': None, 'Qxd5': None, 'Qh4': None, 'Bd7': None, 'Be6': None, 'Bf5': None, 'Bg4': None, 'Bh3': None, 'Rb8': None, 'Nb8': None, 'Ne7': None, 'Na5': None, 'Nxd4': None, 'Nxb4': None, 'Bc5': None, 'Ba5': None, 'Bxd4': None, 'O-O': None, 'exd4': None, 'h6': None, 'g6': None, 'f6': None, 'a6': None, 'e4': None, 'h5': None, 'g5': None, 'f5': None, 'a5': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "fen",
+  "pos": "real_026"
+ },
+ "latency_s": 0.13083737500710413,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "exd4",
+    "confidence": 0.17,
+    "probabilities": {
+     "Bf5": 0.0,
+     "Nxb4": 0.05,
+     "h5": 0.0,
+     "Be6": 0.03,
+     "exd4": 0.2,
+     "Kd7": 0.0,
+     "Bd7": 0.01,
+     "Kf8": 0.0,
+     "Qd7": 0.01,
+     "f6": 0.03,
+     "Qh4": 0.02,
+     "g5": 0.0,
+     "Ne7": 0.01,
+     "Nxd4": 0.06,
+     "g6": 0.0,
+     "Bg4": 0.03,
+     "Bxd4": 0.16,
+     "Bc5": 0.01,
+     "O-O": 0.09,
+     "Qg5": 0.02,
+     "Bh3": 0.01,
+     "f5": 0.0,
+     "Nb8": 0.0,
+     "Rf8": 0.0,
+     "h6": 0.0,
+     "Ke7": 0.01,
+     "a5": 0.0,
+     "Rb8": 0.0,
+     "Qe7": 0.01,
+     "a6": 0.0,
+     "Ba5": 0.02,
+     "Qxd5": 0.14,
+     "e4": 0.04,
+     "Qd6": 0.01,
+     "Qf6": 0.01,
+     "Rg8": 0.01,
+     "Na5": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 706,
+   "output_tokens": 327
+  }
+ }
+}

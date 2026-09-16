@@ -1,0 +1,132 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 . . . . . . . .\n7 b r . . . . . b\n6 . . k . . N N .\n5 . . . . . . . n\n4 . P . . . . . .\n3 n p . . . . . .\n2 . . . . . r . .\n1 . . . R K . . .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "8/br5b/2k2NN1/7n/1P6/np6/5r2/3RK3 b - - 17 77",
+   "move_history": "1. Nh3 d6 2. Na3 Na6 3. e4 f5 4. e5 Be6 5. Rb1 g5 6. Bc4 Qc8 7. f3 Nb4 8. Ra1 dxe5 9. g3 Nh6 10. Bb5+ Kd8 11. O-O Rg8 12. Rb1 Bd7 13. f4 Be6 14. Rf2 Na6 15. Bd7 Rg6 16. c3 exf4 17. Re2 f3 18. d3 Ng8 19. Qe1 h5 20. Bd2 c6 21. Qc1 Qc7 22. Be1 b5 23. Qe3 Qf4 24. Nc4 Qxe3+ 25. Rxe3 h4 26. Nd2 b4 27. Ne4 Kxd7 28. gxh4 Bxa2 29. Nef2 Bg7 30. Kf1 Bf7 31. Re5 g4 32. h5 Be8 33. Bd2 Nc7 34. Be1 Rd8 35. Nf4 Rc8 36. Rxf5 Bh6 37. h3 gxh3 38. d4 Rg7 39. Nd1 Kd6 40. Bh4 h2 41. Ke1 Ra8 42. Rg5 a6 43. Rg6+ Rxg6 44. Nd5 Ra7 45. Nxe7 Bf8 46. Nxg6 Bh6 47. cxb4 Bf8 48. Nf4 Nf6 49. h6 c5 50. Ne2 Bh5 51. Kf1 Bf7 52. Ndc3 c4 53. Ra1 Rb7 54. h7 Bg8 55. h8=N Nh5 56. Ng1 a5 57. Nxf3 Kc6 58. Rxa5 h1=R+ 59. Kf2 Bh7 60. Nb5 Rxh4 61. d5+ Kxd5 62. Ng5 Rh3 63. Ne4 Rc3 64. Ra8 Bd6 65. b3 Nxb5 66. Ra4 Re3 67. Ra6 Re1 68. Ra7 cxb3 69. Ra1 Rb8 70. Ra6 Re2+ 71. Kf1 Bc5 72. Ra4 Rf2+ 73. Ke1 Ba7 74. Ra1 Kc6 75. Nf6 Rb7 76. Ng6 Na3 77. Rd1",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "rook": [
+      "d1"
+     ],
+     "knight": [
+      "f6",
+      "g6"
+     ],
+     "pawn": [
+      "b4"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "rook": [
+      "f2",
+      "b7"
+     ],
+     "knight": [
+      "a3",
+      "h5"
+     ],
+     "bishop": [
+      "a7",
+      "h7"
+     ],
+     "pawn": [
+      "b3"
+     ],
+     "king": [
+      "c6"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "knight on h5 (attacked by knight, undefended)",
+     "rook on f2 (attacked by king, defended)"
+    ],
+    "enemy_pieces_we_can_win": [
+     "knight on g6 (can be taken by our bishop, undefended)",
+     "knight on f6 (can be taken by our knight, undefended)",
+     "pawn on b4 (can be taken by our rook, undefended)"
+    ],
+    "material": {
+     "white": 12,
+     "black": 23,
+     "white_minus_black": -11
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Bg8': 'bishop h7 to g8; afterwards this bishop can be captured by a knight (undefended)', 'Bxg6': 'bishop h7 to g6, captures knight; the moved piece is safe from immediate capture', 'Rb8': 'rook b7 to b8; the moved piece is safe from immediate capture', 'Rg7': 'rook b7 to g7; the moved piece is safe from immediate capture', 'Rf7': 'rook b7 to f7; the moved piece is safe from immediate capture', 'Re7+': 'rook b7 to e7, gives check; afterwards this rook can be captured by a knight (undefended)', 'Rd7': 'rook b7 to d7; afterwards this rook can be captured by a knight (defended)', 'Rc7': 'rook b7 to c7; the moved piece is safe from immediate capture', 'Rb6': 'rook b7 to b6; the moved piece is safe from immediate capture', 'Rb5': 'rook b7 to b5; the moved piece is safe from immediate capture', 'Rxb4': 'rook b7 to b4, captures pawn; the moved piece is safe from immediate capture', 'Bb8': 'bishop a7 to b8; the moved piece is safe from immediate capture', 'Bb6': 'bishop a7 to b6; the moved piece is safe from immediate capture', 'Bc5': 'bishop a7 to c5; afterwards this bishop can be captured by a pawn (defended)', 'Bd4': 'bishop a7 to d4; afterwards this bishop can be captured by a rook (undefended)', 'Be3': 'bishop a7 to e3; the moved piece is safe from immediate capture', 'Kc7': 'king c6 to c7; the moved piece is safe from immediate capture', 'Kb6': 'king c6 to b6; the moved piece is safe from immediate capture', 'Kb5': 'king c6 to b5; the moved piece is safe from immediate capture', 'Ng7': 'knight h5 to g7; the moved piece is safe from immediate capture', 'Nxf6': 'knight h5 to f6, captures knight; the moved piece is safe from immediate capture', 'Nf4': 'knight h5 to f4; afterwards this knight can be captured by a knight (defended)', 'Ng3': 'knight h5 to g3; the moved piece is safe from immediate capture', 'Nb5': 'knight a3 to b5; the moved piece is safe from immediate capture', 'Nc4': 'knight a3 to c4; the moved piece is safe from immediate capture', 'Nc2+': 'knight a3 to c2, gives check; the moved piece is safe from immediate capture', 'Nb1': 'knight a3 to b1; afterwards this knight can be captured by a rook (undefended)', 'Rxf6': 'rook f2 to f6, captures knight; the moved piece is safe from immediate capture', 'Rf5': 'rook f2 to f5; the moved piece is safe from immediate capture', 'Rf4': 'rook f2 to f4; afterwards this rook can be captured by a knight (defended)', 'Rf3': 'rook f2 to f3; the moved piece is safe from immediate capture', 'Rh2': 'rook f2 to h2; the moved piece is safe from immediate capture', 'Rg2': 'rook f2 to g2; the moved piece is safe from immediate capture', 'Re2+': 'rook f2 to e2, gives check; afterwards this rook can be captured by a king (undefended)', 'Rd2': 'rook f2 to d2; afterwards this rook can be captured by a king (undefended)', 'Rc2': 'rook f2 to c2; the moved piece is safe from immediate capture', 'Rb2': 'rook f2 to b2; the moved piece is safe from immediate capture', 'Ra2': 'rook f2 to a2; the moved piece is safe from immediate capture', 'Rf1+': 'rook f2 to f1, gives check; afterwards this rook can be captured by a king (undefended)', 'b2': 'pawn b3 to b2; the moved piece is safe from immediate capture'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "rich",
+  "pos": "mate1_020"
+ },
+ "latency_s": 0.2439346250030212,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Bxg6",
+    "confidence": 0.41,
+    "probabilities": {
+     "Kb6": 0.0,
+     "Bb8": 0.0,
+     "Bb6": 0.0,
+     "Rc7": 0.0,
+     "Ng3": 0.01,
+     "b2": 0.0,
+     "Rg2": 0.0,
+     "Rd2": 0.0,
+     "Be3": 0.0,
+     "Re7+": 0.0,
+     "Kc7": 0.0,
+     "Rb6": 0.0,
+     "Nc4": 0.0,
+     "Rf1+": 0.01,
+     "Rb2": 0.0,
+     "Rh2": 0.0,
+     "Rf7": 0.0,
+     "Bc5": 0.0,
+     "Rf4": 0.0,
+     "Nc2+": 0.02,
+     "Bxg6": 0.43,
+     "Nxf6": 0.29000000000000004,
+     "Kb5": 0.0,
+     "Rg7": 0.0,
+     "Rf5": 0.0,
+     "Bd4": 0.0,
+     "Ra2": 0.0,
+     "Nf4": 0.0,
+     "Bg8": 0.0,
+     "Ng7": 0.01,
+     "Nb5": 0.0,
+     "Rxb4": 0.03,
+     "Rc2": 0.0,
+     "Rxf6": 0.19,
+     "Rf3": 0.01,
+     "Rb8": 0.0,
+     "Rd7": 0.0,
+     "Nb1": 0.0,
+     "Re2+": 0.0,
+     "Rb5": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2767,
+   "output_tokens": 345
+  }
+ }
+}

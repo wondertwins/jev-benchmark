@@ -1,0 +1,113 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r . . . . r . .\n7 p p . . . p k .\n6 n . . . . . p p\n5 . . . . . . . .\n4 . . p P . B . P\n3 . . P . P . . b\n2 P . . . P . P .\n1 R . Q . K B N .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r4r2/pp3pk1/n5pp/8/2pP1B1P/2P1P2b/P3P1P1/R1Q1KBN1 w Q - 0 18",
+   "move_history": "1. d4 d5 2. Nf3 e6 3. c4 Nf6 4. Bg5 Bb4+ 5. Nc3 h6 6. Bxf6 Bxc3+ 7. Qd2 dxc4 8. bxc3 e5 9. Bxd8 e4 10. Bxc7 Na6 11. Bg3 O-O 12. Ng1 e3 13. Qc1 g6 14. fxe3 Kg7 15. h4 Kf6 16. Rh3 Kg7 17. Bf4 Bxh3",
+   "castling_rights": "Q",
+   "pieces": {
+    "white": {
+     "queen": [
+      "c1"
+     ],
+     "rook": [
+      "a1"
+     ],
+     "bishop": [
+      "f1",
+      "f4"
+     ],
+     "knight": [
+      "g1"
+     ],
+     "pawn": [
+      "a2",
+      "e2",
+      "g2",
+      "c3",
+      "e3",
+      "d4",
+      "h4"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "rook": [
+      "a8",
+      "f8"
+     ],
+     "bishop": [
+      "h3"
+     ],
+     "knight": [
+      "a6"
+     ],
+     "pawn": [
+      "c4",
+      "g6",
+      "h6",
+      "a7",
+      "b7",
+      "f7"
+     ],
+     "king": [
+      "g7"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "bishop on h3 (can be taken by our pawn, undefended)"
+    ],
+    "material": {
+     "white": 30,
+     "black": 22,
+     "white_minus_black": 8
+    }
+   }
+  },
+  "questions": {
+   "piece": "Choice(criteria={'bishop_f4': 'bishop on f4; can go to b8, c7, h6, d6, g5, e5, g3, h2', 'knight_g1': 'knight on g1; can go to h3, f3', 'king_e1': 'king on e1; can go to f2, d2, d1', 'queen_c1': 'queen on c1; can go to a3, d2, c2, b2, d1, b1', 'rook_a1': 'rook on a1; can go to b1', 'pawn_g2': 'pawn on g2; can go to h3, g3, g4', 'pawn_h4': 'pawn on h4; can go to h5', 'pawn_d4': 'pawn on d4; can go to d5', 'pawn_e3': 'pawn on e3; can go to e4', 'pawn_a2': 'pawn on a2; can go to a3, a4'}, instructions={'question': 'Which piece should White move now?', 'goal': \"Pick the piece whose best move most improves White's chances: win material, deliver mate or threats, or escape danger.\"})"
+  }
+ },
+ "meta": {
+  "exp": "C1",
+  "pos": "real_016"
+ },
+ "latency_s": 0.16956658399431035,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "piece": {
+    "type": "choice",
+    "choice": "pawn_g2",
+    "confidence": 0.51,
+    "probabilities": {
+     "pawn_h4": 0.14,
+     "queen_c1": 0.01,
+     "pawn_a2": 0.0,
+     "rook_a1": 0.0,
+     "king_e1": 0.0,
+     "knight_g1": 0.2,
+     "bishop_f4": 0.06,
+     "pawn_d4": 0.01,
+     "pawn_e3": 0.02,
+     "pawn_g2": 0.56
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1278,
+   "output_tokens": 111
+  }
+ }
+}

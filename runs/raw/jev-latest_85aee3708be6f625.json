@@ -1,0 +1,53 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 . . . . R . . .\n7 . Q . . . . . .\n6 . . . . p . k .\n5 . . . p . p . p\n4 . . . P . . . P\n3 P . . . . N . .\n2 . . . . . p B .\n1 R N . K . R . .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "4R3/1Q6/4p1k1/3p1p1p/3P3P/P4N2/5pB1/RN1K1R2 w - - 0 47",
+   "move_history": "1. c3 e6 2. Qa4 Qe7 3. e4 Qh4 4. Nh3 Nf6 5. Ng1 b5 6. Qxb5 Ba3 7. g3 Qh5 8. bxa3 Qh6 9. Qb7 a6 10. d4 Qg6 11. Ke2 h6 12. Bg2 Rh7 13. Qa7 Qxg3 14. Bf3 d6 15. Ke1 Qf4 16. a4 Nd5 17. Nh3 Qf5 18. a3 Bd7 19. exd5 Kf8 20. Qb7 a5 21. Qxa8 Qg5 22. Qa7 Qxc1+ 23. Ke2 Bb5+ 24. axb5 Rh8 25. Qa6 c5 26. Qxa5 g5 27. Ng1 Qe3+ 28. Kf1 Kg7 29. Qb6 Qxc3 30. Qxb8 Qc4+ 31. Ke1 Rc8 32. b6 Qxd5 33. b7 g4 34. bxc8=R Qb3 35. Bg2 Qh3 36. Rxc5 Qd3 37. Qa7 Kg6 38. Rc8 Qd1+ 39. Kxd1 g3 40. Re8 Kg7 41. Qa5 f6 42. Qc7+ Kg6 43. Qb7 d5 44. Nf3 h5 45. Rf1 gxf2 46. h4 f5",
+   "castling_rights": "none"
+  },
+  "questions": {
+   "eval": "Score(criteria=['Black is winning: Black is far ahead in material, or has an unstoppable attack or forced mate', 'Black is clearly better: Black is ahead by about a minor piece or more, or has a large lasting advantage', 'Black is slightly better: a small edge for Black such as an extra pawn, more active pieces, or a safer king', 'Roughly equal: material is level and neither side has a meaningful advantage', 'White is slightly better: a small edge for White such as an extra pawn, more active pieces, or a safer king', 'White is clearly better: White is ahead by about a minor piece or more, or has a large lasting advantage', 'White is winning: White is far ahead in material, or has an unstoppable attack or forced mate'], instructions={'question': 'Who is better in this position, and by how much?', 'focus': 'Weigh material, king safety, piece activity, and immediate tactics. The scale runs from Black winning (low) to White winning (high).'})"
+  }
+ },
+ "meta": {
+  "exp": "F",
+  "pos": "mate1_016"
+ },
+ "latency_s": 0.46244166599353775,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "eval": {
+    "type": "score",
+    "score": 3.97,
+    "confidence": 0.21,
+    "legend": {
+     "0": "Black is winning: Black is far ahead in material, or has an unstoppable attack or forced mate",
+     "1": "Black is clearly better: Black is ahead by about a minor piece or more, or has a large lasting advantage",
+     "2": "Black is slightly better: a small edge for Black such as an extra pawn, more active pieces, or a safer king",
+     "3": "Roughly equal: material is level and neither side has a meaningful advantage",
+     "4": "White is slightly better: a small edge for White such as an extra pawn, more active pieces, or a safer king",
+     "5": "White is clearly better: White is ahead by about a minor piece or more, or has a large lasting advantage",
+     "6": "White is winning: White is far ahead in material, or has an unstoppable attack or forced mate"
+    },
+    "probabilities": {
+     "0": 0.02,
+     "1": 0.12,
+     "2": 0.09,
+     "3": 0.08,
+     "4": 0.17,
+     "5": 0.36,
+     "6": 0.16
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1139,
+   "output_tokens": 17
+  }
+ }
+}

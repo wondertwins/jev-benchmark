@@ -1,0 +1,76 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . . q k b . r\n7 . p . . p p . p\n6 p . . . . P p .\n5 . . p . . . . .\n4 P . N n . . . .\n3 . . P . Q b . .\n2 . P . P . P P P\n1 R . B . . R K .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r2qkb1r/1p2pp1p/p4Pp1/2p5/P1Nn4/2P1Qb2/1P1P1PPP/R1B2RK1 b kq - 0 12",
+   "move_history": "1. e4 c5 2. Nf3 d6 3. a4 a6 4. Bc4 Nf6 5. Qe2 Bg4 6. e5 d5 7. exf6 dxc4 8. Na3 g6 9. O-O Nc6 10. Nxc4 Nd4 11. Qe3 Bxf3 12. c3",
+   "castling_rights": "kq"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': 'rook h8 to g8', 'Bg7': 'bishop f8 to g7', 'Bh6': 'bishop f8 to h6', 'Kd7': 'king e8 to d7', 'Qc8': 'queen d8 to c8', 'Qb8': 'queen d8 to b8', 'Qd7': 'queen d8 to d7', 'Qc7': 'queen d8 to c7', 'Qd6': 'queen d8 to d6', 'Qb6': 'queen d8 to b6', 'Qd5': 'queen d8 to d5', 'Qa5': 'queen d8 to a5', 'Rc8': 'rook a8 to c8', 'Rb8': 'rook a8 to b8', 'Ra7': 'rook a8 to a7', 'Ne6': 'knight d4 to e6', 'Nc6': 'knight d4 to c6', 'Nf5': 'knight d4 to f5', 'Nb5': 'knight d4 to b5', 'Nb3': 'knight d4 to b3', 'Ne2+': 'knight d4 to e2, gives check', 'Nc2': 'knight d4 to c2', 'Bc6': 'bishop f3 to c6', 'Bh5': 'bishop f3 to h5', 'Bd5': 'bishop f3 to d5', 'Bg4': 'bishop f3 to g4', 'Be4': 'bishop f3 to e4', 'Bxg2': 'bishop f3 to g2, captures pawn', 'Be2': 'bishop f3 to e2', 'Bd1': 'bishop f3 to d1', 'h6': 'pawn h7 to h6', 'e6': 'pawn e7 to e6', 'b6': 'pawn b7 to b6', 'g5': 'pawn g6 to g5', 'a5': 'pawn a6 to a5', 'h5': 'pawn h7 to h5', 'e5': 'pawn e7 to e5', 'b5': 'pawn b7 to b5'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_023"
+ },
+ "latency_s": 0.1499598340014927,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Ne2+",
+    "confidence": 0.32,
+    "probabilities": {
+     "Nf5": 0.01,
+     "e5": 0.01,
+     "Kd7": 0.0,
+     "Rg8": 0.0,
+     "Qd7": 0.01,
+     "Bg4": 0.01,
+     "Qd6": 0.01,
+     "Bd5": 0.03,
+     "a5": 0.01,
+     "Bh6": 0.01,
+     "Bxg2": 0.22,
+     "Ne2+": 0.35000000000000003,
+     "Qc7": 0.01,
+     "b5": 0.01,
+     "g5": 0.0,
+     "Nc2": 0.04,
+     "e6": 0.01,
+     "h5": 0.0,
+     "Qd5": 0.03,
+     "Bg7": 0.01,
+     "Bd1": 0.02,
+     "Be4": 0.02,
+     "Rc8": 0.01,
+     "Qb6": 0.03,
+     "Rb8": 0.01,
+     "Qc8": 0.0,
+     "Be2": 0.02,
+     "Ra7": 0.0,
+     "Ne6": 0.01,
+     "Bh5": 0.0,
+     "Nb3": 0.04,
+     "Bc6": 0.01,
+     "Qb8": 0.0,
+     "Nc6": 0.01,
+     "Nb5": 0.02,
+     "Qa5": 0.02,
+     "h6": 0.0,
+     "b6": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1408,
+   "output_tokens": 330
+  }
+ }
+}

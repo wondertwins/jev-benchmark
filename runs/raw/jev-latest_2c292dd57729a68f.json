@@ -1,0 +1,146 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r . . . k . n .\n7 . p p q p . b r\n6 p . . p n . N p\n5 . . . . . . p .\n4 . . . . P . b .\n3 . . P . Q . . .\n2 P P . P . P P P\n1 R N B . . R K .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r3k1n1/1ppqp1br/p2pn1Np/6p1/4P1b1/2P1Q3/PP1P1PPP/RNB2RK1 w - - 1 15",
+   "move_history": "1. e4 Nc6 2. Nf3 g6 3. Bc4 Bg7 4. O-O d6 5. Bxf7+ Kxf7 6. Ng5+ Ke8 7. Nf3 Bg4 8. Ng5 Qd7 9. Qe1 h6 10. Nf3 a6 11. Nh4 g5 12. Ng6 Rh7 13. Qe3 Nd4 14. c3 Ne6",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "queen": [
+      "e3"
+     ],
+     "rook": [
+      "a1",
+      "f1"
+     ],
+     "knight": [
+      "b1",
+      "g6"
+     ],
+     "bishop": [
+      "c1"
+     ],
+     "pawn": [
+      "a2",
+      "b2",
+      "d2",
+      "f2",
+      "g2",
+      "h2",
+      "c3",
+      "e4"
+     ],
+     "king": [
+      "g1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "d7"
+     ],
+     "rook": [
+      "h7",
+      "a8"
+     ],
+     "bishop": [
+      "g4",
+      "g7"
+     ],
+     "knight": [
+      "e6",
+      "g8"
+     ],
+     "pawn": [
+      "g5",
+      "a6",
+      "d6",
+      "h6",
+      "b7",
+      "c7",
+      "e7"
+     ],
+     "king": [
+      "e8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 36,
+     "black": 38,
+     "white_minus_black": -2
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Nh8': 'knight g6 to h8; afterwards this knight can be captured by a bishop (undefended)', 'Nf8': 'knight g6 to f8; afterwards this knight can be captured by a king (undefended)', 'Nxe7': 'knight g6 to e7, captures pawn; afterwards this knight can be captured by a king (undefended)', 'Ne5': 'knight g6 to e5; afterwards this knight can be captured by a pawn (undefended)', 'Nh4': 'knight g6 to h4; afterwards this knight can be captured by a pawn (undefended)', 'Nf4': 'knight g6 to f4; afterwards this knight can be captured by a pawn (defended)', 'Qa7': 'queen e3 to a7; afterwards this queen can be captured by a rook (undefended)', 'Qb6': 'queen e3 to b6; afterwards this queen can be captured by a pawn (undefended)', 'Qxg5': 'queen e3 to g5, captures pawn; afterwards this queen can be captured by a pawn (undefended)', 'Qc5': 'queen e3 to c5; afterwards this queen can be captured by a pawn (undefended)', 'Qf4': 'queen e3 to f4; afterwards this queen can be captured by a pawn (defended)', 'Qd4': 'queen e3 to d4; afterwards this queen can be captured by a knight (defended)', 'Qh3': 'queen e3 to h3; afterwards this queen can be captured by a bishop (defended)', 'Qg3': 'queen e3 to g3; the moved piece is safe from immediate capture', 'Qf3': 'queen e3 to f3; afterwards this queen can be captured by a bishop (defended)', 'Qd3': 'queen e3 to d3; the moved piece is safe from immediate capture', 'Qe2': 'queen e3 to e2; afterwards this queen can be captured by a bishop (undefended)', 'Qe1': 'queen e3 to e1; the moved piece is safe from immediate capture', 'Kh1': 'king g1 to h1; the moved piece is safe from immediate capture', 'Re1': 'rook f1 to e1; the moved piece is safe from immediate capture', 'Rd1': 'rook f1 to d1; afterwards this rook can be captured by a bishop (undefended)', 'Na3': 'knight b1 to a3; the moved piece is safe from immediate capture', 'e5': 'pawn e4 to e5; afterwards this pawn can be captured by a pawn (defended)', 'c4': 'pawn c3 to c4; the moved piece is safe from immediate capture', 'h3': 'pawn h2 to h3; afterwards this pawn can be captured by a bishop (defended)', 'g3': 'pawn g2 to g3; the moved piece is safe from immediate capture', 'f3': 'pawn f2 to f3; afterwards this pawn can be captured by a bishop (defended)', 'd3': 'pawn d2 to d3; the moved piece is safe from immediate capture', 'b3': 'pawn b2 to b3; the moved piece is safe from immediate capture', 'a3': 'pawn a2 to a3; the moved piece is safe from immediate capture', 'h4': 'pawn h2 to h4; afterwards this pawn can be captured by a pawn (defended)', 'f4': 'pawn f2 to f4; afterwards this pawn can be captured by a pawn (defended)', 'd4': 'pawn d2 to d4; afterwards this pawn can be captured by a knight (defended)', 'b4': 'pawn b2 to b4; the moved piece is safe from immediate capture', 'a4': 'pawn a2 to a4; afterwards this pawn can be captured by a queen (defended)'}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "G",
+  "ply": 28
+ },
+ "latency_s": 0.1999778330209665,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qg3",
+    "confidence": 0.33,
+    "probabilities": {
+     "e5": 0.02,
+     "a3": 0.0,
+     "b4": 0.0,
+     "Qf4": 0.04,
+     "Nxe7": 0.06,
+     "Qc5": 0.01,
+     "Qxg5": 0.05,
+     "Rd1": 0.01,
+     "d4": 0.01,
+     "f3": 0.02,
+     "Nf4": 0.03,
+     "Re1": 0.09,
+     "Qe1": 0.02,
+     "Nh8": 0.01,
+     "a4": 0.0,
+     "Qd4": 0.02,
+     "Nf8": 0.01,
+     "Qb6": 0.01,
+     "c4": 0.01,
+     "Qd3": 0.05,
+     "d3": 0.01,
+     "h4": 0.02,
+     "h3": 0.02,
+     "Nh4": 0.01,
+     "Qa7": 0.01,
+     "Ne5": 0.01,
+     "Qg3": 0.33999999999999997,
+     "Qh3": 0.02,
+     "Qf3": 0.02,
+     "g3": 0.04,
+     "Kh1": 0.01,
+     "Qe2": 0.0,
+     "Na3": 0.01,
+     "b3": 0.0,
+     "f4": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2127,
+   "output_tokens": 311
+  }
+ }
+}

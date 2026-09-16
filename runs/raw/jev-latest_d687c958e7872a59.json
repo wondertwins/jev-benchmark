@@ -1,0 +1,74 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . b . k . . r\n7 . p . p . p p p\n6 p . n . p . . .\n5 . . . . . . . .\n4 . . P . n . . .\n3 . . . . N P . .\n2 P P . . . . P P\n1 R N . . K B . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r1b1k2r/1p1p1ppp/p1n1p3/8/2P1n3/4NP2/PP4PP/RN2KB1R b KQkq - 0 12",
+   "move_history": "1. e4 c5 2. d4 cxd4 3. Nf3 Qa5+ 4. Qd2 Qxd2+ 5. Bxd2 Nf6 6. Nxd4 Nxe4 7. Bc1 a6 8. c4 Nc6 9. Be3 e6 10. f3 Bc5 11. Nc2 Bxe3 12. Nxe3",
+   "castling_rights": "KQkq"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': 'rook h8 to g8', 'Rf8': 'rook h8 to f8', 'Kf8': 'king e8 to f8', 'Kd8': 'king e8 to d8', 'Ke7': 'king e8 to e7', 'Rb8': 'rook a8 to b8', 'Ra7': 'rook a8 to a7', 'Nd8': 'knight c6 to d8', 'Nb8': 'knight c6 to b8', 'Ne7': 'knight c6 to e7', 'Na7': 'knight c6 to a7', 'Ne5': 'knight c6 to e5', 'Na5': 'knight c6 to a5', 'Nd4': 'knight c6 to d4', 'Nb4': 'knight c6 to b4', 'Nf6': 'knight e4 to f6', 'Nd6': 'knight e4 to d6', 'Ng5': 'knight e4 to g5', 'Nc5': 'knight e4 to c5', 'Ng3': 'knight e4 to g3', 'Nc3': 'knight e4 to c3', 'Nf2': 'knight e4 to f2', 'Nd2': 'knight e4 to d2', 'O-O': 'castles kingside', 'h6': 'pawn h7 to h6', 'g6': 'pawn g7 to g6', 'f6': 'pawn f7 to f6', 'd6': 'pawn d7 to d6', 'b6': 'pawn b7 to b6', 'e5': 'pawn e6 to e5', 'a5': 'pawn a6 to a5', 'h5': 'pawn h7 to h5', 'g5': 'pawn g7 to g5', 'f5': 'pawn f7 to f5', 'd5': 'pawn d7 to d5', 'b5': 'pawn b7 to b5'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_009"
+ },
+ "latency_s": 0.27013712498592213,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Nc3",
+    "confidence": 0.14,
+    "probabilities": {
+     "Ng5": 0.02,
+     "Kd8": 0.01,
+     "e5": 0.02,
+     "f5": 0.01,
+     "Ne5": 0.03,
+     "b5": 0.01,
+     "h5": 0.0,
+     "Rf8": 0.01,
+     "Nd6": 0.01,
+     "Nd4": 0.12,
+     "Ng3": 0.04,
+     "Rb8": 0.0,
+     "Na7": 0.0,
+     "Nc3": 0.17,
+     "Ke7": 0.01,
+     "Nd8": 0.0,
+     "Nf2": 0.09,
+     "Nf6": 0.01,
+     "Ra7": 0.0,
+     "d6": 0.01,
+     "b6": 0.0,
+     "Nc5": 0.07,
+     "Nb8": 0.0,
+     "Na5": 0.01,
+     "g5": 0.0,
+     "f6": 0.01,
+     "Nd2": 0.07,
+     "Rg8": 0.0,
+     "d5": 0.06,
+     "O-O": 0.17,
+     "h6": 0.0,
+     "Ne7": 0.0,
+     "Nb4": 0.04,
+     "g6": 0.0,
+     "Kf8": 0.0,
+     "a5": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1374,
+   "output_tokens": 309
+  }
+ }
+}

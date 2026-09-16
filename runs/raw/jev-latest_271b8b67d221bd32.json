@@ -1,0 +1,110 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . b . k . . r\n7 . p . p . p p p\n6 p . n . p . . .\n5 . . . . . . . .\n4 . . P . n . . .\n3 . . . . N P . .\n2 P P . . . . P P\n1 R N . . K B . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r1b1k2r/1p1p1ppp/p1n1p3/8/2P1n3/4NP2/PP4PP/RN2KB1R b KQkq - 0 12",
+   "move_history": "1. e4 c5 2. d4 cxd4 3. Nf3 Qa5+ 4. Qd2 Qxd2+ 5. Bxd2 Nf6 6. Nxd4 Nxe4 7. Bc1 a6 8. c4 Nc6 9. Be3 e6 10. f3 Bc5 11. Nc2 Bxe3 12. Nxe3",
+   "castling_rights": "KQkq",
+   "pieces": {
+    "white": {
+     "rook": [
+      "a1",
+      "h1"
+     ],
+     "knight": [
+      "b1",
+      "e3"
+     ],
+     "bishop": [
+      "f1"
+     ],
+     "pawn": [
+      "a2",
+      "b2",
+      "g2",
+      "h2",
+      "f3",
+      "c4"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "rook": [
+      "a8",
+      "h8"
+     ],
+     "knight": [
+      "e4",
+      "c6"
+     ],
+     "bishop": [
+      "c8"
+     ],
+     "pawn": [
+      "a6",
+      "e6",
+      "b7",
+      "d7",
+      "f7",
+      "g7",
+      "h7"
+     ],
+     "king": [
+      "e8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "knight on e4 (attacked by pawn, undefended)"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 25,
+     "black": 26,
+     "white_minus_black": -1
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Nf6': 'knight e4 to f6; the moved piece is safe from immediate capture', 'Nd6': 'knight e4 to d6; the moved piece is safe from immediate capture', 'Ng5': 'knight e4 to g5; the moved piece is safe from immediate capture', 'Nc5': 'knight e4 to c5; the moved piece is safe from immediate capture', 'Ng3': 'knight e4 to g3; afterwards this knight can be captured by a pawn (undefended)', 'Nc3': 'knight e4 to c3; afterwards this knight can be captured by a pawn (undefended)', 'Nf2': 'knight e4 to f2; afterwards this knight can be captured by a king (undefended)', 'Nd2': 'knight e4 to d2; afterwards this knight can be captured by a king (undefended)'}, instructions={'question': 'Black has decided to move the knight on e4. Which move should it make?', 'goal': 'Pick the destination that gives Black the best chance to win.'})"
+  }
+ },
+ "meta": {
+  "exp": "C2",
+  "pos": "real_009"
+ },
+ "latency_s": 0.22066195803927258,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Nf6",
+    "confidence": 0.21,
+    "probabilities": {
+     "Ng3": 0.06,
+     "Nf6": 0.3,
+     "Nc3": 0.06,
+     "Ng5": 0.07,
+     "Nc5": 0.26,
+     "Nf2": 0.04,
+     "Nd2": 0.02,
+     "Nd6": 0.19
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1198,
+   "output_tokens": 85
+  }
+ }
+}

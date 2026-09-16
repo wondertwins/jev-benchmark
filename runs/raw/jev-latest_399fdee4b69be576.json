@@ -1,0 +1,65 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 . . . . R . . .\n7 . Q . . . . . .\n6 . . . . p . k .\n5 . . . p . p . p\n4 . . . P . . . P\n3 P . . . . N . .\n2 . . . . . p B .\n1 R N . K . R . .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "4R3/1Q6/4p1k1/3p1p1p/3P3P/P4N2/5pB1/RN1K1R2 w - - 0 47",
+   "move_history": "1. c3 e6 2. Qa4 Qe7 3. e4 Qh4 4. Nh3 Nf6 5. Ng1 b5 6. Qxb5 Ba3 7. g3 Qh5 8. bxa3 Qh6 9. Qb7 a6 10. d4 Qg6 11. Ke2 h6 12. Bg2 Rh7 13. Qa7 Qxg3 14. Bf3 d6 15. Ke1 Qf4 16. a4 Nd5 17. Nh3 Qf5 18. a3 Bd7 19. exd5 Kf8 20. Qb7 a5 21. Qxa8 Qg5 22. Qa7 Qxc1+ 23. Ke2 Bb5+ 24. axb5 Rh8 25. Qa6 c5 26. Qxa5 g5 27. Ng1 Qe3+ 28. Kf1 Kg7 29. Qb6 Qxc3 30. Qxb8 Qc4+ 31. Ke1 Rc8 32. b6 Qxd5 33. b7 g4 34. bxc8=R Qb3 35. Bg2 Qh3 36. Rxc5 Qd3 37. Qa7 Kg6 38. Rc8 Qd1+ 39. Kxd1 g3 40. Re8 Kg7 41. Qa5 f6 42. Qc7+ Kg6 43. Qb7 d5 44. Nf3 h5 45. Rf1 gxf2 46. h4 f5",
+   "castling_rights": "none"
+  },
+  "questions": {
+   "in_check": "Noul(instructions='White, the side to move, is currently in check: the White king is attacked by an enemy piece.', criteria={'true': 'The White king is under attack right now.', 'false': 'The White king is not attacked.'})",
+   "mate_in_one": "Noul(instructions='White has a legal move that delivers checkmate immediately (mate in one).', criteria={'true': 'Some legal move ends the game by checkmate this turn.', 'false': 'No move gives checkmate this turn.'})",
+   "free_capture": "Noul(instructions='White can capture an enemy piece or pawn that is completely undefended, winning it for free.', criteria={'true': 'A legal capture exists whose target square is not protected by any enemy piece.', 'false': 'Every capturable enemy piece is protected, or no captures exist.'})",
+   "own_piece_hanging": "Noul(instructions='White has a knight, bishop, rook, or queen that is attacked by the opponent and defended by nothing.', criteria={'true': 'At least one White piece (not a pawn or the king) can be taken for free.', 'false': 'All attacked White pieces are defended, or none are attacked.'})",
+   "can_castle": "Noul(instructions='White can legally castle on this move (kingside or queenside).', criteria={'true': 'Castling is a legal move right now.', 'false': 'Castling is not legal right now.'})",
+   "more_material": "Choice(criteria={'white': \"White's pieces add up to more\", 'black': \"Black's pieces add up to more\", 'equal': 'Both sides have the same total'}, instructions='Which side has more material, counting pawn 1, knight 3, bishop 3, rook 5, queen 9?')"
+  }
+ },
+ "meta": {
+  "exp": "D",
+  "pos": "mate1_016"
+ },
+ "latency_s": 0.21931954100728035,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "in_check": {
+    "type": "noul",
+    "noul": 0.26
+   },
+   "mate_in_one": {
+    "type": "noul",
+    "noul": 0.38
+   },
+   "free_capture": {
+    "type": "noul",
+    "noul": 0.82
+   },
+   "own_piece_hanging": {
+    "type": "noul",
+    "noul": 0.37
+   },
+   "can_castle": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "more_material": {
+    "type": "choice",
+    "choice": "white",
+    "confidence": 0.92,
+    "probabilities": {
+     "equal": 0.03,
+     "white": 0.94,
+     "black": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1316,
+   "output_tokens": 130
+  }
+ }
+}

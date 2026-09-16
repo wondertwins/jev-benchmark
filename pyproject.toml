@@ -1,0 +1,9 @@
+[project]
+name = "jev-benchmark"
+version = "0.1.0"
+description = "Benchmarks and a playground for TypeSafe's Jev (System One) model: chess and speech-to-text NPC addressee detection"
+requires-python = ">=3.11"
+dependencies = [
+    "chess>=1.11.2",
+    "typesafe-sdk>=0.6.0",
+]

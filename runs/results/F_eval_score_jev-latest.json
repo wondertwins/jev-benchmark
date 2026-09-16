@@ -1,0 +1,509 @@
+{
+ "experiment": "F_eval_score",
+ "level": "ascii",
+ "summary": {
+  "n": 55,
+  "spearman_vs_stockfish": 0.639,
+  "exact_bucket_accuracy": 0.273,
+  "within_one_bucket": 0.418,
+  "who_is_better_accuracy": 0.564,
+  "always_equal_baseline": 0.273
+ },
+ "rows": [
+  {
+   "pos": "real_000",
+   "stockfish_cp_white": 23,
+   "truth_bucket": 3,
+   "score": 3.02,
+   "pred_bucket": 3,
+   "confidence": 0.61,
+   "input_tokens": 862
+  },
+  {
+   "pos": "real_001",
+   "stockfish_cp_white": -218,
+   "truth_bucket": 1,
+   "score": 2.99,
+   "pred_bucket": 3,
+   "confidence": 0.28,
+   "input_tokens": 824
+  },
+  {
+   "pos": "real_002",
+   "stockfish_cp_white": 77,
+   "truth_bucket": 4,
+   "score": 3.58,
+   "pred_bucket": 4,
+   "confidence": 0.14,
+   "input_tokens": 860
+  },
+  {
+   "pos": "real_003",
+   "stockfish_cp_white": 28,
+   "truth_bucket": 3,
+   "score": 3.24,
+   "pred_bucket": 3,
+   "confidence": 0.41,
+   "input_tokens": 832
+  },
+  {
+   "pos": "real_004",
+   "stockfish_cp_white": 30,
+   "truth_bucket": 3,
+   "score": 3.3,
+   "pred_bucket": 3,
+   "confidence": 0.53,
+   "input_tokens": 803
+  },
+  {
+   "pos": "real_005",
+   "stockfish_cp_white": 68,
+   "truth_bucket": 4,
+   "score": 3.29,
+   "pred_bucket": 3,
+   "confidence": 0.57,
+   "input_tokens": 787
+  },
+  {
+   "pos": "real_006",
+   "stockfish_cp_white": -411,
+   "truth_bucket": 1,
+   "score": 3.48,
+   "pred_bucket": 3,
+   "confidence": 0.04,
+   "input_tokens": 912
+  },
+  {
+   "pos": "real_007",
+   "stockfish_cp_white": 12,
+   "truth_bucket": 3,
+   "score": 3.18,
+   "pred_bucket": 3,
+   "confidence": 0.4,
+   "input_tokens": 865
+  },
+  {
+   "pos": "real_008",
+   "stockfish_cp_white": 0,
+   "truth_bucket": 3,
+   "score": 2.9,
+   "pred_bucket": 3,
+   "confidence": 0.5,
+   "input_tokens": 822
+  },
+  {
+   "pos": "real_009",
+   "stockfish_cp_white": -130,
+   "truth_bucket": 2,
+   "score": 3.03,
+   "pred_bucket": 3,
+   "confidence": 0.51,
+   "input_tokens": 840
+  },
+  {
+   "pos": "real_010",
+   "stockfish_cp_white": 64,
+   "truth_bucket": 4,
+   "score": 3.36,
+   "pred_bucket": 3,
+   "confidence": 0.42,
+   "input_tokens": 800
+  },
+  {
+   "pos": "real_011",
+   "stockfish_cp_white": -8,
+   "truth_bucket": 3,
+   "score": 3.14,
+   "pred_bucket": 3,
+   "confidence": 0.0,
+   "input_tokens": 906
+  },
+  {
+   "pos": "real_012",
+   "stockfish_cp_white": -801,
+   "truth_bucket": 0,
+   "score": 2.77,
+   "pred_bucket": 3,
+   "confidence": 0.23,
+   "input_tokens": 900
+  },
+  {
+   "pos": "real_013",
+   "stockfish_cp_white": -585,
+   "truth_bucket": 0,
+   "score": 3.54,
+   "pred_bucket": 4,
+   "confidence": 0.42,
+   "input_tokens": 855
+  },
+  {
+   "pos": "real_014",
+   "stockfish_cp_white": -2,
+   "truth_bucket": 3,
+   "score": 2.85,
+   "pred_bucket": 3,
+   "confidence": 0.51,
+   "input_tokens": 888
+  },
+  {
+   "pos": "real_015",
+   "stockfish_cp_white": -98,
+   "truth_bucket": 2,
+   "score": 3.16,
+   "pred_bucket": 3,
+   "confidence": 0.3,
+   "input_tokens": 790
+  },
+  {
+   "pos": "real_016",
+   "stockfish_cp_white": 1110,
+   "truth_bucket": 6,
+   "score": 2.93,
+   "pred_bucket": 3,
+   "confidence": 0.0,
+   "input_tokens": 876
+  },
+  {
+   "pos": "real_017",
+   "stockfish_cp_white": 24,
+   "truth_bucket": 3,
+   "score": 2.97,
+   "pred_bucket": 3,
+   "confidence": 0.57,
+   "input_tokens": 786
+  },
+  {
+   "pos": "real_018",
+   "stockfish_cp_white": 1,
+   "truth_bucket": 3,
+   "score": 3.22,
+   "pred_bucket": 3,
+   "confidence": 0.42,
+   "input_tokens": 877
+  },
+  {
+   "pos": "real_019",
+   "stockfish_cp_white": 254,
+   "truth_bucket": 5,
+   "score": 3.75,
+   "pred_bucket": 4,
+   "confidence": 0.19,
+   "input_tokens": 831
+  },
+  {
+   "pos": "real_020",
+   "stockfish_cp_white": 23,
+   "truth_bucket": 3,
+   "score": 2.94,
+   "pred_bucket": 3,
+   "confidence": 0.28,
+   "input_tokens": 861
+  },
+  {
+   "pos": "real_021",
+   "stockfish_cp_white": -20,
+   "truth_bucket": 3,
+   "score": 3.11,
+   "pred_bucket": 3,
+   "confidence": 0.71,
+   "input_tokens": 789
+  },
+  {
+   "pos": "real_022",
+   "stockfish_cp_white": -18,
+   "truth_bucket": 3,
+   "score": 3.37,
+   "pred_bucket": 3,
+   "confidence": 0.56,
+   "input_tokens": 845
+  },
+  {
+   "pos": "real_023",
+   "stockfish_cp_white": -585,
+   "truth_bucket": 0,
+   "score": 2.93,
+   "pred_bucket": 3,
+   "confidence": 0.18,
+   "input_tokens": 834
+  },
+  {
+   "pos": "real_024",
+   "stockfish_cp_white": 0,
+   "truth_bucket": 3,
+   "score": 2.94,
+   "pred_bucket": 3,
+   "confidence": 0.48,
+   "input_tokens": 778
+  },
+  {
+   "pos": "real_025",
+   "stockfish_cp_white": 384,
+   "truth_bucket": 5,
+   "score": 3.16,
+   "pred_bucket": 3,
+   "confidence": 0.67,
+   "input_tokens": 806
+  },
+  {
+   "pos": "real_026",
+   "stockfish_cp_white": -15,
+   "truth_bucket": 3,
+   "score": 3.51,
+   "pred_bucket": 4,
+   "confidence": 0.41,
+   "input_tokens": 807
+  },
+  {
+   "pos": "real_027",
+   "stockfish_cp_white": 680,
+   "truth_bucket": 6,
+   "score": 3.58,
+   "pred_bucket": 4,
+   "confidence": 0.13,
+   "input_tokens": 848
+  },
+  {
+   "pos": "real_028",
+   "stockfish_cp_white": 1,
+   "truth_bucket": 3,
+   "score": 3.0,
+   "pred_bucket": 3,
+   "confidence": 0.73,
+   "input_tokens": 784
+  },
+  {
+   "pos": "real_029",
+   "stockfish_cp_white": 69,
+   "truth_bucket": 4,
+   "score": 3.41,
+   "pred_bucket": 3,
+   "confidence": 0.54,
+   "input_tokens": 823
+  },
+  {
+   "pos": "mate1_000",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.46,
+   "pred_bucket": 3,
+   "confidence": 0.05,
+   "input_tokens": 929
+  },
+  {
+   "pos": "mate1_001",
+   "stockfish_cp_white": -9999,
+   "truth_bucket": 0,
+   "score": 2.5,
+   "pred_bucket": 2,
+   "confidence": 0.04,
+   "input_tokens": 1000
+  },
+  {
+   "pos": "mate1_002",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 4.61,
+   "pred_bucket": 5,
+   "confidence": 0.43,
+   "input_tokens": 1390
+  },
+  {
+   "pos": "mate1_003",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.01,
+   "pred_bucket": 3,
+   "confidence": 0.0,
+   "input_tokens": 980
+  },
+  {
+   "pos": "mate1_004",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 4.44,
+   "pred_bucket": 4,
+   "confidence": 0.09,
+   "input_tokens": 1406
+  },
+  {
+   "pos": "mate1_005",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.05,
+   "pred_bucket": 3,
+   "confidence": 0.0,
+   "input_tokens": 1327
+  },
+  {
+   "pos": "mate1_006",
+   "stockfish_cp_white": -9999,
+   "truth_bucket": 0,
+   "score": 2.81,
+   "pred_bucket": 3,
+   "confidence": 0.0,
+   "input_tokens": 1338
+  },
+  {
+   "pos": "mate1_007",
+   "stockfish_cp_white": -9999,
+   "truth_bucket": 0,
+   "score": 2.54,
+   "pred_bucket": 3,
+   "confidence": 0.05,
+   "input_tokens": 826
+  },
+  {
+   "pos": "mate1_008",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.95,
+   "pred_bucket": 4,
+   "confidence": 0.17,
+   "input_tokens": 1331
+  },
+  {
+   "pos": "mate1_009",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.45,
+   "pred_bucket": 3,
+   "confidence": 0.02,
+   "input_tokens": 974
+  },
+  {
+   "pos": "mate1_010",
+   "stockfish_cp_white": -9999,
+   "truth_bucket": 0,
+   "score": 1.88,
+   "pred_bucket": 2,
+   "confidence": 0.31,
+   "input_tokens": 962
+  },
+  {
+   "pos": "mate1_011",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.79,
+   "pred_bucket": 4,
+   "confidence": 0.17,
+   "input_tokens": 1155
+  },
+  {
+   "pos": "mate1_012",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.65,
+   "pred_bucket": 4,
+   "confidence": 0.1,
+   "input_tokens": 1117
+  },
+  {
+   "pos": "mate1_013",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.77,
+   "pred_bucket": 4,
+   "confidence": 0.21,
+   "input_tokens": 944
+  },
+  {
+   "pos": "mate1_014",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.72,
+   "pred_bucket": 4,
+   "confidence": 0.14,
+   "input_tokens": 966
+  },
+  {
+   "pos": "mate1_015",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 4.22,
+   "pred_bucket": 4,
+   "confidence": 0.32,
+   "input_tokens": 1252
+  },
+  {
+   "pos": "mate1_016",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.97,
+   "pred_bucket": 4,
+   "confidence": 0.21,
+   "input_tokens": 1139
+  },
+  {
+   "pos": "mate1_017",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.74,
+   "pred_bucket": 4,
+   "confidence": 0.21,
+   "input_tokens": 1135
+  },
+  {
+   "pos": "mate1_018",
+   "stockfish_cp_white": -9999,
+   "truth_bucket": 0,
+   "score": 2.99,
+   "pred_bucket": 3,
+   "confidence": 0.0,
+   "input_tokens": 1259
+  },
+  {
+   "pos": "mate1_019",
+   "stockfish_cp_white": -9999,
+   "truth_bucket": 0,
+   "score": 2.27,
+   "pred_bucket": 2,
+   "confidence": 0.17,
+   "input_tokens": 1199
+  },
+  {
+   "pos": "mate1_020",
+   "stockfish_cp_white": -9999,
+   "truth_bucket": 0,
+   "score": 2.45,
+   "pred_bucket": 2,
+   "confidence": 0.06,
+   "input_tokens": 1391
+  },
+  {
+   "pos": "mate1_021",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 2.76,
+   "pred_bucket": 3,
+   "confidence": 0.0,
+   "input_tokens": 880
+  },
+  {
+   "pos": "mate1_022",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.08,
+   "pred_bucket": 3,
+   "confidence": 0.5,
+   "input_tokens": 856
+  },
+  {
+   "pos": "mate1_023",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.42,
+   "pred_bucket": 3,
+   "confidence": 0.02,
+   "input_tokens": 1076
+  },
+  {
+   "pos": "mate1_024",
+   "stockfish_cp_white": 9999,
+   "truth_bucket": 6,
+   "score": 3.03,
+   "pred_bucket": 3,
+   "confidence": 0.0,
+   "input_tokens": 916
+  }
+ ]
+}

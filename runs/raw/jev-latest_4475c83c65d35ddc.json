@@ -1,0 +1,141 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 . . B k . b n r\n7 . . . . . . p .\n6 . . p p Q p . p\n5 . . . . . . . P\n4 . P P P . p . .\n3 P R . . P P . .\n2 . . . . . . q .\n1 . . n . K . N R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "2Bk1bnr/6p1/2ppQp1p/7P/1PPP1p2/PR2PP2/6q1/2n1K1NR w - - 9 49",
+   "move_history": "1. a3 d6 2. h4 c6 3. c3 Be6 4. b4 Nd7 5. c4 b6 6. d4 Nc5 7. Qa4 Nd3+ 8. Kd2 Rb8 9. Nc3 f6 10. Nd5 Nc5 11. Qb5 Qd7 12. Qa4 Bf5 13. Kd1 Bg4 14. Qa5 Nh6 15. h5 e5 16. Qxb6 Nf7 17. Rh3 Bf5 18. Rh4 Ne6 19. Kd2 Nh6 20. Qb7 Qf7 21. Qxa7 Kd8 22. Ne7 Nc5 23. Ke3 Na4 24. Qa8 Bd3 25. Kd2 Bxe7 26. g4 Qf8 27. Kxd3 Qe8 28. Bg5 Ng8 29. Kd2 Kd7 30. Re1 h6 31. Bf4 exf4 32. Ra1 Nc3 33. Ke1 Kc7 34. e3 Rc8 35. Bh3 Qg6 36. f3 Bf8 37. Rb1 Qxg4 38. Kf1 Na2 39. Qa7+ Kd8 40. Rb3 Rh7 41. Qb6+ Ke7 42. Qb5 Nc1 43. Qd5 Qg6 44. Bxc8 Kd8 45. Kf2 Rh8 46. Rh1 Qg2+ 47. Ke1 Ke8 48. Qe6+ Kd8",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "queen": [
+      "e6"
+     ],
+     "rook": [
+      "h1",
+      "b3"
+     ],
+     "knight": [
+      "g1"
+     ],
+     "bishop": [
+      "c8"
+     ],
+     "pawn": [
+      "a3",
+      "e3",
+      "f3",
+      "b4",
+      "c4",
+      "d4",
+      "h5"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "g2"
+     ],
+     "rook": [
+      "h8"
+     ],
+     "knight": [
+      "c1",
+      "g8"
+     ],
+     "bishop": [
+      "f8"
+     ],
+     "pawn": [
+      "f4",
+      "c6",
+      "d6",
+      "f6",
+      "h6",
+      "g7"
+     ],
+     "king": [
+      "d8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "bishop on c8 (attacked by king, defended)",
+     "rook on b3 (attacked by knight, undefended)",
+     "rook on h1 (attacked by queen, undefended)"
+    ],
+    "enemy_pieces_we_can_win": [
+     "pawn on f4 (can be taken by our pawn, undefended)"
+    ],
+    "material": {
+     "white": 32,
+     "black": 29,
+     "white_minus_black": 3
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Bd7': 'bishop c8 to d7; afterwards this bishop can be captured by a king (defended)', 'Bb7': 'bishop c8 to b7; the moved piece is safe from immediate capture', 'Ba6': 'bishop c8 to a6; the moved piece is safe from immediate capture', 'Qxg8': 'queen e6 to g8, captures knight; afterwards this queen can be captured by a rook (undefended)', 'Qe8+': 'queen e6 to e8, gives check; afterwards this queen can be captured by a king (undefended)', 'Qf7': 'queen e6 to f7; the moved piece is safe from immediate capture', 'Qe7+': 'queen e6 to e7, gives check; afterwards this queen can be captured by a king (undefended)', 'Qd7+': 'queen e6 to d7, gives check; afterwards this queen can be captured by a king (defended)', 'Qxf6+': 'queen e6 to f6, captures pawn, gives check; afterwards this queen can be captured by a pawn (undefended)', 'Qxd6+': 'queen e6 to d6, captures pawn, gives check; afterwards this queen can be captured by a bishop (undefended)', 'Qf5': 'queen e6 to f5; the moved piece is safe from immediate capture', 'Qe5': 'queen e6 to e5; afterwards this queen can be captured by a pawn (defended)', 'Qd5': 'queen e6 to d5; afterwards this queen can be captured by a pawn (defended)', 'Qg4': 'queen e6 to g4; afterwards this queen can be captured by a queen (defended)', 'Qe4': 'queen e6 to e4; the moved piece is safe from immediate capture', 'Qh3': 'queen e6 to h3; afterwards this queen can be captured by a queen (defended)', 'Rd3': 'rook b3 to d3; afterwards this rook can be captured by a knight (undefended)', 'Rc3': 'rook b3 to c3; the moved piece is safe from immediate capture', 'Rb2': 'rook b3 to b2; afterwards this rook can be captured by a queen (undefended)', 'Rb1': 'rook b3 to b1; the moved piece is safe from immediate capture', 'Rh4': 'rook h1 to h4; the moved piece is safe from immediate capture', 'Rh3': 'rook h1 to h3; afterwards this rook can be captured by a queen (defended)', 'Rh2': 'rook h1 to h2; afterwards this rook can be captured by a queen (undefended)', 'Nh3': 'knight g1 to h3; afterwards this knight can be captured by a queen (defended)', 'Ne2': 'knight g1 to e2; afterwards this knight can be captured by a knight (defended)', 'Kd1': 'king e1 to d1; the moved piece is safe from immediate capture', 'exf4': 'pawn e3 to f4, captures pawn; the moved piece is safe from immediate capture', 'd5': 'pawn d4 to d5; afterwards this pawn can be captured by a pawn (defended)', 'c5': 'pawn c4 to c5; afterwards this pawn can be captured by a pawn (defended)', 'b5': 'pawn b4 to b5; afterwards this pawn can be captured by a pawn (defended)', 'e4': 'pawn e3 to e4; the moved piece is safe from immediate capture', 'a4': 'pawn a3 to a4; the moved piece is safe from immediate capture'}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "rich",
+  "pos": "mate1_011"
+ },
+ "latency_s": 0.2978669999865815,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "exf4",
+    "confidence": 0.36,
+    "probabilities": {
+     "Ne2": 0.02,
+     "Nh3": 0.01,
+     "Qd5": 0.01,
+     "Rh2": 0.01,
+     "Bb7": 0.04,
+     "Rh3": 0.02,
+     "Rc3": 0.060000000000000005,
+     "Qe7+": 0.0,
+     "exf4": 0.37,
+     "Rh4": 0.03,
+     "Qf7": 0.02,
+     "d5": 0.0,
+     "a4": 0.0,
+     "Qf5": 0.02,
+     "Qxf6+": 0.01,
+     "Qg4": 0.04,
+     "Qxg8": 0.03,
+     "b5": 0.0,
+     "Qe4": 0.01,
+     "Qe8+": 0.02,
+     "Rb1": 0.1,
+     "Qe5": 0.0,
+     "Qxd6+": 0.01,
+     "Rb2": 0.01,
+     "Qh3": 0.03,
+     "Bd7": 0.01,
+     "c5": 0.0,
+     "Rd3": 0.01,
+     "Kd1": 0.02,
+     "e4": 0.02,
+     "Qd7+": 0.05,
+     "Ba6": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 2403,
+   "output_tokens": 289
+  }
+ }
+}

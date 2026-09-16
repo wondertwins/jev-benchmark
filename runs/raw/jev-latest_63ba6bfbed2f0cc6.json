@@ -1,0 +1,56 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "4k2N/3p4/5P2/2R5/2b5/4B1p1/3K4/r7 w - - 8 69",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Nf7': None, 'Ng6': None, 'Rc8+': None, 'Rc7': None, 'Rc6': None, 'Rh5': None, 'Rg5': None, 'Rf5': None, 'Re5+': None, 'Rd5': None, 'Rb5': None, 'Ra5': None, 'Rxc4': None, 'Bh6': None, 'Bg5': None, 'Bf4': None, 'Bd4': None, 'Bf2': None, 'Bg1': None, 'Kc3': None, 'Kc2': None, 'f7+': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_005"
+ },
+ "latency_s": 0.30355408403556794,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Rxc4",
+    "confidence": 0.21,
+    "probabilities": {
+     "Bg1": 0.01,
+     "Bh6": 0.03,
+     "Ra5": 0.02,
+     "Bg5": 0.01,
+     "Rc8+": 0.2,
+     "Rh5": 0.02,
+     "Rxc4": 0.26,
+     "f7+": 0.14,
+     "Rf5": 0.01,
+     "Rb5": 0.01,
+     "Bd4": 0.02,
+     "Nf7": 0.03,
+     "Ng6": 0.01,
+     "Kc2": 0.01,
+     "Kc3": 0.02,
+     "Bf4": 0.01,
+     "Re5+": 0.07,
+     "Rc7": 0.04,
+     "Rc6": 0.02,
+     "Rg5": 0.02,
+     "Bf2": 0.01,
+     "Rd5": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 584,
+   "output_tokens": 201
+  }
+ }
+}

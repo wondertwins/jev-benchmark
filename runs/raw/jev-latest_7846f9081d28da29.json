@@ -1,0 +1,74 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "8/br5b/2k2NN1/7n/1P6/np6/5r2/3RK3 b - - 17 77",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Bg8': None, 'Bxg6': None, 'Rb8': None, 'Rg7': None, 'Rf7': None, 'Re7+': None, 'Rd7': None, 'Rc7': None, 'Rb6': None, 'Rb5': None, 'Rxb4': None, 'Bb8': None, 'Bb6': None, 'Bc5': None, 'Bd4': None, 'Be3': None, 'Kc7': None, 'Kb6': None, 'Kb5': None, 'Ng7': None, 'Nxf6': None, 'Nf4': None, 'Ng3': None, 'Nb5': None, 'Nc4': None, 'Nc2+': None, 'Nb1': None, 'Rxf6': None, 'Rf5': None, 'Rf4': None, 'Rf3': None, 'Rh2': None, 'Rg2': None, 'Re2+': None, 'Rd2': None, 'Rc2': None, 'Rb2': None, 'Ra2': None, 'Rf1+': None, 'b2': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_020"
+ },
+ "latency_s": 0.25794970901915804,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Rxf6",
+    "confidence": 0.13,
+    "probabilities": {
+     "Rd2": 0.03,
+     "Nxf6": 0.05,
+     "Nb5": 0.01,
+     "b2": 0.01,
+     "Rd7": 0.01,
+     "Bg8": 0.01,
+     "Rg7": 0.01,
+     "Rb8": 0.01,
+     "Kb6": 0.01,
+     "Ra2": 0.01,
+     "Bc5": 0.01,
+     "Bb8": 0.01,
+     "Rxf6": 0.15,
+     "Bd4": 0.01,
+     "Kb5": 0.01,
+     "Bb6": 0.01,
+     "Rb5": 0.01,
+     "Rg2": 0.01,
+     "Rf3": 0.02,
+     "Nf4": 0.01,
+     "Ng3": 0.02,
+     "Nc4": 0.02,
+     "Rb6": 0.01,
+     "Nb1": 0.01,
+     "Rxb4": 0.08,
+     "Rf7": 0.01,
+     "Ng7": 0.01,
+     "Rb2": 0.01,
+     "Rf4": 0.01,
+     "Rf1+": 0.12,
+     "Rf5": 0.01,
+     "Nc2+": 0.05,
+     "Kc7": 0.01,
+     "Bxg6": 0.05,
+     "Be3": 0.01,
+     "Rc7": 0.01,
+     "Rc2": 0.02,
+     "Rh2": 0.01,
+     "Re2+": 0.06,
+     "Re7+": 0.06
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 708,
+   "output_tokens": 345
+  }
+ }
+}

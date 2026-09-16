@@ -1,0 +1,106 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r . . . . r . .\n7 p p . . . p k .\n6 n . . . . . p p\n5 . . . . . . . .\n4 . . p P . B . P\n3 . . P . P . . b\n2 P . . . P . P .\n1 R . Q . K B N .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r4r2/pp3pk1/n5pp/8/2pP1B1P/2P1P2b/P3P1P1/R1Q1KBN1 w Q - 0 18",
+   "move_history": "1. d4 d5 2. Nf3 e6 3. c4 Nf6 4. Bg5 Bb4+ 5. Nc3 h6 6. Bxf6 Bxc3+ 7. Qd2 dxc4 8. bxc3 e5 9. Bxd8 e4 10. Bxc7 Na6 11. Bg3 O-O 12. Ng1 e3 13. Qc1 g6 14. fxe3 Kg7 15. h4 Kf6 16. Rh3 Kg7 17. Bf4 Bxh3",
+   "castling_rights": "Q",
+   "pieces": {
+    "white": {
+     "queen": [
+      "c1"
+     ],
+     "rook": [
+      "a1"
+     ],
+     "bishop": [
+      "f1",
+      "f4"
+     ],
+     "knight": [
+      "g1"
+     ],
+     "pawn": [
+      "a2",
+      "e2",
+      "g2",
+      "c3",
+      "e3",
+      "d4",
+      "h4"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "rook": [
+      "a8",
+      "f8"
+     ],
+     "bishop": [
+      "h3"
+     ],
+     "knight": [
+      "a6"
+     ],
+     "pawn": [
+      "c4",
+      "g6",
+      "h6",
+      "a7",
+      "b7",
+      "f7"
+     ],
+     "king": [
+      "g7"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "bishop on h3 (can be taken by our pawn, undefended)"
+    ],
+    "material": {
+     "white": 30,
+     "black": 22,
+     "white_minus_black": 8
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'gxh3': 'pawn g2 to h3, captures bishop; the moved piece is safe from immediate capture', 'g3': 'pawn g2 to g3; the moved piece is safe from immediate capture', 'g4': 'pawn g2 to g4; afterwards this pawn can be captured by a bishop (undefended)'}, instructions={'question': 'White has decided to move the pawn on g2. Which move should it make?', 'goal': 'Pick the destination that gives White the best chance to win.'})"
+  }
+ },
+ "meta": {
+  "exp": "C2",
+  "pos": "real_016"
+ },
+ "latency_s": 0.24767274997429922,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "gxh3",
+    "confidence": 0.99,
+    "probabilities": {
+     "gxh3": 0.99,
+     "g3": 0.01,
+     "g4": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1078,
+   "output_tokens": 44
+  }
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r . . . r b k .\n7 p b q n . p p .\n6 . p . p p n . p\n5 . . . . . . . .\n4 . . . P . . . .\n3 . . P B . N . P\n2 P P . N . P P B\n1 . . R Q R . K .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r3rbk1/pbqn1pp1/1p1ppn1p/8/3P4/2PB1N1P/PP1N1PPB/2RQR1K1 w - - 2 16",
+   "move_history": "1. d4 Nf6 2. Nf3 b6 3. Bf4 e6 4. Nbd2 Bb7 5. e3 Be7 6. h3 O-O 7. Bd3 d6 8. Qe2 Qc8 9. c3 c5 10. Rc1 cxd4 11. exd4 Nbd7 12. O-O Qc7 13. Bh2 Rfe8 14. Rfe1 h6 15. Qd1 Bf8",
+   "castling_rights": "none"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Ng5': 'knight f3 to g5', 'Ne5': 'knight f3 to e5', 'Nh4': 'knight f3 to h4', 'Bh7+': 'bishop d3 to h7, gives check', 'Bg6': 'bishop d3 to g6', 'Ba6': 'bishop d3 to a6', 'Bf5': 'bishop d3 to f5', 'Bb5': 'bishop d3 to b5', 'Be4': 'bishop d3 to e4', 'Bc4': 'bishop d3 to c4', 'Be2': 'bishop d3 to e2', 'Bc2': 'bishop d3 to c2', 'Bf1': 'bishop d3 to f1', 'Bb1': 'bishop d3 to b1', 'Bxd6': 'bishop h2 to d6, captures pawn', 'Be5': 'bishop h2 to e5', 'Bf4': 'bishop h2 to f4', 'Bg3': 'bishop h2 to g3', 'Ne4': 'knight d2 to e4', 'Nc4': 'knight d2 to c4', 'Nb3': 'knight d2 to b3', 'Nf1': 'knight d2 to f1', 'Nb1': 'knight d2 to b1', 'Kh1': 'king g1 to h1', 'Kf1': 'king g1 to f1', 'Rxe6': 'rook e1 to e6, captures pawn', 'Re5': 'rook e1 to e5', 'Re4': 'rook e1 to e4', 'Re3': 'rook e1 to e3', 'Re2': 'rook e1 to e2', 'Rf1': 'rook e1 to f1', 'Qa4': 'queen d1 to a4', 'Qb3': 'queen d1 to b3', 'Qe2': 'queen d1 to e2', 'Qc2': 'queen d1 to c2', 'Rc2': 'rook c1 to c2', 'Rb1': 'rook c1 to b1', 'Ra1': 'rook c1 to a1', 'd5': 'pawn d4 to d5', 'h4': 'pawn h3 to h4', 'c4': 'pawn c3 to c4', 'g3': 'pawn g2 to g3', 'b3': 'pawn b2 to b3', 'a3': 'pawn a2 to a3', 'g4': 'pawn g2 to g4', 'b4': 'pawn b2 to b4', 'a4': 'pawn a2 to a4'}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_000"
+ },
+ "latency_s": 0.17808700003661215,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Bh7+",
+    "confidence": 0.21,
+    "probabilities": {
+     "Bg6": 0.03,
+     "Rb1": 0.0,
+     "Rf1": 0.01,
+     "g3": 0.01,
+     "Be2": 0.01,
+     "Bg3": 0.01,
+     "Bh7+": 0.24000000000000002,
+     "Ng5": 0.02,
+     "Bf4": 0.01,
+     "h4": 0.0,
+     "Qb3": 0.03,
+     "Rxe6": 0.09,
+     "Nb3": 0.01,
+     "Re5": 0.01,
+     "Bb5": 0.01,
+     "Ba6": 0.03,
+     "b4": 0.0,
+     "Re3": 0.0,
+     "Qe2": 0.01,
+     "a4": 0.01,
+     "Nc4": 0.02,
+     "Bf1": 0.0,
+     "a3": 0.0,
+     "Nh4": 0.0,
+     "d5": 0.05,
+     "Bb1": 0.0,
+     "Bf5": 0.01,
+     "Re2": 0.01,
+     "Ne4": 0.03,
+     "Be4": 0.02,
+     "Kh1": 0.0,
+     "Bc2": 0.01,
+     "Qc2": 0.01,
+     "Kf1": 0.01,
+     "Ra1": 0.0,
+     "Nf1": 0.01,
+     "b3": 0.0,
+     "Be5": 0.03,
+     "c4": 0.01,
+     "Bxd6": 0.16,
+     "g4": 0.0,
+     "Rc2": 0.01,
+     "Ne5": 0.05,
+     "Qa4": 0.01,
+     "Nb1": 0.0,
+     "Bc4": 0.01,
+     "Re4": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1609,
+   "output_tokens": 404
+  }
+ }
+}

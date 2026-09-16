@@ -1,0 +1,71 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "6k1/4R3/P5N1/2bK2Pp/2P1N3/2P2P2/R2N4/1bB5 w - - 3 60",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Re8+': None, 'Rh7': None, 'Rg7+': None, 'Rf7': None, 'Rd7': None, 'Rc7': None, 'Rb7': None, 'Ra7': None, 'Re6': None, 'Re5': None, 'Nh8': None, 'Nf8': None, 'Ne5': None, 'Nh4': None, 'Nf4': None, 'Ke6': None, 'Kc6': None, 'Ke5': None, 'Kxc5': None, 'Nf6+': None, 'Nd6': None, 'Nxc5': None, 'Ng3': None, 'Nf2': None, 'Nb3': None, 'Nf1': None, 'Nxb1': None, 'Ra5': None, 'Ra4': None, 'Ra3': None, 'Rc2': None, 'Rb2': None, 'Ra1': None, 'Ba3': None, 'Bb2': None, 'a7': None, 'f4': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_015"
+ },
+ "latency_s": 0.4865595829905942,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Re8+",
+    "confidence": 0.15,
+    "probabilities": {
+     "Ra3": 0.01,
+     "Re6": 0.01,
+     "a7": 0.04,
+     "Nb3": 0.01,
+     "Ra7": 0.01,
+     "Nh4": 0.01,
+     "Bb2": 0.01,
+     "Re8+": 0.16,
+     "Kxc5": 0.13999999999999999,
+     "Nf8": 0.02,
+     "Nd6": 0.01,
+     "Nxb1": 0.08,
+     "Re5": 0.01,
+     "Rc2": 0.01,
+     "f4": 0.01,
+     "Kc6": 0.01,
+     "Nf4": 0.01,
+     "Ra1": 0.01,
+     "Ra5": 0.01,
+     "Nf2": 0.01,
+     "Rg7+": 0.06,
+     "Nf6+": 0.05,
+     "Ke6": 0.02,
+     "Ne5": 0.01,
+     "Rb2": 0.01,
+     "Ba3": 0.01,
+     "Nh8": 0.01,
+     "Rc7": 0.02,
+     "Rh7": 0.02,
+     "Rb7": 0.01,
+     "Nxc5": 0.1,
+     "Rf7": 0.02,
+     "Ng3": 0.01,
+     "Nf1": 0.01,
+     "Ra4": 0.01,
+     "Ke5": 0.01,
+     "Rd7": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 699,
+   "output_tokens": 324
+  }
+ }
+}

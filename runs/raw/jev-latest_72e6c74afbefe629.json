@@ -1,0 +1,64 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r n b . k b . r\n7 p p q . p . p p\n6 . . p . P p . n\n5 . . N p . . N .\n4 . . . P . . . P\n3 P . . . . . . .\n2 . P P . B P P .\n1 R . . Q K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "rnb1kb1r/ppq1p1pp/2p1Pp1n/2Np2N1/3P3P/P7/1PP1BPP1/R2QK2R b KQkq - 1 14",
+   "move_history": "1. d4 Nf6 2. Bf4 c6 3. e3 Qb6 4. Nd2 d6 5. Ngf3 Nh5 6. h4 Nxf4 7. a3 Nh5 8. Be2 Nf6 9. e4 Qc7 10. e5 Ng4 11. Ng5 Nh6 12. Nde4 d5 13. e6 f6 14. Nc5",
+   "castling_rights": "KQkq"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': 'rook h8 to g8', 'Kd8': 'king e8 to d8', 'Bd7': 'bishop c8 to d7', 'Bxe6': 'bishop c8 to e6, captures pawn', 'Nd7': 'knight b8 to d7', 'Na6': 'knight b8 to a6', 'Qd8': 'queen c7 to d8', 'Qd7': 'queen c7 to d7', 'Qd6': 'queen c7 to d6', 'Qb6': 'queen c7 to b6', 'Qe5': 'queen c7 to e5', 'Qa5+': 'queen c7 to a5, gives check', 'Qf4': 'queen c7 to f4', 'Qg3': 'queen c7 to g3', 'Qh2': 'queen c7 to h2', 'Ng8': 'knight h6 to g8', 'Nf7': 'knight h6 to f7', 'Nf5': 'knight h6 to f5', 'Ng4': 'knight h6 to g4', 'fxg5': 'pawn f6 to g5, captures knight', 'g6': 'pawn g7 to g6', 'b6': 'pawn b7 to b6', 'a6': 'pawn a7 to a6', 'f5': 'pawn f6 to f5', 'b5': 'pawn b7 to b5', 'a5': 'pawn a7 to a5'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_013"
+ },
+ "latency_s": 0.18497687502531335,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "fxg5",
+    "confidence": 0.35,
+    "probabilities": {
+     "Qb6": 0.01,
+     "a5": 0.0,
+     "b6": 0.01,
+     "f5": 0.01,
+     "Rg8": 0.0,
+     "Qa5+": 0.16,
+     "Nf7": 0.01,
+     "Na6": 0.01,
+     "Ng8": 0.01,
+     "Qh2": 0.03,
+     "Nd7": 0.01,
+     "Qf4": 0.03,
+     "fxg5": 0.39,
+     "Qd7": 0.01,
+     "g6": 0.01,
+     "Ng4": 0.02,
+     "Qd6": 0.02,
+     "Nf5": 0.02,
+     "Qe5": 0.04,
+     "a6": 0.01,
+     "b5": 0.01,
+     "Kd8": 0.0,
+     "Bd7": 0.01,
+     "Qd8": 0.01,
+     "Bxe6": 0.13,
+     "Qg3": 0.03
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1216,
+   "output_tokens": 238
+  }
+ }
+}

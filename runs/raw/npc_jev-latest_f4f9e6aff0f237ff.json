@@ -1,0 +1,209 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "setting": "A fantasy village in a video game. The player speaks out loud and a speech-to-text system transcribes it. The characters listed are the non-player characters within earshot.",
+   "characters_present": [
+    {
+     "name": "Hanna",
+     "role": "innkeeper"
+    },
+    {
+     "name": "Jeff",
+     "role": "guard"
+    },
+    {
+     "name": "Anna",
+     "role": "merchant"
+    }
+   ],
+   "recent_context": {
+    "player_is_facing": "Jeff"
+   },
+   "transcript": "um you there come here",
+   "transcript_quality": "Raw speech-to-text output: lowercase, no punctuation, and names may be spelled the way they sound."
+  },
+  "questions": {
+   "addr_Hanna": {
+    "type": "noul",
+    "instructions": {
+     "question": "Is the player speaking to Hanna, the innkeeper?",
+     "speaking_to_means": "Hanna is an intended listener who should pay attention or respond. That includes being addressed by name, nickname, role, or description; being the character the player faces when saying 'you'; being part of a group the player addresses; or being the natural continuation of an ongoing conversation with Hanna.",
+     "not_speaking_to": "Hanna is merely the topic, a third party the player talks about, someone the player asks another character to relay a message to, or a name that only appears inside quoted speech."
+    },
+    "criteria": {
+     "true": "Hanna is an intended listener of this utterance.",
+     "false": "Hanna is not being spoken to."
+    }
+   },
+   "addr_Jeff": {
+    "type": "noul",
+    "instructions": {
+     "question": "Is the player speaking to Jeff, the guard?",
+     "speaking_to_means": "Jeff is an intended listener who should pay attention or respond. That includes being addressed by name, nickname, role, or description; being the character the player faces when saying 'you'; being part of a group the player addresses; or being the natural continuation of an ongoing conversation with Jeff.",
+     "not_speaking_to": "Jeff is merely the topic, a third party the player talks about, someone the player asks another character to relay a message to, or a name that only appears inside quoted speech."
+    },
+    "criteria": {
+     "true": "Jeff is an intended listener of this utterance.",
+     "false": "Jeff is not being spoken to."
+    }
+   },
+   "addr_Anna": {
+    "type": "noul",
+    "instructions": {
+     "question": "Is the player speaking to Anna, the merchant?",
+     "speaking_to_means": "Anna is an intended listener who should pay attention or respond. That includes being addressed by name, nickname, role, or description; being the character the player faces when saying 'you'; being part of a group the player addresses; or being the natural continuation of an ongoing conversation with Anna.",
+     "not_speaking_to": "Anna is merely the topic, a third party the player talks about, someone the player asks another character to relay a message to, or a name that only appears inside quoted speech."
+    },
+    "criteria": {
+     "true": "Anna is an intended listener of this utterance.",
+     "false": "Anna is not being spoken to."
+    }
+   },
+   "group_address": {
+    "type": "noul",
+    "instructions": "The player is addressing all the characters present as a group, for example with 'everyone', 'all of you', 'you lot', or a plural role like 'guards' when speaking to the room.",
+    "criteria": {
+     "true": "The utterance is aimed at everyone present.",
+     "false": "The utterance is aimed at specific people or nobody."
+    }
+   },
+   "nobody": {
+    "type": "noul",
+    "instructions": "The player is not talking to any of the characters present: they are talking to themself, thinking aloud, speaking to someone who is not here, or saying something out-of-game such as a remark about their microphone or needing to step away.",
+    "criteria": {
+     "true": "None of the listed characters is an intended listener.",
+     "false": "At least one listed character is being spoken to."
+    }
+   },
+   "intent": {
+    "type": "choice",
+    "criteria": {
+     "greeting": "Saying hello or opening a conversation",
+     "farewell": "Saying goodbye or closing a conversation",
+     "request_or_command": "Asking or telling someone to do something, including calling them over or ordering goods",
+     "question": "Asking for information",
+     "statement_or_smalltalk": "Sharing information, an opinion, or chit-chat",
+     "threat_or_insult": "Threatening, insulting, or intimidating someone",
+     "none_or_unclear": "Not directed at the characters, or no clear purpose (self-talk, out-of-game remarks)"
+    },
+    "instructions": "What is the player mainly doing with this utterance?"
+   },
+   "urgency": {
+    "type": "score",
+    "criteria": [
+     "No response is needed soon: casual remark, greeting, or thinking aloud",
+     "A reply or action is expected, but it can wait a moment",
+     "Immediate attention or action is needed: danger, an emergency, or an urgent command"
+    ],
+    "instructions": "How urgently do the people being spoken to need to react?"
+   },
+   "attitude": {
+    "type": "choice",
+    "criteria": {
+     "friendly": "Warm, polite, playful, or grateful",
+     "neutral": "Matter-of-fact or businesslike",
+     "hostile": "Angry, rude, threatening, or contemptuous"
+    },
+    "instructions": "What is the player's attitude toward the person or people they are speaking to?"
+   },
+   "primary": {
+    "type": "choice",
+    "criteria": {
+     "Hanna": "Hanna the innkeeper",
+     "Jeff": "Jeff the guard",
+     "Anna": "Anna the merchant",
+     "everyone": "All characters present, as a group",
+     "nobody": "None of the characters present"
+    },
+    "instructions": "Who is the main person the player is speaking to? Pick 'everyone' for a group address and 'nobody' if the player is not talking to any character present."
+   }
+  }
+ },
+ "meta": {
+  "exp": "npc",
+  "variant": "stt_misheard",
+  "item": "u063"
+ },
+ "latency_s": 0.15438862500013784,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "addr_Hanna": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "addr_Jeff": {
+    "type": "noul",
+    "noul": 0.89
+   },
+   "addr_Anna": {
+    "type": "noul",
+    "noul": 0.05
+   },
+   "group_address": {
+    "type": "noul",
+    "noul": 0.08
+   },
+   "nobody": {
+    "type": "noul",
+    "noul": 0.09
+   },
+   "intent": {
+    "type": "choice",
+    "choice": "request_or_command",
+    "confidence": 1.0,
+    "probabilities": {
+     "farewell": 0.0,
+     "statement_or_smalltalk": 0.0,
+     "none_or_unclear": 0.0,
+     "question": 0.0,
+     "threat_or_insult": 0.0,
+     "greeting": 0.0,
+     "request_or_command": 1.0
+    }
+   },
+   "urgency": {
+    "type": "score",
+    "score": 1.01,
+    "confidence": 0.89,
+    "legend": {
+     "0": "No response is needed soon: casual remark, greeting, or thinking aloud",
+     "1": "A reply or action is expected, but it can wait a moment",
+     "2": "Immediate attention or action is needed: danger, an emergency, or an urgent command"
+    },
+    "probabilities": {
+     "0": 0.03,
+     "1": 0.93,
+     "2": 0.04
+    }
+   },
+   "attitude": {
+    "type": "choice",
+    "choice": "neutral",
+    "confidence": 0.65,
+    "probabilities": {
+     "hostile": 0.23,
+     "neutral": 0.76,
+     "friendly": 0.01
+    }
+   },
+   "primary": {
+    "type": "choice",
+    "choice": "Jeff",
+    "confidence": 1.0,
+    "probabilities": {
+     "everyone": 0.0,
+     "Jeff": 1.0,
+     "Hanna": 0.0,
+     "Anna": 0.0,
+     "nobody": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1637,
+   "output_tokens": 275
+  }
+ }
+}

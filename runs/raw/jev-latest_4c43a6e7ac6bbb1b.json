@@ -1,0 +1,70 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r1b1k2r/1p1p1ppp/p1n1p3/8/2P1n3/4NP2/PP4PP/RN2KB1R b KQkq - 0 12",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': None, 'Rf8': None, 'Kf8': None, 'Kd8': None, 'Ke7': None, 'Rb8': None, 'Ra7': None, 'Nd8': None, 'Nb8': None, 'Ne7': None, 'Na7': None, 'Ne5': None, 'Na5': None, 'Nd4': None, 'Nb4': None, 'Nf6': None, 'Nd6': None, 'Ng5': None, 'Nc5': None, 'Ng3': None, 'Nc3': None, 'Nf2': None, 'Nd2': None, 'O-O': None, 'h6': None, 'g6': None, 'f6': None, 'd6': None, 'b6': None, 'e5': None, 'a5': None, 'h5': None, 'g5': None, 'f5': None, 'd5': None, 'b5': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "fen",
+  "pos": "real_009"
+ },
+ "latency_s": 0.1586070409975946,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "O-O",
+    "confidence": 0.11,
+    "probabilities": {
+     "Ng3": 0.03,
+     "e5": 0.03,
+     "Nc3": 0.13,
+     "h5": 0.0,
+     "Nf6": 0.02,
+     "Kf8": 0.01,
+     "Nb4": 0.04,
+     "f6": 0.01,
+     "d6": 0.01,
+     "Ra7": 0.01,
+     "g5": 0.01,
+     "b5": 0.01,
+     "Ne7": 0.01,
+     "Nc5": 0.05,
+     "Nd4": 0.13,
+     "b6": 0.0,
+     "g6": 0.0,
+     "Nd2": 0.01,
+     "Na7": 0.01,
+     "O-O": 0.14,
+     "Nb8": 0.0,
+     "f5": 0.02,
+     "Rf8": 0.01,
+     "h6": 0.01,
+     "Ng5": 0.04,
+     "Ke7": 0.02,
+     "a5": 0.0,
+     "Rb8": 0.0,
+     "Nf2": 0.05,
+     "Nd8": 0.0,
+     "Nd6": 0.02,
+     "Kd8": 0.01,
+     "Ne5": 0.05,
+     "Rg8": 0.0,
+     "Na5": 0.01,
+     "d5": 0.1
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 690,
+   "output_tokens": 309
+  }
+ }
+}

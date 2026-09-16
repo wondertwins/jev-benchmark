@@ -1,0 +1,141 @@
+{
+ "request": {
+  "model": "jev-preview",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r n b q k . . r\n7 . p p p b p p p\n6 p . . . p . . .\n5 . . n . P . . .\n4 . . . . . . . .\n3 . . P . . N . .\n2 P P . P B P P P\n1 R N B Q K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "rnbqk2r/1pppbppp/p3p3/2n1P3/8/2P2N2/PP1PBPPP/RNBQK2R b KQkq - 1 7",
+   "move_history": "1. e4 e6 2. c3 Be7 3. Nf3 Nf6 4. e5 Ne4 5. Bd3 Nc5 6. Bb5 a6 7. Be2",
+   "castling_rights": "KQkq",
+   "pieces": {
+    "white": {
+     "queen": [
+      "d1"
+     ],
+     "rook": [
+      "a1",
+      "h1"
+     ],
+     "knight": [
+      "b1",
+      "f3"
+     ],
+     "bishop": [
+      "c1",
+      "e2"
+     ],
+     "pawn": [
+      "a2",
+      "b2",
+      "d2",
+      "f2",
+      "g2",
+      "h2",
+      "c3",
+      "e5"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "d8"
+     ],
+     "rook": [
+      "a8",
+      "h8"
+     ],
+     "knight": [
+      "c5",
+      "b8"
+     ],
+     "bishop": [
+      "e7",
+      "c8"
+     ],
+     "pawn": [
+      "a6",
+      "e6",
+      "b7",
+      "c7",
+      "d7",
+      "f7",
+      "g7",
+      "h7"
+     ],
+     "king": [
+      "e8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 39,
+     "black": 39,
+     "white_minus_black": 0
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': 'rook h8 to g8; the moved piece is safe from immediate capture', 'Rf8': 'rook h8 to f8; the moved piece is safe from immediate capture', 'Kf8': 'king e8 to f8; the moved piece is safe from immediate capture', 'Nc6': 'knight b8 to c6; the moved piece is safe from immediate capture', 'Ra7': 'rook a8 to a7; the moved piece is safe from immediate capture', 'Bf8': 'bishop e7 to f8; the moved piece is safe from immediate capture', 'Bf6': 'bishop e7 to f6; afterwards this bishop can be captured by a pawn (defended)', 'Bd6': 'bishop e7 to d6; afterwards this bishop can be captured by a pawn (defended)', 'Bg5': 'bishop e7 to g5; afterwards this bishop can be captured by a knight (defended)', 'Bh4': 'bishop e7 to h4; afterwards this bishop can be captured by a knight (defended)', 'Ne4': 'knight c5 to e4; the moved piece is safe from immediate capture', 'Na4': 'knight c5 to a4; afterwards this knight can be captured by a queen (undefended)', 'Nd3+': 'knight c5 to d3, gives check; afterwards this knight can be captured by a bishop (undefended)', 'Nb3': 'knight c5 to b3; afterwards this knight can be captured by a pawn (undefended)', 'O-O': 'castles kingside', 'h6': 'pawn h7 to h6; the moved piece is safe from immediate capture', 'g6': 'pawn g7 to g6; the moved piece is safe from immediate capture', 'f6': 'pawn f7 to f6; afterwards this pawn can be captured by a pawn (defended)', 'd6': 'pawn d7 to d6; afterwards this pawn can be captured by a pawn (defended)', 'c6': 'pawn c7 to c6; the moved piece is safe from immediate capture', 'b6': 'pawn b7 to b6; the moved piece is safe from immediate capture', 'a5': 'pawn a6 to a5; the moved piece is safe from immediate capture', 'h5': 'pawn h7 to h5; the moved piece is safe from immediate capture', 'g5': 'pawn g7 to g5; afterwards this pawn can be captured by a knight (defended)', 'f5': 'pawn f7 to f5; the moved piece is safe from immediate capture', 'd5': 'pawn d7 to d5; the moved piece is safe from immediate capture', 'b5': 'pawn b7 to b5; afterwards this pawn can be captured by a bishop (defended)'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "rich",
+  "pos": "real_005"
+ },
+ "latency_s": 0.1567617499968037,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "O-O",
+    "confidence": 0.46,
+    "probabilities": {
+     "Ne4": 0.09,
+     "g6": 0.01,
+     "g5": 0.0,
+     "Nb3": 0.01,
+     "Ra7": 0.0,
+     "Na4": 0.0,
+     "b5": 0.02,
+     "Rf8": 0.0,
+     "Bf6": 0.01,
+     "Bh4": 0.01,
+     "h6": 0.01,
+     "c6": 0.02,
+     "f6": 0.02,
+     "O-O": 0.47,
+     "a5": 0.01,
+     "Kf8": 0.0,
+     "d6": 0.02,
+     "h5": 0.0,
+     "Bf8": 0.0,
+     "d5": 0.09,
+     "b6": 0.01,
+     "Nc6": 0.05,
+     "Rg8": 0.0,
+     "f5": 0.03,
+     "Nd3+": 0.1,
+     "Bd6": 0.01,
+     "Bg5": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1772,
+   "output_tokens": 237
+  }
+ }
+}

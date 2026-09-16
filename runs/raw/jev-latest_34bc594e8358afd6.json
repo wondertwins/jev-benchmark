@@ -1,0 +1,74 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r2k2r1/p3nQpp/1pP5/3Np1P1/P1PpPP2/2b4B/1Bn1K2P/6NR w - - 3 29",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Qxg8+': None, 'Qf8+': None, 'Qe8+': None, 'Qxg7': None, 'Qxe7+': None, 'Qg6': None, 'Qf6': None, 'Qe6': None, 'Qh5': None, 'Qf5': None, 'Nxe7': None, 'Nc7': None, 'Nf6': None, 'Nxb6': None, 'Nb4': None, 'Ne3': None, 'Nxc3': None, 'Bc8': None, 'Bd7': None, 'Be6': None, 'Bf5': None, 'Bg4': None, 'Bg2': None, 'Bf1': None, 'Kf3': None, 'Kd3': None, 'Kf2': None, 'Kf1': None, 'Kd1': None, 'Bxc3': None, 'Ba3': None, 'Bc1': None, 'Ba1': None, 'Nf3': None, 'fxe5': None, 'c7+': None, 'g6': None, 'f5': None, 'c5': None, 'a5': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_009"
+ },
+ "latency_s": 0.41285870800493285,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxe7+",
+    "confidence": 0.09,
+    "probabilities": {
+     "Qxg7": 0.03,
+     "Kd3": 0.01,
+     "fxe5": 0.02,
+     "Kf2": 0.01,
+     "Bc1": 0.01,
+     "Qh5": 0.01,
+     "c5": 0.01,
+     "Qg6": 0.02,
+     "Be6": 0.01,
+     "Nc7": 0.03,
+     "Bg4": 0.01,
+     "Nxe7": 0.06,
+     "Nf3": 0.01,
+     "Kf3": 0.01,
+     "Bf1": 0.01,
+     "Bxc3": 0.07,
+     "Qxg8+": 0.09,
+     "Ba3": 0.01,
+     "Qf6": 0.02,
+     "g6": 0.01,
+     "a5": 0.01,
+     "Kd1": 0.01,
+     "Kf1": 0.01,
+     "Nxc3": 0.06,
+     "Bc8": 0.01,
+     "Nf6": 0.03,
+     "Ba1": 0.0,
+     "c7+": 0.1,
+     "Nb4": 0.01,
+     "Bd7": 0.01,
+     "Qe6": 0.01,
+     "Bg2": 0.01,
+     "Ne3": 0.01,
+     "Qxe7+": 0.11,
+     "Qf8+": 0.05,
+     "f5": 0.01,
+     "Bf5": 0.01,
+     "Qf5": 0.01,
+     "Qe8+": 0.05,
+     "Nxb6": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 740,
+   "output_tokens": 363
+  }
+ }
+}

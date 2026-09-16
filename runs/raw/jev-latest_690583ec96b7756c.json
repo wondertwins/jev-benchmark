@@ -1,0 +1,75 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r n b q . r k .\n7 p p . p b p p p\n6 . . . . p n . .\n5 . . . . . . . .\n4 . . P p P . . .\n3 . . N . . N . .\n2 P P . B B P P P\n1 R . . Q K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "rnbq1rk1/pp1pbppp/4pn2/8/2PpP3/2N2N2/PP1BBPPP/R2QK2R w KQ - 0 8",
+   "move_history": "1. d4 Nf6 2. Nf3 e6 3. c4 Bb4+ 4. Bd2 Be7 5. Nc3 O-O 6. e4 c5 7. Be2 cxd4",
+   "castling_rights": "KQ"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Ng5': 'knight f3 to g5', 'Ne5': 'knight f3 to e5', 'Nh4': 'knight f3 to h4', 'Nxd4': 'knight f3 to d4, captures pawn', 'Ng1': 'knight f3 to g1', 'Nd5': 'knight c3 to d5', 'Nb5': 'knight c3 to b5', 'Na4': 'knight c3 to a4', 'Nb1': 'knight c3 to b1', 'Bd3': 'bishop e2 to d3', 'Bf1': 'bishop e2 to f1', 'Bh6': 'bishop d2 to h6', 'Bg5': 'bishop d2 to g5', 'Bf4': 'bishop d2 to f4', 'Be3': 'bishop d2 to e3', 'Bc1': 'bishop d2 to c1', 'Rg1': 'rook h1 to g1', 'Rf1': 'rook h1 to f1', 'Kf1': 'king e1 to f1', 'Qa4': 'queen d1 to a4', 'Qb3': 'queen d1 to b3', 'Qc2': 'queen d1 to c2', 'Qc1': 'queen d1 to c1', 'Qb1': 'queen d1 to b1', 'Rc1': 'rook a1 to c1', 'Rb1': 'rook a1 to b1', 'O-O': 'castles kingside', 'e5': 'pawn e4 to e5', 'c5': 'pawn c4 to c5', 'h3': 'pawn h2 to h3', 'g3': 'pawn g2 to g3', 'b3': 'pawn b2 to b3', 'a3': 'pawn a2 to a3', 'h4': 'pawn h2 to h4', 'g4': 'pawn g2 to g4', 'b4': 'pawn b2 to b4', 'a4': 'pawn a2 to a4'}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_017"
+ },
+ "latency_s": 0.18058812501840293,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Nxd4",
+    "confidence": 0.49,
+    "probabilities": {
+     "Rg1": 0.0,
+     "Bg5": 0.02,
+     "Bc1": 0.01,
+     "Nb1": 0.0,
+     "g3": 0.0,
+     "h4": 0.0,
+     "Qb3": 0.02,
+     "Qa4": 0.03,
+     "c5": 0.02,
+     "a4": 0.0,
+     "Bd3": 0.02,
+     "Na4": 0.01,
+     "Bf4": 0.01,
+     "b3": 0.0,
+     "Nb5": 0.0,
+     "h3": 0.0,
+     "Qc2": 0.01,
+     "e5": 0.02,
+     "Nh4": 0.0,
+     "Rc1": 0.01,
+     "Rf1": 0.0,
+     "Bf1": 0.0,
+     "Nxd4": 0.52,
+     "Be3": 0.01,
+     "O-O": 0.14,
+     "Kf1": 0.0,
+     "Bh6": 0.01,
+     "Rb1": 0.0,
+     "Ne5": 0.04,
+     "g4": 0.0,
+     "Qc1": 0.01,
+     "Qb1": 0.0,
+     "Ng5": 0.01,
+     "Ng1": 0.0,
+     "Nd5": 0.060000000000000005,
+     "a3": 0.01,
+     "b4": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1337,
+   "output_tokens": 321
+  }
+ }
+}

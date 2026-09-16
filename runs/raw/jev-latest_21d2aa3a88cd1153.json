@@ -1,0 +1,72 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r2qkb1r/1p2pp1p/p4Pp1/2p5/P1Nn4/2P1Qb2/1P1P1PPP/R1B2RK1 b kq - 0 12",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': None, 'Bg7': None, 'Bh6': None, 'Kd7': None, 'Qc8': None, 'Qb8': None, 'Qd7': None, 'Qc7': None, 'Qd6': None, 'Qb6': None, 'Qd5': None, 'Qa5': None, 'Rc8': None, 'Rb8': None, 'Ra7': None, 'Ne6': None, 'Nc6': None, 'Nf5': None, 'Nb5': None, 'Nb3': None, 'Ne2+': None, 'Nc2': None, 'Bc6': None, 'Bh5': None, 'Bd5': None, 'Bg4': None, 'Be4': None, 'Bxg2': None, 'Be2': None, 'Bd1': None, 'h6': None, 'e6': None, 'b6': None, 'g5': None, 'a5': None, 'h5': None, 'e5': None, 'b5': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "fen",
+  "pos": "real_023"
+ },
+ "latency_s": 0.16026254202006385,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Bxg2",
+    "confidence": 0.22,
+    "probabilities": {
+     "b6": 0.01,
+     "b5": 0.01,
+     "Rg8": 0.01,
+     "Qb6": 0.03,
+     "Be4": 0.03,
+     "Qd6": 0.02,
+     "Nf5": 0.04,
+     "a5": 0.01,
+     "Kd7": 0.01,
+     "Bd1": 0.03,
+     "Qd5": 0.05,
+     "Nb3": 0.02,
+     "Bc6": 0.02,
+     "Qa5": 0.02,
+     "Bh6": 0.01,
+     "Qc8": 0.01,
+     "Nc2": 0.01,
+     "Bg7": 0.01,
+     "Ra7": 0.0,
+     "Be2": 0.01,
+     "Bh5": 0.01,
+     "Bg4": 0.02,
+     "Nc6": 0.02,
+     "Bd5": 0.03,
+     "Qd7": 0.02,
+     "Qc7": 0.01,
+     "Ne2+": 0.17,
+     "Rc8": 0.0,
+     "h6": 0.01,
+     "Qb8": 0.01,
+     "Rb8": 0.01,
+     "e6": 0.01,
+     "e5": 0.02,
+     "h5": 0.0,
+     "Bxg2": 0.22999999999999998,
+     "Ne6": 0.03,
+     "g5": 0.02,
+     "Nb5": 0.02
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 711,
+   "output_tokens": 330
+  }
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r . . k . . r .\n7 p . . . n Q p p\n6 . p P . . . . .\n5 . . . N p . P .\n4 P . P p P P . .\n3 . . b . . . . B\n2 . B n . K . . P\n1 . . . . . . N R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r2k2r1/p3nQpp/1pP5/3Np1P1/P1PpPP2/2b4B/1Bn1K2P/6NR w - - 3 29",
+   "move_history": "1. b4 c6 2. g3 Na6 3. c4 b6 4. b5 e5 5. Na3 d5 6. bxc6 Nh6 7. e3 Qh4 8. g4 Bb4 9. g5 Kd8 10. Rb1 Ba5 11. Qf3 d4 12. Rb4 Ke7 13. Qe2 Bd7 14. e4 Nc5 15. Qd1 Ng8 16. d3 Nxd3+ 17. Ke2 Ke8 18. f4 Qh5+ 19. Kd2 Ne1 20. Qxh5 Bxb4+ 21. Ke2 Bc8 22. Bb2 Bh3 23. Nb5 Bc3 24. Nc7+ Ke7 25. Qxf7+ Kd8 26. a4 Ne7 27. Bxh3 Rg8 28. Nd5 Nc2",
+   "castling_rights": "none"
+  },
+  "questions": {
+   "eval": "Score(criteria=['Black is winning: Black is far ahead in material, or has an unstoppable attack or forced mate', 'Black is clearly better: Black is ahead by about a minor piece or more, or has a large lasting advantage', 'Black is slightly better: a small edge for Black such as an extra pawn, more active pieces, or a safer king', 'Roughly equal: material is level and neither side has a meaningful advantage', 'White is slightly better: a small edge for White such as an extra pawn, more active pieces, or a safer king', 'White is clearly better: White is ahead by about a minor piece or more, or has a large lasting advantage', 'White is winning: White is far ahead in material, or has an unstoppable attack or forced mate'], instructions={'question': 'Who is better in this position, and by how much?', 'focus': 'Weigh material, king safety, piece activity, and immediate tactics. The scale runs from Black winning (low) to White winning (high).'})"
+  }
+ },
+ "meta": {
+  "exp": "F",
+  "pos": "mate1_009"
+ },
+ "latency_s": 0.2214756669709459,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "eval": {
+    "type": "score",
+    "score": 3.45,
+    "confidence": 0.02,
+    "legend": {
+     "0": "Black is winning: Black is far ahead in material, or has an unstoppable attack or forced mate",
+     "1": "Black is clearly better: Black is ahead by about a minor piece or more, or has a large lasting advantage",
+     "2": "Black is slightly better: a small edge for Black such as an extra pawn, more active pieces, or a safer king",
+     "3": "Roughly equal: material is level and neither side has a meaningful advantage",
+     "4": "White is slightly better: a small edge for White such as an extra pawn, more active pieces, or a safer king",
+     "5": "White is clearly better: White is ahead by about a minor piece or more, or has a large lasting advantage",
+     "6": "White is winning: White is far ahead in material, or has an unstoppable attack or forced mate"
+    },
+    "probabilities": {
+     "0": 0.03,
+     "1": 0.2,
+     "2": 0.12,
+     "3": 0.08,
+     "4": 0.18,
+     "5": 0.33,
+     "6": 0.06
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 974,
+   "output_tokens": 17
+  }
+ }
+}

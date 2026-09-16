@@ -1,0 +1,110 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 . . . r . r k .\n7 p p . . Q p p p\n6 B . p N b . . .\n5 q . n . . . . .\n4 P . . . . . . .\n3 . . . . . N . .\n2 . P P . . P P P\n1 R . B R . . K .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "3r1rk1/pp2Qppp/B1pNb3/q1n5/P7/5N2/1PP2PPP/R1BR2K1 b - - 0 15",
+   "move_history": "1. e4 e5 2. d4 Nf6 3. dxe5 Nxe4 4. Bc4 Nc5 5. Qe2 Be7 6. Nc3 O-O 7. Nf3 c6 8. a4 Nba6 9. O-O d6 10. exd6 Qxd6 11. Rd1 Qc7 12. Nb5 Qa5 13. Qxe7 Be6 14. Nd6 Rad8 15. Bxa6",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "queen": [
+      "e7"
+     ],
+     "rook": [
+      "a1",
+      "d1"
+     ],
+     "bishop": [
+      "c1",
+      "a6"
+     ],
+     "knight": [
+      "f3",
+      "d6"
+     ],
+     "pawn": [
+      "b2",
+      "c2",
+      "f2",
+      "g2",
+      "h2",
+      "a4"
+     ],
+     "king": [
+      "g1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "a5"
+     ],
+     "rook": [
+      "d8",
+      "f8"
+     ],
+     "knight": [
+      "c5"
+     ],
+     "bishop": [
+      "e6"
+     ],
+     "pawn": [
+      "c6",
+      "a7",
+      "b7",
+      "f7",
+      "g7",
+      "h7"
+     ],
+     "king": [
+      "g8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "bishop on a6 (can be taken by our pawn, undefended)"
+    ],
+    "material": {
+     "white": 37,
+     "black": 31,
+     "white_minus_black": 6
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'bxa6': 'pawn b7 to a6, captures bishop; the moved piece is safe from immediate capture', 'b6': 'pawn b7 to b6; the moved piece is safe from immediate capture', 'b5': 'pawn b7 to b5; afterwards this pawn can be captured by a pawn (defended)'}, instructions={'question': 'Black has decided to move the pawn on b7. Which move should it make?', 'goal': 'Pick the destination that gives Black the best chance to win.'})"
+  }
+ },
+ "meta": {
+  "exp": "C2",
+  "pos": "real_027"
+ },
+ "latency_s": 0.2537721659755334,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "bxa6",
+    "confidence": 0.99,
+    "probabilities": {
+     "b6": 0.01,
+     "bxa6": 0.99,
+     "b5": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1066,
+   "output_tokens": 44
+  }
+ }
+}

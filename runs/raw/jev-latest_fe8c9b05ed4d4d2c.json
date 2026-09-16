@@ -1,0 +1,117 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "White",
+   "board": "8 r n . . k b . r\n7 . p q b n p . .\n6 p . . . p . p p\n5 . . . p P . . .\n4 P . . Q . . . P\n3 . . P . B N . .\n2 . P B . . P P .\n1 R N . . K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "rn2kb1r/1pqbnp2/p3p1pp/3pP3/P2Q3P/2P1BN2/1PB2PP1/RN2K2R w KQkq - 0 14",
+   "move_history": "1. d4 e6 2. e4 a6 3. Nf3 h6 4. Bd3 d5 5. e5 Bd7 6. c3 c5 7. Be3 Qb6 8. Qc1 Bb5 9. Bc2 Qc7 10. a4 Bd7 11. Qd1 cxd4 12. Qxd4 Ne7 13. h4 g6",
+   "castling_rights": "KQkq",
+   "pieces": {
+    "white": {
+     "queen": [
+      "d4"
+     ],
+     "rook": [
+      "a1",
+      "h1"
+     ],
+     "knight": [
+      "b1",
+      "f3"
+     ],
+     "bishop": [
+      "c2",
+      "e3"
+     ],
+     "pawn": [
+      "b2",
+      "f2",
+      "g2",
+      "c3",
+      "a4",
+      "h4",
+      "e5"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "c7"
+     ],
+     "rook": [
+      "a8",
+      "h8"
+     ],
+     "bishop": [
+      "d7",
+      "f8"
+     ],
+     "knight": [
+      "e7",
+      "b8"
+     ],
+     "pawn": [
+      "d5",
+      "a6",
+      "e6",
+      "g6",
+      "h6",
+      "b7",
+      "f7"
+     ],
+     "king": [
+      "e8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 38,
+     "black": 38,
+     "white_minus_black": 0
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Bxg6': 'bishop c2 to g6, captures pawn; afterwards this bishop can be captured by a pawn (undefended)', 'Bf5': 'bishop c2 to f5; afterwards this bishop can be captured by a pawn (undefended)', 'Be4': 'bishop c2 to e4; afterwards this bishop can be captured by a pawn (defended)', 'Bd3': 'bishop c2 to d3; the moved piece is safe from immediate capture', 'Bb3': 'bishop c2 to b3; the moved piece is safe from immediate capture', 'Bd1': 'bishop c2 to d1; the moved piece is safe from immediate capture'}, instructions={'question': 'White has decided to move the bishop on c2. Which move should it make?', 'goal': 'Pick the destination that gives White the best chance to win.'})"
+  }
+ },
+ "meta": {
+  "exp": "C2",
+  "pos": "real_022"
+ },
+ "latency_s": 0.20721449999837205,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Be4",
+    "confidence": 0.12,
+    "probabilities": {
+     "Bd1": 0.03,
+     "Bxg6": 0.15,
+     "Bf5": 0.07,
+     "Bb3": 0.24,
+     "Be4": 0.26,
+     "Bd3": 0.25
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1161,
+   "output_tokens": 68
+  }
+ }
+}

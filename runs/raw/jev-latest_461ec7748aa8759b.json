@@ -1,0 +1,65 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . . . k b n r\n7 p p . . . p p p\n6 . . q . . . . .\n5 . Q n N . . . .\n4 . . . . . . . .\n3 . . . . P N . .\n2 P P . . . P P P\n1 R . B . K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r3kbnr/pp3ppp/2q5/1QnN4/8/4PN2/PP3PPP/R1B1K2R b KQ - 0 12",
+   "move_history": "1. d4 d5 2. e3 e6 3. c4 c5 4. cxd5 exd5 5. Bb5+ Bd7 6. Bxd7+ Kxd7 7. Qb3 Qc7 8. dxc5 Ke8 9. Nc3 Na6 10. Nf3 Nxc5 11. Qb5+ Qc6 12. Nxd5",
+   "castling_rights": "KQ"
+  },
+  "questions": {
+   "in_check": "Noul(instructions='Black, the side to move, is currently in check: the Black king is attacked by an enemy piece.', criteria={'true': 'The Black king is under attack right now.', 'false': 'The Black king is not attacked.'})",
+   "mate_in_one": "Noul(instructions='Black has a legal move that delivers checkmate immediately (mate in one).', criteria={'true': 'Some legal move ends the game by checkmate this turn.', 'false': 'No move gives checkmate this turn.'})",
+   "free_capture": "Noul(instructions='Black can capture an enemy piece or pawn that is completely undefended, winning it for free.', criteria={'true': 'A legal capture exists whose target square is not protected by any enemy piece.', 'false': 'Every capturable enemy piece is protected, or no captures exist.'})",
+   "own_piece_hanging": "Noul(instructions='Black has a knight, bishop, rook, or queen that is attacked by the opponent and defended by nothing.', criteria={'true': 'At least one Black piece (not a pawn or the king) can be taken for free.', 'false': 'All attacked Black pieces are defended, or none are attacked.'})",
+   "can_castle": "Noul(instructions='Black can legally castle on this move (kingside or queenside).', criteria={'true': 'Castling is a legal move right now.', 'false': 'Castling is not legal right now.'})",
+   "more_material": "Choice(criteria={'white': \"White's pieces add up to more\", 'black': \"Black's pieces add up to more\", 'equal': 'Both sides have the same total'}, instructions='Which side has more material, counting pawn 1, knight 3, bishop 3, rook 5, queen 9?')"
+  }
+ },
+ "meta": {
+  "exp": "D",
+  "pos": "real_019"
+ },
+ "latency_s": 0.2538932500174269,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "in_check": {
+    "type": "noul",
+    "noul": 0.57
+   },
+   "mate_in_one": {
+    "type": "noul",
+    "noul": 0.41
+   },
+   "free_capture": {
+    "type": "noul",
+    "noul": 0.61
+   },
+   "own_piece_hanging": {
+    "type": "noul",
+    "noul": 0.53
+   },
+   "can_castle": {
+    "type": "noul",
+    "noul": 0.52
+   },
+   "more_material": {
+    "type": "choice",
+    "choice": "white",
+    "confidence": 0.57,
+    "probabilities": {
+     "equal": 0.11,
+     "white": 0.72,
+     "black": 0.17
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1008,
+   "output_tokens": 130
+  }
+ }
+}

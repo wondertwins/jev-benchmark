@@ -1,0 +1,66 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . . . k b n r\n7 p p . . . p p p\n6 . . q . . . . .\n5 . Q n N . . . .\n4 . . . . . . . .\n3 . . . . P N . .\n2 P P . . . P P P\n1 R . B . K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r3kbnr/pp3ppp/2q5/1QnN4/8/4PN2/PP3PPP/R1B1K2R b KQ - 0 12",
+   "move_history": "1. d4 d5 2. e3 e6 3. c4 c5 4. cxd5 exd5 5. Bb5+ Bd7 6. Bxd7+ Kxd7 7. Qb3 Qc7 8. dxc5 Ke8 9. Nc3 Na6 10. Nf3 Nxc5 11. Qb5+ Qc6 12. Nxd5",
+   "castling_rights": "KQ"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Ne7': 'knight g8 to e7', 'Nh6': 'knight g8 to h6', 'Nf6': 'knight g8 to f6', 'Be7': 'bishop f8 to e7', 'Bd6': 'bishop f8 to d6', 'Kd8': 'king e8 to d8', 'Kd7': 'king e8 to d7', 'Rd8': 'rook a8 to d8', 'Rc8': 'rook a8 to c8', 'Rb8': 'rook a8 to b8', 'Qd7': 'queen c6 to d7', 'Qxb5': 'queen c6 to b5, captures queen', 'Nd7': 'knight c5 to d7', 'Ne6': 'knight c5 to e6', 'Na6': 'knight c5 to a6', 'Ne4': 'knight c5 to e4', 'Na4': 'knight c5 to a4', 'Nd3+': 'knight c5 to d3, gives check', 'Nb3': 'knight c5 to b3', 'h6': 'pawn h7 to h6', 'g6': 'pawn g7 to g6', 'f6': 'pawn f7 to f6', 'b6': 'pawn b7 to b6', 'a6': 'pawn a7 to a6', 'h5': 'pawn h7 to h5', 'g5': 'pawn g7 to g5', 'f5': 'pawn f7 to f5', 'a5': 'pawn a7 to a5'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "ascii",
+  "pos": "real_019"
+ },
+ "latency_s": 0.15197979100048542,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxb5",
+    "confidence": 0.64,
+    "probabilities": {
+     "Qxb5": 0.67,
+     "Bd6": 0.01,
+     "Kd7": 0.03,
+     "Nb3": 0.02,
+     "Ne4": 0.03,
+     "h6": 0.0,
+     "f6": 0.01,
+     "Nd3+": 0.14,
+     "b6": 0.0,
+     "Na6": 0.0,
+     "f5": 0.0,
+     "Qd7": 0.01,
+     "a6": 0.0,
+     "Be7": 0.0,
+     "a5": 0.0,
+     "Kd8": 0.0,
+     "Nf6": 0.01,
+     "Ne6": 0.01,
+     "Rc8": 0.0,
+     "Nh6": 0.0,
+     "Nd7": 0.02,
+     "g6": 0.0,
+     "Na4": 0.01,
+     "h5": 0.0,
+     "Rd8": 0.01,
+     "Ne7": 0.0,
+     "Rb8": 0.01,
+     "g5": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1223,
+   "output_tokens": 246
+  }
+ }
+}

@@ -1,0 +1,6086 @@
+{
+ "summary": {
+  "clean": {
+   "n_utterances": 79,
+   "n_strict": 75,
+   "n_addressee_decisions": 237,
+   "jev_per_npc": {
+    "precision": 1.0,
+    "recall": 0.926,
+    "f1": 0.962,
+    "accuracy": 0.97
+   },
+   "baseline_per_npc": {
+    "precision": 0.717,
+    "recall": 0.958,
+    "f1": 0.82,
+    "accuracy": 0.831
+   },
+   "jev_exact_set_accuracy": 0.92,
+   "baseline_exact_set_accuracy": 0.64,
+   "jev_brier": 0.021,
+   "nobody_noul": {
+    "precision": 0.778,
+    "recall": 1.0,
+    "f1": 0.875,
+    "accuracy": 0.975
+   },
+   "group_noul": {
+    "precision": 0.833,
+    "recall": 0.625,
+    "f1": 0.714,
+    "accuracy": 0.949
+   },
+   "intent_accuracy": 0.911,
+   "primary_choice_accuracy_single_addressee": 0.981,
+   "primary_choice_says_nobody_when_nobody": 1,
+   "by_category": {
+    "continuation": {
+     "n": 4,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "continuation_with_mention": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "description_address": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "description_address_facing": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "direct_multi": {
+     "n": 5,
+     "jev_exact": 1,
+     "baseline_exact": 0.6
+    },
+    "direct_multi_attention_shift": {
+     "n": 3,
+     "jev_exact": 0.67,
+     "baseline_exact": 0.67
+    },
+    "direct_multi_with_mentions": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "direct_single": {
+     "n": 8,
+     "jev_exact": 1,
+     "baseline_exact": 0.75
+    },
+    "direct_single_with_mentions": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "facing_deixis": {
+     "n": 3,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "facing_deixis_role_mentioned": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "group_all": {
+     "n": 5,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "group_then_single": {
+     "n": 1,
+     "jev_exact": 0,
+     "baseline_exact": 1
+    },
+    "insult": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "mention_absent": {
+     "n": 2,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "mention_only": {
+     "n": 9,
+     "jev_exact": 0.89,
+     "baseline_exact": 0
+    },
+    "mention_only_relay": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "mention_only_topic_needs_context": {
+     "n": 4,
+     "jev_exact": 0.25,
+     "baseline_exact": 0
+    },
+    "mention_then_address": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "mid_sentence_vocative": {
+     "n": 3,
+     "jev_exact": 1,
+     "baseline_exact": 0.67
+    },
+    "offstage_addressee": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "out_of_game": {
+     "n": 2,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "reported_speech": {
+     "n": 3,
+     "jev_exact": 1,
+     "baseline_exact": 0.33
+    },
+    "role_address": {
+     "n": 5,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "role_address_plural_one_present": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "role_synonym": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "self_talk": {
+     "n": 4,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "threat": {
+     "n": 2,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    }
+   },
+   "ambiguous_items": [
+    {
+     "text": "Whoever owns this cart, move it!",
+     "truth": {
+      "Hanna": true,
+      "Jeff": true,
+      "Anna": true,
+      "Marcus": true,
+      "Elara": true
+     },
+     "pred": {
+      "Hanna": 0.09,
+      "Jeff": 0.13,
+      "Anna": 0.22,
+      "Marcus": 0.1,
+      "Elara": 0.06
+     }
+    },
+    {
+     "text": "Everyone except Jeff, come with me.",
+     "truth": {
+      "Hanna": true,
+      "Jeff": true,
+      "Anna": true
+     },
+     "pred": {
+      "Hanna": 0.94,
+      "Jeff": 0.11,
+      "Anna": 0.94
+     }
+    },
+    {
+     "text": "I'm not talking to you, Jeff. Hanna, another round.",
+     "truth": {
+      "Hanna": true,
+      "Jeff": true,
+      "Anna": false
+     },
+     "pred": {
+      "Hanna": 0.96,
+      "Jeff": 0.25,
+      "Anna": 0.05
+     }
+    },
+    {
+     "text": "Elara... no wait, Anna, you're the merchant, right?",
+     "truth": {
+      "Anna": true,
+      "Elara": false
+     },
+     "pred": {
+      "Anna": 0.88,
+      "Elara": 0.07
+     }
+    }
+   ],
+   "mean_input_tokens": 1667
+  },
+  "stt_misheard": {
+   "n_utterances": 79,
+   "n_strict": 75,
+   "n_addressee_decisions": 237,
+   "jev_per_npc": {
+    "precision": 1.0,
+    "recall": 0.874,
+    "f1": 0.933,
+    "accuracy": 0.949
+   },
+   "baseline_per_npc": {
+    "precision": 0.762,
+    "recall": 0.811,
+    "f1": 0.786,
+    "accuracy": 0.823
+   },
+   "jev_exact_set_accuracy": 0.853,
+   "baseline_exact_set_accuracy": 0.613,
+   "jev_brier": 0.041,
+   "nobody_noul": {
+    "precision": 0.538,
+    "recall": 1.0,
+    "f1": 0.7,
+    "accuracy": 0.924
+   },
+   "group_noul": {
+    "precision": 0.833,
+    "recall": 0.625,
+    "f1": 0.714,
+    "accuracy": 0.949
+   },
+   "intent_accuracy": 0.899,
+   "primary_choice_accuracy_single_addressee": 0.925,
+   "primary_choice_says_nobody_when_nobody": 1,
+   "by_category": {
+    "continuation": {
+     "n": 4,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "continuation_with_mention": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "description_address": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "description_address_facing": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "direct_multi": {
+     "n": 5,
+     "jev_exact": 1,
+     "baseline_exact": 0.6
+    },
+    "direct_multi_attention_shift": {
+     "n": 3,
+     "jev_exact": 0.67,
+     "baseline_exact": 0
+    },
+    "direct_multi_with_mentions": {
+     "n": 1,
+     "jev_exact": 0,
+     "baseline_exact": 0
+    },
+    "direct_single": {
+     "n": 8,
+     "jev_exact": 1,
+     "baseline_exact": 0.62
+    },
+    "direct_single_with_mentions": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "facing_deixis": {
+     "n": 3,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "facing_deixis_role_mentioned": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "group_all": {
+     "n": 5,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "group_then_single": {
+     "n": 1,
+     "jev_exact": 0,
+     "baseline_exact": 1
+    },
+    "insult": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "mention_absent": {
+     "n": 2,
+     "jev_exact": 0.5,
+     "baseline_exact": 0.5
+    },
+    "mention_only": {
+     "n": 9,
+     "jev_exact": 0.78,
+     "baseline_exact": 0.22
+    },
+    "mention_only_relay": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 0
+    },
+    "mention_only_topic_needs_context": {
+     "n": 4,
+     "jev_exact": 0.25,
+     "baseline_exact": 0
+    },
+    "mention_then_address": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "mid_sentence_vocative": {
+     "n": 3,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "offstage_addressee": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "out_of_game": {
+     "n": 2,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "reported_speech": {
+     "n": 3,
+     "jev_exact": 0.33,
+     "baseline_exact": 0.67
+    },
+    "role_address": {
+     "n": 5,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "role_address_plural_one_present": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "role_synonym": {
+     "n": 1,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "self_talk": {
+     "n": 4,
+     "jev_exact": 1,
+     "baseline_exact": 1
+    },
+    "threat": {
+     "n": 2,
+     "jev_exact": 1,
+     "baseline_exact": 0.5
+    }
+   },
+   "ambiguous_items": [
+    {
+     "text": "whoever owns this cart move it",
+     "truth": {
+      "Hanna": true,
+      "Jeff": true,
+      "Anna": true,
+      "Marcus": true,
+      "Elara": true
+     },
+     "pred": {
+      "Hanna": 0.11,
+      "Jeff": 0.16,
+      "Anna": 0.29,
+      "Marcus": 0.14,
+      "Elara": 0.06
+     }
+    },
+    {
+     "text": "everyone except geoff come with me",
+     "truth": {
+      "Hanna": true,
+      "Jeff": true,
+      "Anna": true
+     },
+     "pred": {
+      "Hanna": 0.88,
+      "Jeff": 0.18,
+      "Anna": 0.87
+     }
+    },
+    {
+     "text": "i'm not talking to you geoff hannah another round",
+     "truth": {
+      "Hanna": true,
+      "Jeff": true,
+      "Anna": false
+     },
+     "pred": {
+      "Hanna": 0.72,
+      "Jeff": 0.56,
+      "Anna": 0.13
+     }
+    },
+    {
+     "text": "um ilara no wait ana you're the merchant right",
+     "truth": {
+      "Anna": true,
+      "Elara": false
+     },
+     "pred": {
+      "Anna": 0.76,
+      "Elara": 0.33
+     }
+    }
+   ],
+   "mean_input_tokens": 1681
+  }
+ },
+ "rows": {
+  "clean": [
+   {
+    "item": "u000",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Hi Hanna, today I went to school with Jeff and Anna.",
+    "category": "direct_single_with_mentions",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.88,
+     "Jeff": 0.09,
+     "Anna": 0.08
+    },
+    "group": 0.05,
+    "nobody": 0.1,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.98,
+    "urgency": 0.02,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 0.93,
+    "input_tokens": 1628
+   },
+   {
+    "item": "u001",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Anna, do you have any healing potions left?",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.02,
+     "Jeff": 0.02,
+     "Anna": 0.98
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "question",
+    "intent_conf": 0.84,
+    "urgency": 0.96,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 1.0,
+    "input_tokens": 1626
+   },
+   {
+    "item": "u002",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Marcus, this blade is dull already.",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.97,
+     "Elara": 0.02,
+     "Jeff": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.04,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.71,
+    "urgency": 0.88,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1629
+   },
+   {
+    "item": "u003",
+    "variant": "clean",
+    "scene": "shop",
+    "text": "Elara, my shoulder still aches from yesterday.",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Anna": false,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.02,
+     "Elara": 0.96
+    },
+    "group": 0.02,
+    "nobody": 0.06,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.97,
+    "urgency": 0.84,
+    "attitude": "neutral",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 1417
+   },
+   {
+    "item": "u004",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Jeff, how far is it to the city?",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "pred": {
+     "Jeff": 0.98,
+     "Biscuit": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.95,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 1.0,
+    "input_tokens": 1425
+   },
+   {
+    "item": "u005",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Good evening, Hanna.",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "greeting",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.98,
+     "Jeff": 0.02,
+     "Anna": 0.02,
+     "Marcus": 0.02,
+     "Elara": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "greeting",
+    "intent_conf": 1.0,
+    "urgency": 0.01,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 1.0,
+    "input_tokens": 2049
+   },
+   {
+    "item": "u006",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Thank you, Marcus. I'll be back next week.",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "farewell",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.91,
+     "Elara": 0.03,
+     "Jeff": 0.03
+    },
+    "group": 0.02,
+    "nobody": 0.06,
+    "intent": "farewell",
+    "intent_conf": 0.99,
+    "urgency": 0.02,
+    "attitude": "friendly",
+    "primary": "Marcus",
+    "primary_conf": 0.98,
+    "input_tokens": 1633
+   },
+   {
+    "item": "u007",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Jeff, Jeff, Jeff. What are we going to do with you?",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.9,
+     "Anna": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.07,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.39,
+    "urgency": 0.31,
+    "attitude": "hostile",
+    "primary": "Jeff",
+    "primary_conf": 1.0,
+    "input_tokens": 1630
+   },
+   {
+    "item": "u008",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Hey, Jeff, Anna, please come over here.",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.06,
+     "Jeff": 0.98,
+     "Anna": 0.98
+    },
+    "group": 0.1,
+    "nobody": 0.02,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.86,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.89,
+    "input_tokens": 1626
+   },
+   {
+    "item": "u009",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Hanna, watch the door. Jeff, with me.",
+    "category": "direct_multi_attention_shift",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.98,
+     "Jeff": 0.98,
+     "Anna": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.84,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.53,
+    "input_tokens": 1627
+   },
+   {
+    "item": "u010",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Morning Hanna, morning Jeff.",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "greeting",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.98,
+     "Jeff": 0.97,
+     "Anna": 0.04
+    },
+    "group": 0.05,
+    "nobody": 0.03,
+    "intent": "greeting",
+    "intent_conf": 1.0,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.69,
+    "input_tokens": 1621
+   },
+   {
+    "item": "u011",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Marcus and Elara, I need you both at the gate now.",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.05,
+     "Anna": 0.03,
+     "Marcus": 0.98,
+     "Elara": 0.98
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.97,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.49,
+    "input_tokens": 2058
+   },
+   {
+    "item": "u012",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Hanna, two ales. Anna, I'll take the red cloak. Jeff... nothing for you.",
+    "category": "direct_multi_attention_shift",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.98,
+     "Jeff": 0.81,
+     "Anna": 0.98
+    },
+    "group": 0.04,
+    "nobody": 0.02,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.89,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.95,
+    "input_tokens": 1636
+   },
+   {
+    "item": "u013",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Good boy, Biscuit. Jeff, he's adorable.",
+    "category": "direct_multi_attention_shift",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Jeff": true,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.32,
+     "Biscuit": 0.83
+    },
+    "group": 0.05,
+    "nobody": 0.11,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 1.0,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "Biscuit",
+    "primary_conf": 0.45,
+    "input_tokens": 1428
+   },
+   {
+    "item": "u014",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Elara, Jeff, stand back, he's about to quench it.",
+    "category": "direct_multi_with_mentions",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": false,
+     "Elara": true,
+     "Jeff": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Marcus": false,
+     "Elara": true,
+     "Jeff": true
+    },
+    "pred": {
+     "Marcus": 0.2,
+     "Elara": 0.97,
+     "Jeff": 0.96
+    },
+    "group": 0.05,
+    "nobody": 0.04,
+    "intent": "request_or_command",
+    "intent_conf": 0.99,
+    "urgency": 1.99,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.66,
+    "input_tokens": 1637
+   },
+   {
+    "item": "u015",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Anna, Hanna, which of you sells rope?",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.95,
+     "Jeff": 0.03,
+     "Anna": 0.96
+    },
+    "group": 0.04,
+    "nobody": 0.03,
+    "intent": "question",
+    "intent_conf": 0.98,
+    "urgency": 0.94,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.77,
+    "input_tokens": 1625
+   },
+   {
+    "item": "u016",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Marcus, Elara, Jeff, thank you all for coming.",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": true
+    },
+    "pred": {
+     "Marcus": 0.98,
+     "Elara": 0.97,
+     "Jeff": 0.97
+    },
+    "group": 0.75,
+    "nobody": 0.04,
+    "intent": "greeting",
+    "intent_conf": 0.83,
+    "urgency": 0.12,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 1.0,
+    "input_tokens": 1634
+   },
+   {
+    "item": "u017",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Hanna, have you seen Jeff today?",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.96,
+     "Jeff": 0.03,
+     "Anna": 0.03
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.84,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 1.0,
+    "input_tokens": 1624
+   },
+   {
+    "item": "u018",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Hanna, tell Anna her order is ready.",
+    "category": "mention_only_relay",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.97,
+     "Jeff": 0.02,
+     "Anna": 0.05
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.02,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 1.0,
+    "input_tokens": 1625
+   },
+   {
+    "item": "u019",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Jeff is the laziest guard I've ever seen.",
+    "category": "mention_only_topic_needs_context",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.34,
+     "Jeff": 0.1,
+     "Anna": 0.04
+    },
+    "group": 0.08,
+    "nobody": 0.62,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.71,
+    "urgency": 0.24,
+    "attitude": "hostile",
+    "primary": "Hanna",
+    "primary_conf": 0.64,
+    "input_tokens": 1633
+   },
+   {
+    "item": "u020",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Anna's shop is closed again?",
+    "category": "mention_only_topic_needs_context",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.38,
+     "Jeff": 0.06,
+     "Anna": 0.11
+    },
+    "group": 0.09,
+    "nobody": 0.46,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.37,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.65,
+    "input_tokens": 1628
+   },
+   {
+    "item": "u021",
+    "variant": "clean",
+    "scene": "shop",
+    "text": "Elara, is Marcus around? His forge was cold.",
+    "category": "mention_absent",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Anna": false,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.04,
+     "Elara": 0.95
+    },
+    "group": 0.02,
+    "nobody": 0.04,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.99,
+    "attitude": "neutral",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 1419
+   },
+   {
+    "item": "u022",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Marcus, Jeff said you owe him money.",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": true
+    },
+    "pred": {
+     "Marcus": 0.8,
+     "Elara": 0.04,
+     "Jeff": 0.09
+    },
+    "group": 0.05,
+    "nobody": 0.08,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.92,
+    "urgency": 1.02,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 0.95,
+    "input_tokens": 1630
+   },
+   {
+    "item": "u023",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Oh sure, Jeff will save us all.",
+    "category": "mention_only_topic_needs_context",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.07,
+     "Jeff": 0.15,
+     "Anna": 0.26
+    },
+    "group": 0.09,
+    "nobody": 0.6,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.58,
+    "urgency": 0.1,
+    "attitude": "hostile",
+    "primary": "Anna",
+    "primary_conf": 0.31,
+    "input_tokens": 1629
+   },
+   {
+    "item": "u024",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Psst, Anna. Don't look now, but Jeff is staring at you.",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.05,
+     "Jeff": 0.03,
+     "Anna": 0.94
+    },
+    "group": 0.02,
+    "nobody": 0.04,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.86,
+    "urgency": 0.87,
+    "attitude": "friendly",
+    "primary": "Anna",
+    "primary_conf": 0.97,
+    "input_tokens": 1632
+   },
+   {
+    "item": "u025",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Elara, Marcus is hurt, come quickly!",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.02,
+     "Jeff": 0.03,
+     "Anna": 0.02,
+     "Marcus": 0.04,
+     "Elara": 0.97
+    },
+    "group": 0.03,
+    "nobody": 0.02,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 2.0,
+    "attitude": "neutral",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 2054
+   },
+   {
+    "item": "u026",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Jeff! Hanna's inn is on fire!",
+    "category": "mention_absent",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "pred": {
+     "Jeff": 0.98,
+     "Biscuit": 0.02
+    },
+    "group": 0.03,
+    "nobody": 0.03,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.58,
+    "urgency": 2.0,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 1.0,
+    "input_tokens": 1424
+   },
+   {
+    "item": "u027",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Hanna, Jeff and Anna both told me you make the best stew.",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.27,
+     "Jeff": 0.16,
+     "Anna": 0.17
+    },
+    "group": 0.13,
+    "nobody": 0.3,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.99,
+    "urgency": 0.13,
+    "attitude": "friendly",
+    "primary": "nobody",
+    "primary_conf": 0.21,
+    "input_tokens": 1630
+   },
+   {
+    "item": "u028",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Marcus, does Elara still live by the river?",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.93,
+     "Elara": 0.03,
+     "Jeff": 0.07
+    },
+    "group": 0.02,
+    "nobody": 0.06,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.74,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1632
+   },
+   {
+    "item": "u029",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Hanna! Over here! Bring Jeff if you see him.",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.96,
+     "Jeff": 0.06,
+     "Anna": 0.03,
+     "Marcus": 0.02,
+     "Elara": 0.02
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.99,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 1.0,
+    "input_tokens": 2057
+   },
+   {
+    "item": "u030",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Come on, Jeff, keep up. Biscuit's faster than you.",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Jeff": true,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.95,
+     "Biscuit": 0.09
+    },
+    "group": 0.05,
+    "nobody": 0.05,
+    "intent": "request_or_command",
+    "intent_conf": 0.74,
+    "urgency": 0.37,
+    "attitude": "friendly",
+    "primary": "Jeff",
+    "primary_conf": 0.89,
+    "input_tokens": 1431
+   },
+   {
+    "item": "u031",
+    "variant": "clean",
+    "scene": "shop",
+    "text": "That's robbery. Anna charges half that.",
+    "category": "mention_only_topic_needs_context",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Anna": true,
+     "Elara": false
+    },
+    "pred": {
+     "Anna": 0.19,
+     "Elara": 0.79
+    },
+    "group": 0.1,
+    "nobody": 0.17,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.77,
+    "urgency": 0.9,
+    "attitude": "hostile",
+    "primary": "Elara",
+    "primary_conf": 0.88,
+    "input_tokens": 1456
+   },
+   {
+    "item": "u032",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Jeff, Anna said 'Marcus, come here' but he ignored her.",
+    "category": "reported_speech",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.04,
+     "Jeff": 0.74,
+     "Anna": 0.06
+    },
+    "group": 0.05,
+    "nobody": 0.2,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.98,
+    "urgency": 0.2,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 0.72,
+    "input_tokens": 1630
+   },
+   {
+    "item": "u033",
+    "variant": "clean",
+    "scene": "shop",
+    "text": "Anna, yesterday Hanna shouted 'Jeff, get out of my inn' at the top of her lungs.",
+    "category": "reported_speech",
+    "ambiguous": false,
+    "truth": {
+     "Anna": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Anna": true,
+     "Elara": false
+    },
+    "pred": {
+     "Anna": 0.73,
+     "Elara": 0.03
+    },
+    "group": 0.04,
+    "nobody": 0.17,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.99,
+    "urgency": 0.02,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 0.91,
+    "input_tokens": 1428
+   },
+   {
+    "item": "u034",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Marcus, the note just says 'Elara, meet me at midnight.' Do you know who wrote it?",
+    "category": "reported_speech",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.97,
+     "Elara": 0.03,
+     "Jeff": 0.03
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 1.06,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1643
+   },
+   {
+    "item": "u035",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Everyone, listen up!",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.85,
+     "Jeff": 0.87,
+     "Anna": 0.87
+    },
+    "group": 0.95,
+    "nobody": 0.17,
+    "intent": "request_or_command",
+    "intent_conf": 0.92,
+    "urgency": 1.05,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 1.0,
+    "input_tokens": 1620
+   },
+   {
+    "item": "u036",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Alright you lot, back to work.",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.73,
+     "Jeff": 0.78,
+     "Anna": 0.75,
+     "Marcus": 0.79,
+     "Elara": 0.77
+    },
+    "group": 0.88,
+    "nobody": 0.25,
+    "intent": "request_or_command",
+    "intent_conf": 0.97,
+    "urgency": 0.91,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.96,
+    "input_tokens": 2052
+   },
+   {
+    "item": "u037",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Goodnight everyone.",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "farewell",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.81,
+     "Jeff": 0.82,
+     "Anna": 0.82
+    },
+    "group": 0.94,
+    "nobody": 0.23,
+    "intent": "farewell",
+    "intent_conf": 0.9,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.98,
+    "input_tokens": 1621
+   },
+   {
+    "item": "u038",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Hello, all! Lovely day.",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "greeting",
+    "baseline": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": true
+    },
+    "pred": {
+     "Marcus": 0.87,
+     "Elara": 0.87,
+     "Jeff": 0.88
+    },
+    "group": 0.91,
+    "nobody": 0.17,
+    "intent": "greeting",
+    "intent_conf": 1.0,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 1.0,
+    "input_tokens": 1628
+   },
+   {
+    "item": "u039",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Could all of you please step back from the well?",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.86,
+     "Jeff": 0.91,
+     "Anna": 0.9,
+     "Marcus": 0.92,
+     "Elara": 0.89
+    },
+    "group": 0.9,
+    "nobody": 0.08,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.26,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.99,
+    "input_tokens": 2055
+   },
+   {
+    "item": "u040",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Nobody move. Hanna, blow out the candles.",
+    "category": "group_then_single",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.97,
+     "Jeff": 0.49,
+     "Anna": 0.09
+    },
+    "group": 0.43,
+    "nobody": 0.04,
+    "intent": "request_or_command",
+    "intent_conf": 0.99,
+    "urgency": 1.99,
+    "attitude": "hostile",
+    "primary": "everyone",
+    "primary_conf": 0.44,
+    "input_tokens": 1625
+   },
+   {
+    "item": "u041",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Whoever owns this cart, move it!",
+    "category": "group_unknown_owner",
+    "ambiguous": true,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.09,
+     "Jeff": 0.13,
+     "Anna": 0.22,
+     "Marcus": 0.1,
+     "Elara": 0.06
+    },
+    "group": 0.07,
+    "nobody": 0.45,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.78,
+    "attitude": "hostile",
+    "primary": "nobody",
+    "primary_conf": 0.57,
+    "input_tokens": 2053
+   },
+   {
+    "item": "u042",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Innkeeper, a room for the night, please.",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.97,
+     "Jeff": 0.02,
+     "Anna": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.98,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 1.0,
+    "input_tokens": 1627
+   },
+   {
+    "item": "u043",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Guard! Someone stole my purse!",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.96,
+     "Anna": 0.03
+    },
+    "group": 0.04,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 0.86,
+    "urgency": 1.99,
+    "attitude": "hostile",
+    "primary": "Jeff",
+    "primary_conf": 1.0,
+    "input_tokens": 1622
+   },
+   {
+    "item": "u044",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Hey blacksmith, can you sharpen this?",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.97,
+     "Elara": 0.02,
+     "Jeff": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.97,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1632
+   },
+   {
+    "item": "u045",
+    "variant": "clean",
+    "scene": "shop",
+    "text": "Healer, my arm won't stop bleeding.",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Anna": false,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.03,
+     "Elara": 0.96
+    },
+    "group": 0.03,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 0.92,
+    "urgency": 1.99,
+    "attitude": "neutral",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 1417
+   },
+   {
+    "item": "u046",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Guards, arrest that man!",
+    "category": "role_address_plural_one_present",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.05,
+     "Jeff": 0.85,
+     "Anna": 0.04,
+     "Marcus": 0.04,
+     "Elara": 0.03
+    },
+    "group": 0.29,
+    "nobody": 0.1,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 2.0,
+    "attitude": "hostile",
+    "primary": "Jeff",
+    "primary_conf": 0.94,
+    "input_tokens": 2051
+   },
+   {
+    "item": "u047",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "You with the hammer, how much for a sword?",
+    "category": "description_address",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Marcus": false,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.97,
+     "Elara": 0.02,
+     "Jeff": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "question",
+    "intent_conf": 0.93,
+    "urgency": 0.94,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1632
+   },
+   {
+    "item": "u048",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Barkeep, another round for the table.",
+    "category": "role_synonym",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.94,
+     "Jeff": 0.03,
+     "Anna": 0.03
+    },
+    "group": 0.04,
+    "nobody": 0.06,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.92,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.98,
+    "input_tokens": 1625
+   },
+   {
+    "item": "u049",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Merchant, do you buy old armor?",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.02,
+     "Jeff": 0.02,
+     "Anna": 0.96,
+     "Marcus": 0.03,
+     "Elara": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "question",
+    "intent_conf": 0.98,
+    "urgency": 0.92,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 1.0,
+    "input_tokens": 2052
+   },
+   {
+    "item": "u050",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Hey! Yes, you, in the apron. Two loaves please.",
+    "category": "description_address_facing",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.9,
+     "Jeff": 0.03,
+     "Anna": 0.07,
+     "Marcus": 0.02,
+     "Elara": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.95,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 0.95,
+    "input_tokens": 2061
+   },
+   {
+    "item": "u051",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Hmm, where did I put that key?",
+    "category": "self_talk",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.06,
+     "Jeff": 0.04,
+     "Anna": 0.04
+    },
+    "group": 0.03,
+    "nobody": 0.91,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.95,
+    "urgency": 0.0,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 1.0,
+    "input_tokens": 1624
+   },
+   {
+    "item": "u052",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Okay, okay, think. The map said north of the forge.",
+    "category": "self_talk",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": false,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Marcus": false,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.08,
+     "Elara": 0.04,
+     "Jeff": 0.04
+    },
+    "group": 0.04,
+    "nobody": 0.9,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.97,
+    "urgency": 0.0,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.99,
+    "input_tokens": 1635
+   },
+   {
+    "item": "u053",
+    "variant": "clean",
+    "scene": "square",
+    "text": "hang on, my mic is cutting out",
+    "category": "out_of_game",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.07,
+     "Jeff": 0.05,
+     "Anna": 0.05,
+     "Marcus": 0.05,
+     "Elara": 0.04
+    },
+    "group": 0.07,
+    "nobody": 0.96,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.96,
+    "urgency": 0.05,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.98,
+    "input_tokens": 2052
+   },
+   {
+    "item": "u054",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "brb, dinner's ready",
+    "category": "out_of_game",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.07,
+     "Jeff": 0.03,
+     "Anna": 0.04
+    },
+    "group": 0.07,
+    "nobody": 0.91,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.9,
+    "urgency": 0.02,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.99,
+    "input_tokens": 1621
+   },
+   {
+    "item": "u055",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Ugh, this quest is impossible.",
+    "category": "self_talk",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": false,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": false
+    },
+    "pred": {
+     "Jeff": 0.07,
+     "Biscuit": 0.04
+    },
+    "group": 0.07,
+    "nobody": 0.87,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.42,
+    "urgency": 0.01,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.9,
+    "input_tokens": 1423
+   },
+   {
+    "item": "u056",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Mom, I'll be home late!",
+    "category": "offstage_addressee",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.03,
+     "Anna": 0.02
+    },
+    "group": 0.03,
+    "nobody": 0.9,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.7,
+    "urgency": 0.01,
+    "attitude": "friendly",
+    "primary": "nobody",
+    "primary_conf": 1.0,
+    "input_tokens": 1623
+   },
+   {
+    "item": "u057",
+    "variant": "clean",
+    "scene": "shop",
+    "text": "Note to self: buy more arrows.",
+    "category": "self_talk",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Anna": false,
+     "Elara": false
+    },
+    "pred": {
+     "Anna": 0.09,
+     "Elara": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.92,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.99,
+    "urgency": 0.0,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.99,
+    "input_tokens": 1415
+   },
+   {
+    "item": "u058",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "And what about you? Did you ever leave the village?",
+    "category": "continuation",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.89,
+     "Jeff": 0.05,
+     "Anna": 0.06
+    },
+    "group": 0.07,
+    "nobody": 0.09,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.72,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 0.99,
+    "input_tokens": 1670
+   },
+   {
+    "item": "u059",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "No, I meant the other one.",
+    "category": "continuation",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.84,
+     "Jeff": 0.05,
+     "Anna": 0.08
+    },
+    "group": 0.06,
+    "nobody": 0.18,
+    "intent": "request_or_command",
+    "intent_conf": 0.38,
+    "urgency": 0.9,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.96,
+    "input_tokens": 1663
+   },
+   {
+    "item": "u060",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Thanks. See you tomorrow.",
+    "category": "continuation",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "farewell",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.87,
+     "Elara": 0.05,
+     "Jeff": 0.04
+    },
+    "group": 0.07,
+    "nobody": 0.14,
+    "intent": "farewell",
+    "intent_conf": 1.0,
+    "urgency": 0.01,
+    "attitude": "friendly",
+    "primary": "Marcus",
+    "primary_conf": 0.99,
+    "input_tokens": 1632
+   },
+   {
+    "item": "u061",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Fine. Lead the way.",
+    "category": "continuation",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "pred": {
+     "Jeff": 0.88,
+     "Biscuit": 0.04
+    },
+    "group": 0.08,
+    "nobody": 0.09,
+    "intent": "request_or_command",
+    "intent_conf": 0.99,
+    "urgency": 0.98,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 0.99,
+    "input_tokens": 1426
+   },
+   {
+    "item": "u062",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Really? Then why is it already rusting?",
+    "category": "continuation_with_mention",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.03,
+     "Anna": 0.86,
+     "Marcus": 0.12,
+     "Elara": 0.03
+    },
+    "group": 0.05,
+    "nobody": 0.09,
+    "intent": "question",
+    "intent_conf": 0.9,
+    "urgency": 0.87,
+    "attitude": "hostile",
+    "primary": "Anna",
+    "primary_conf": 0.98,
+    "input_tokens": 2092
+   },
+   {
+    "item": "u063",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "You there, come here.",
+    "category": "facing_deixis",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.04,
+     "Jeff": 0.93,
+     "Anna": 0.04
+    },
+    "group": 0.06,
+    "nobody": 0.06,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.02,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 1.0,
+    "input_tokens": 1622
+   },
+   {
+    "item": "u064",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Excuse me, do you know where the healer is?",
+    "category": "facing_deixis_role_mentioned",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.03,
+     "Anna": 0.03,
+     "Marcus": 0.9,
+     "Elara": 0.04
+    },
+    "group": 0.04,
+    "nobody": 0.04,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.97,
+    "attitude": "friendly",
+    "primary": "Marcus",
+    "primary_conf": 0.99,
+    "input_tokens": 2057
+   },
+   {
+    "item": "u065",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Are you the one who fixed my leg last spring?",
+    "category": "facing_deixis",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": false,
+     "Elara": true,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Marcus": false,
+     "Elara": true,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.02,
+     "Elara": 0.96,
+     "Jeff": 0.02
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.78,
+    "attitude": "friendly",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 1634
+   },
+   {
+    "item": "u066",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Who's a good boy? You are!",
+    "category": "facing_deixis",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.02,
+     "Biscuit": 0.96
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.95,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "Biscuit",
+    "primary_conf": 0.99,
+    "input_tokens": 1427
+   },
+   {
+    "item": "u067",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "I think, Anna, that your prices are too high.",
+    "category": "mid_sentence_vocative",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.02,
+     "Anna": 0.97
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.99,
+    "urgency": 0.81,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 1.0,
+    "input_tokens": 1627
+   },
+   {
+    "item": "u068",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Honestly, Marcus, I expected better.",
+    "category": "mid_sentence_vocative",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.97,
+     "Elara": 0.03,
+     "Jeff": 0.03
+    },
+    "group": 0.02,
+    "nobody": 0.04,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.61,
+    "urgency": 0.87,
+    "attitude": "hostile",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1629
+   },
+   {
+    "item": "u069",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Could you, Elara, take a look at this rash?",
+    "category": "mid_sentence_vocative",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.02,
+     "Jeff": 0.02,
+     "Anna": 0.02,
+     "Marcus": 0.02,
+     "Elara": 0.98
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.0,
+    "attitude": "friendly",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 2057
+   },
+   {
+    "item": "u070",
+    "variant": "clean",
+    "scene": "forge",
+    "text": "Is Marcus here? Oh, there you are. Marcus, I need horseshoes.",
+    "category": "mention_then_address",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.98,
+     "Elara": 0.02,
+     "Jeff": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.99,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1639
+   },
+   {
+    "item": "u071",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Jeff, if you touch my bag again I'll break your fingers.",
+    "category": "threat",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "threat_or_insult",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.02,
+     "Jeff": 0.98,
+     "Anna": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "threat_or_insult",
+    "intent_conf": 1.0,
+    "urgency": 1.83,
+    "attitude": "hostile",
+    "primary": "Jeff",
+    "primary_conf": 1.0,
+    "input_tokens": 1629
+   },
+   {
+    "item": "u072",
+    "variant": "clean",
+    "scene": "square",
+    "text": "Get out of my way, Marcus, or I'll move you myself.",
+    "category": "threat",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "threat_or_insult",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.03,
+     "Anna": 0.02,
+     "Marcus": 0.98,
+     "Elara": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.76,
+    "urgency": 1.89,
+    "attitude": "hostile",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 2059
+   },
+   {
+    "item": "u073",
+    "variant": "clean",
+    "scene": "shop",
+    "text": "Anna, you're a thief and everyone knows it.",
+    "category": "insult",
+    "ambiguous": false,
+    "truth": {
+     "Anna": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "threat_or_insult",
+    "baseline": {
+     "Anna": true,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.97,
+     "Elara": 0.02
+    },
+    "group": 0.03,
+    "nobody": 0.03,
+    "intent": "threat_or_insult",
+    "intent_conf": 1.0,
+    "urgency": 1.02,
+    "attitude": "hostile",
+    "primary": "Anna",
+    "primary_conf": 1.0,
+    "input_tokens": 1418
+   },
+   {
+    "item": "u074",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Biscuit! Here, boy!",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.02,
+     "Biscuit": 0.98
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "request_or_command",
+    "intent_conf": 0.99,
+    "urgency": 0.32,
+    "attitude": "friendly",
+    "primary": "Biscuit",
+    "primary_conf": 1.0,
+    "input_tokens": 1423
+   },
+   {
+    "item": "u075",
+    "variant": "clean",
+    "scene": "road",
+    "text": "Jeff, does your dog bite?",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Jeff": true,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.97,
+     "Biscuit": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.02,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.79,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 1.0,
+    "input_tokens": 1422
+   },
+   {
+    "item": "u076",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "Everyone except Jeff, come with me.",
+    "category": "exclusion",
+    "ambiguous": true,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.94,
+     "Jeff": 0.11,
+     "Anna": 0.94
+    },
+    "group": 0.35,
+    "nobody": 0.05,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.24,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.95,
+    "input_tokens": 1623
+   },
+   {
+    "item": "u077",
+    "variant": "clean",
+    "scene": "tavern",
+    "text": "I'm not talking to you, Jeff. Hanna, another round.",
+    "category": "negated_address",
+    "ambiguous": true,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.96,
+     "Jeff": 0.25,
+     "Anna": 0.05
+    },
+    "group": 0.02,
+    "nobody": 0.02,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.81,
+    "attitude": "hostile",
+    "primary": "Hanna",
+    "primary_conf": 0.98,
+    "input_tokens": 1629
+   },
+   {
+    "item": "u078",
+    "variant": "clean",
+    "scene": "shop",
+    "text": "Elara... no wait, Anna, you're the merchant, right?",
+    "category": "self_correction",
+    "ambiguous": true,
+    "truth": {
+     "Anna": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Anna": true,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.88,
+     "Elara": 0.07
+    },
+    "group": 0.03,
+    "nobody": 0.1,
+    "intent": "question",
+    "intent_conf": 0.97,
+    "urgency": 0.37,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 0.98,
+    "input_tokens": 1422
+   }
+  ],
+  "stt_misheard": [
+   {
+    "item": "u000",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um hi hannah today i went to school with geoff and ana",
+    "category": "direct_single_with_mentions",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.84,
+     "Jeff": 0.07,
+     "Anna": 0.09
+    },
+    "group": 0.05,
+    "nobody": 0.26,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.97,
+    "urgency": 0.02,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 0.87,
+    "input_tokens": 1645
+   },
+   {
+    "item": "u001",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "ana do you have any healing potions left",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.08,
+     "Jeff": 0.02,
+     "Anna": 0.88
+    },
+    "group": 0.02,
+    "nobody": 0.06,
+    "intent": "question",
+    "intent_conf": 0.87,
+    "urgency": 0.96,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 0.98,
+    "input_tokens": 1640
+   },
+   {
+    "item": "u002",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "markus this blade is dull already",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.95,
+     "Elara": 0.02,
+     "Jeff": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.05,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.47,
+    "urgency": 0.93,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1644
+   },
+   {
+    "item": "u003",
+    "variant": "stt_misheard",
+    "scene": "shop",
+    "text": "um ilara my shoulder still aches from yesterday",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Anna": false,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.03,
+     "Elara": 0.94
+    },
+    "group": 0.02,
+    "nobody": 0.06,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.9,
+    "urgency": 0.85,
+    "attitude": "neutral",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 1432
+   },
+   {
+    "item": "u004",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "geoff how far is it to the city",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": false
+    },
+    "pred": {
+     "Jeff": 0.87,
+     "Biscuit": 0.02
+    },
+    "group": 0.04,
+    "nobody": 0.1,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.9,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 0.97,
+    "input_tokens": 1440
+   },
+   {
+    "item": "u005",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "good evening hannah",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "greeting",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.94,
+     "Jeff": 0.02,
+     "Anna": 0.05,
+     "Marcus": 0.02,
+     "Elara": 0.02
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "greeting",
+    "intent_conf": 1.0,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 1.0,
+    "input_tokens": 2064
+   },
+   {
+    "item": "u006",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "um thank you markus i'll be back next week",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "farewell",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.92,
+     "Elara": 0.03,
+     "Jeff": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.09,
+    "intent": "farewell",
+    "intent_conf": 0.96,
+    "urgency": 0.03,
+    "attitude": "friendly",
+    "primary": "Marcus",
+    "primary_conf": 0.98,
+    "input_tokens": 1648
+   },
+   {
+    "item": "u007",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "geoff geoff geoff what are we going to do with you",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.04,
+     "Jeff": 0.74,
+     "Anna": 0.03
+    },
+    "group": 0.05,
+    "nobody": 0.31,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.31,
+    "urgency": 0.35,
+    "attitude": "hostile",
+    "primary": "Jeff",
+    "primary_conf": 0.89,
+    "input_tokens": 1645
+   },
+   {
+    "item": "u008",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "hey geoff ana please come over here",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.12,
+     "Jeff": 0.76,
+     "Anna": 0.88
+    },
+    "group": 0.07,
+    "nobody": 0.09,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.81,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.64,
+    "input_tokens": 1639
+   },
+   {
+    "item": "u009",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um hannah watch the door geoff with me",
+    "category": "direct_multi_attention_shift",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.84,
+     "Jeff": 0.74,
+     "Anna": 0.04
+    },
+    "group": 0.05,
+    "nobody": 0.08,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.44,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.51,
+    "input_tokens": 1641
+   },
+   {
+    "item": "u010",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "morning hannah morning geoff",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "greeting",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.97,
+     "Jeff": 0.85,
+     "Anna": 0.07
+    },
+    "group": 0.06,
+    "nobody": 0.04,
+    "intent": "greeting",
+    "intent_conf": 1.0,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.45,
+    "input_tokens": 1638
+   },
+   {
+    "item": "u011",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "markus and ilara i need you both at the gate now",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.04,
+     "Anna": 0.03,
+     "Marcus": 0.97,
+     "Elara": 0.95
+    },
+    "group": 0.03,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.98,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 0.43,
+    "input_tokens": 2073
+   },
+   {
+    "item": "u012",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um hannah two ales ana i'll take the red cloak geoff nothing for you",
+    "category": "direct_multi_attention_shift",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.96,
+     "Jeff": 0.73,
+     "Anna": 0.5
+    },
+    "group": 0.05,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.95,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.55,
+    "input_tokens": 1648
+   },
+   {
+    "item": "u013",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "good boy biscut geoff he's adorable",
+    "category": "direct_multi_attention_shift",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.38,
+     "Biscuit": 0.88
+    },
+    "group": 0.06,
+    "nobody": 0.11,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 1.0,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "Biscuit",
+    "primary_conf": 0.73,
+    "input_tokens": 1440
+   },
+   {
+    "item": "u014",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "ilara geoff stand back he's about to quench it",
+    "category": "direct_multi_with_mentions",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": false,
+     "Elara": true,
+     "Jeff": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Marcus": false,
+     "Elara": true,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.42,
+     "Elara": 0.82,
+     "Jeff": 0.23
+    },
+    "group": 0.08,
+    "nobody": 0.12,
+    "intent": "request_or_command",
+    "intent_conf": 0.97,
+    "urgency": 1.99,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.3,
+    "input_tokens": 1650
+   },
+   {
+    "item": "u015",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um ana hannah which of you sells rope",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.88,
+     "Jeff": 0.09,
+     "Anna": 0.87
+    },
+    "group": 0.07,
+    "nobody": 0.05,
+    "intent": "question",
+    "intent_conf": 0.98,
+    "urgency": 0.93,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.66,
+    "input_tokens": 1640
+   },
+   {
+    "item": "u016",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "markus ilara geoff thank you all for coming",
+    "category": "direct_multi",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": true
+    },
+    "pred": {
+     "Marcus": 0.96,
+     "Elara": 0.94,
+     "Jeff": 0.91
+    },
+    "group": 0.77,
+    "nobody": 0.08,
+    "intent": "greeting",
+    "intent_conf": 0.84,
+    "urgency": 0.13,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.99,
+    "input_tokens": 1648
+   },
+   {
+    "item": "u017",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "hannah have you seen geoff today",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.92,
+     "Jeff": 0.09,
+     "Anna": 0.04
+    },
+    "group": 0.02,
+    "nobody": 0.07,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.82,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.97,
+    "input_tokens": 1639
+   },
+   {
+    "item": "u018",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um hannah tell ana her order is ready",
+    "category": "mention_only_relay",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.89,
+     "Jeff": 0.03,
+     "Anna": 0.07
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.01,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.99,
+    "input_tokens": 1640
+   },
+   {
+    "item": "u019",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "geoff is the laziest guard i've ever seen",
+    "category": "mention_only_topic_needs_context",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.42,
+     "Jeff": 0.11,
+     "Anna": 0.04
+    },
+    "group": 0.08,
+    "nobody": 0.55,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.65,
+    "urgency": 0.17,
+    "attitude": "hostile",
+    "primary": "Hanna",
+    "primary_conf": 0.64,
+    "input_tokens": 1649
+   },
+   {
+    "item": "u020",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "ana's shop is closed again",
+    "category": "mention_only_topic_needs_context",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.38,
+     "Jeff": 0.06,
+     "Anna": 0.08
+    },
+    "group": 0.07,
+    "nobody": 0.58,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.99,
+    "urgency": 0.03,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.65,
+    "input_tokens": 1643
+   },
+   {
+    "item": "u021",
+    "variant": "stt_misheard",
+    "scene": "shop",
+    "text": "um ilara is markus around his forge was cold",
+    "category": "mention_absent",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Anna": false,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.11,
+     "Elara": 0.61
+    },
+    "group": 0.06,
+    "nobody": 0.37,
+    "intent": "question",
+    "intent_conf": 0.71,
+    "urgency": 0.66,
+    "attitude": "neutral",
+    "primary": "Elara",
+    "primary_conf": 0.67,
+    "input_tokens": 1434
+   },
+   {
+    "item": "u022",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "markus geoff said you owe him money",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.27,
+     "Elara": 0.08,
+     "Jeff": 0.2
+    },
+    "group": 0.1,
+    "nobody": 0.38,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.89,
+    "urgency": 0.98,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 0.35,
+    "input_tokens": 1646
+   },
+   {
+    "item": "u023",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "oh sure geoff will save us all",
+    "category": "mention_only_topic_needs_context",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.07,
+     "Jeff": 0.17,
+     "Anna": 0.29
+    },
+    "group": 0.11,
+    "nobody": 0.56,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.49,
+    "urgency": 0.12,
+    "attitude": "hostile",
+    "primary": "Anna",
+    "primary_conf": 0.31,
+    "input_tokens": 1644
+   },
+   {
+    "item": "u024",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um psst ana don't look now but geoff is staring at you",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.05,
+     "Jeff": 0.04,
+     "Anna": 0.9
+    },
+    "group": 0.02,
+    "nobody": 0.11,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.8,
+    "urgency": 0.84,
+    "attitude": "friendly",
+    "primary": "Anna",
+    "primary_conf": 0.95,
+    "input_tokens": 1646
+   },
+   {
+    "item": "u025",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "ilara markus is hurt come quickly",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.17,
+     "Jeff": 0.31,
+     "Anna": 0.07,
+     "Marcus": 0.43,
+     "Elara": 0.11
+    },
+    "group": 0.17,
+    "nobody": 0.16,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 2.0,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.66,
+    "input_tokens": 2068
+   },
+   {
+    "item": "u026",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "geoff hannah's inn is on fire",
+    "category": "mention_absent",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": false
+    },
+    "pred": {
+     "Jeff": 0.39,
+     "Biscuit": 0.04
+    },
+    "group": 0.22,
+    "nobody": 0.5,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.93,
+    "urgency": 2.0,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.21,
+    "input_tokens": 1440
+   },
+   {
+    "item": "u027",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um hannah geoff and ana both told me you make the best stew",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.96,
+     "Jeff": 0.05,
+     "Anna": 0.04
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.98,
+    "urgency": 0.3,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 1.0,
+    "input_tokens": 1646
+   },
+   {
+    "item": "u028",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "markus does ilara still live by the river",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.72,
+     "Elara": 0.06,
+     "Jeff": 0.21
+    },
+    "group": 0.06,
+    "nobody": 0.41,
+    "intent": "question",
+    "intent_conf": 0.99,
+    "urgency": 0.51,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 0.6,
+    "input_tokens": 1647
+   },
+   {
+    "item": "u029",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "hannah over here bring geoff if you see him",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.76,
+     "Jeff": 0.05,
+     "Anna": 0.04,
+     "Marcus": 0.03,
+     "Elara": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.08,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.88,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.97,
+    "input_tokens": 2071
+   },
+   {
+    "item": "u030",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "um come on geoff keep up biscut's faster than you",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.8,
+     "Biscuit": 0.19
+    },
+    "group": 0.07,
+    "nobody": 0.2,
+    "intent": "request_or_command",
+    "intent_conf": 0.77,
+    "urgency": 0.3,
+    "attitude": "friendly",
+    "primary": "Jeff",
+    "primary_conf": 0.6,
+    "input_tokens": 1444
+   },
+   {
+    "item": "u031",
+    "variant": "stt_misheard",
+    "scene": "shop",
+    "text": "that's robbery ana charges half that",
+    "category": "mention_only_topic_needs_context",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Anna": true,
+     "Elara": false
+    },
+    "pred": {
+     "Anna": 0.24,
+     "Elara": 0.87
+    },
+    "group": 0.1,
+    "nobody": 0.1,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.45,
+    "urgency": 0.98,
+    "attitude": "hostile",
+    "primary": "Elara",
+    "primary_conf": 0.94,
+    "input_tokens": 1470
+   },
+   {
+    "item": "u032",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "geoff ana said 'markus come here' but he ignored her",
+    "category": "reported_speech",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.07,
+     "Jeff": 0.1,
+     "Anna": 0.08
+    },
+    "group": 0.06,
+    "nobody": 0.66,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.86,
+    "urgency": 0.16,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.64,
+    "input_tokens": 1645
+   },
+   {
+    "item": "u033",
+    "variant": "stt_misheard",
+    "scene": "shop",
+    "text": "um ana yesterday hannah shouted 'geoff get out of my inn' at the top of her lungs",
+    "category": "reported_speech",
+    "ambiguous": false,
+    "truth": {
+     "Anna": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Anna": true,
+     "Elara": false
+    },
+    "pred": {
+     "Anna": 0.34,
+     "Elara": 0.09
+    },
+    "group": 0.1,
+    "nobody": 0.74,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.95,
+    "urgency": 0.04,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.47,
+    "input_tokens": 1444
+   },
+   {
+    "item": "u034",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "markus the note just says 'ilara meet me at midnight ' do you know who wrote it",
+    "category": "reported_speech",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.7,
+     "Elara": 0.11,
+     "Jeff": 0.12
+    },
+    "group": 0.13,
+    "nobody": 0.13,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 1.24,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 0.33,
+    "input_tokens": 1657
+   },
+   {
+    "item": "u035",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "everyone listen up",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.83,
+     "Jeff": 0.85,
+     "Anna": 0.87
+    },
+    "group": 0.95,
+    "nobody": 0.18,
+    "intent": "request_or_command",
+    "intent_conf": 0.95,
+    "urgency": 1.06,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 1.0,
+    "input_tokens": 1634
+   },
+   {
+    "item": "u036",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "um alright you lot back to work",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.67,
+     "Jeff": 0.77,
+     "Anna": 0.76,
+     "Marcus": 0.78,
+     "Elara": 0.74
+    },
+    "group": 0.9,
+    "nobody": 0.27,
+    "intent": "request_or_command",
+    "intent_conf": 0.97,
+    "urgency": 1.04,
+    "attitude": "hostile",
+    "primary": "everyone",
+    "primary_conf": 0.94,
+    "input_tokens": 2067
+   },
+   {
+    "item": "u037",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "goodnight everyone",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "farewell",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.83,
+     "Jeff": 0.84,
+     "Anna": 0.83
+    },
+    "group": 0.95,
+    "nobody": 0.23,
+    "intent": "farewell",
+    "intent_conf": 0.98,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.99,
+    "input_tokens": 1635
+   },
+   {
+    "item": "u038",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "hello all lovely day",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "greeting",
+    "baseline": {
+     "Marcus": true,
+     "Elara": true,
+     "Jeff": true
+    },
+    "pred": {
+     "Marcus": 0.85,
+     "Elara": 0.83,
+     "Jeff": 0.83
+    },
+    "group": 0.89,
+    "nobody": 0.2,
+    "intent": "greeting",
+    "intent_conf": 1.0,
+    "urgency": 0.0,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 1.0,
+    "input_tokens": 1641
+   },
+   {
+    "item": "u039",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "um could all of you please step back from the well",
+    "category": "group_all",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.85,
+     "Jeff": 0.88,
+     "Anna": 0.89,
+     "Marcus": 0.91,
+     "Elara": 0.87
+    },
+    "group": 0.91,
+    "nobody": 0.09,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.44,
+    "attitude": "friendly",
+    "primary": "everyone",
+    "primary_conf": 0.99,
+    "input_tokens": 2071
+   },
+   {
+    "item": "u040",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "nobody move hannah blow out the candles",
+    "category": "group_then_single",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.95,
+     "Jeff": 0.37,
+     "Anna": 0.06
+    },
+    "group": 0.23,
+    "nobody": 0.05,
+    "intent": "request_or_command",
+    "intent_conf": 0.99,
+    "urgency": 1.99,
+    "attitude": "hostile",
+    "primary": "Hanna",
+    "primary_conf": 0.47,
+    "input_tokens": 1640
+   },
+   {
+    "item": "u041",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "whoever owns this cart move it",
+    "category": "group_unknown_owner",
+    "ambiguous": true,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.11,
+     "Jeff": 0.16,
+     "Anna": 0.29,
+     "Marcus": 0.14,
+     "Elara": 0.06
+    },
+    "group": 0.08,
+    "nobody": 0.42,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.68,
+    "attitude": "hostile",
+    "primary": "nobody",
+    "primary_conf": 0.39,
+    "input_tokens": 2067
+   },
+   {
+    "item": "u042",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um innkeeper a room for the night please",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.97,
+     "Jeff": 0.03,
+     "Anna": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.98,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 1.0,
+    "input_tokens": 1641
+   },
+   {
+    "item": "u043",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "guard someone stole my purse",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.04,
+     "Jeff": 0.92,
+     "Anna": 0.03
+    },
+    "group": 0.06,
+    "nobody": 0.07,
+    "intent": "request_or_command",
+    "intent_conf": 0.61,
+    "urgency": 1.92,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 0.98,
+    "input_tokens": 1636
+   },
+   {
+    "item": "u044",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "hey blacksmith can you sharpen this",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.97,
+     "Elara": 0.02,
+     "Jeff": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.03,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.98,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1646
+   },
+   {
+    "item": "u045",
+    "variant": "stt_misheard",
+    "scene": "shop",
+    "text": "um healer my arm won't stop bleeding",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Anna": false,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.03,
+     "Elara": 0.95
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "request_or_command",
+    "intent_conf": 0.93,
+    "urgency": 1.98,
+    "attitude": "neutral",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 1431
+   },
+   {
+    "item": "u046",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "guards arrest that man",
+    "category": "role_address_plural_one_present",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.07,
+     "Jeff": 0.68,
+     "Anna": 0.05,
+     "Marcus": 0.06,
+     "Elara": 0.05
+    },
+    "group": 0.27,
+    "nobody": 0.3,
+    "intent": "request_or_command",
+    "intent_conf": 0.98,
+    "urgency": 1.9,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 0.84,
+    "input_tokens": 2064
+   },
+   {
+    "item": "u047",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "you with the hammer how much for a sword",
+    "category": "description_address",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Marcus": false,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.97,
+     "Elara": 0.02,
+     "Jeff": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.03,
+    "intent": "question",
+    "intent_conf": 0.87,
+    "urgency": 0.94,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 1646
+   },
+   {
+    "item": "u048",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um barkeep another round for the table",
+    "category": "role_synonym",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.93,
+     "Jeff": 0.03,
+     "Anna": 0.04
+    },
+    "group": 0.05,
+    "nobody": 0.07,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.95,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.98,
+    "input_tokens": 1639
+   },
+   {
+    "item": "u049",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "merchant do you buy old armor",
+    "category": "role_address",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.02,
+     "Jeff": 0.02,
+     "Anna": 0.95,
+     "Marcus": 0.03,
+     "Elara": 0.02
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "question",
+    "intent_conf": 0.95,
+    "urgency": 0.91,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 1.0,
+    "input_tokens": 2066
+   },
+   {
+    "item": "u050",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "hey yes you in the apron two loaves please",
+    "category": "description_address_facing",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.88,
+     "Jeff": 0.02,
+     "Anna": 0.08,
+     "Marcus": 0.02,
+     "Elara": 0.03
+    },
+    "group": 0.02,
+    "nobody": 0.04,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 0.93,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.94,
+    "input_tokens": 2072
+   },
+   {
+    "item": "u051",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um hmm where did i put that key",
+    "category": "self_talk",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.07,
+     "Jeff": 0.05,
+     "Anna": 0.05
+    },
+    "group": 0.04,
+    "nobody": 0.9,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.96,
+    "urgency": 0.0,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.99,
+    "input_tokens": 1639
+   },
+   {
+    "item": "u052",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "okay okay think the map said north of the forge",
+    "category": "self_talk",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": false,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Marcus": false,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.1,
+     "Elara": 0.06,
+     "Jeff": 0.07
+    },
+    "group": 0.06,
+    "nobody": 0.87,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.87,
+    "urgency": 0.0,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.95,
+    "input_tokens": 1647
+   },
+   {
+    "item": "u053",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "hang on my mic is cutting out",
+    "category": "out_of_game",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.06,
+     "Jeff": 0.04,
+     "Anna": 0.04,
+     "Marcus": 0.04,
+     "Elara": 0.03
+    },
+    "group": 0.08,
+    "nobody": 0.96,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.95,
+    "urgency": 0.11,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.97,
+    "input_tokens": 2067
+   },
+   {
+    "item": "u054",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um brb dinner's ready",
+    "category": "out_of_game",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.06,
+     "Jeff": 0.04,
+     "Anna": 0.04
+    },
+    "group": 0.06,
+    "nobody": 0.93,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.94,
+    "urgency": 0.01,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.99,
+    "input_tokens": 1637
+   },
+   {
+    "item": "u055",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "ugh this quest is impossible",
+    "category": "self_talk",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": false,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": false
+    },
+    "pred": {
+     "Jeff": 0.08,
+     "Biscuit": 0.04
+    },
+    "group": 0.07,
+    "nobody": 0.86,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.53,
+    "urgency": 0.01,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 0.93,
+    "input_tokens": 1436
+   },
+   {
+    "item": "u056",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "mom i'll be home late",
+    "category": "offstage_addressee",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.04,
+     "Jeff": 0.03,
+     "Anna": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.88,
+    "intent": "none_or_unclear",
+    "intent_conf": 0.78,
+    "urgency": 0.01,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 1.0,
+    "input_tokens": 1637
+   },
+   {
+    "item": "u057",
+    "variant": "stt_misheard",
+    "scene": "shop",
+    "text": "um note to self buy more arrows",
+    "category": "self_talk",
+    "ambiguous": false,
+    "truth": {
+     "Anna": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": true,
+    "truth_intent": "none_or_unclear",
+    "baseline": {
+     "Anna": false,
+     "Elara": false
+    },
+    "pred": {
+     "Anna": 0.05,
+     "Elara": 0.04
+    },
+    "group": 0.03,
+    "nobody": 0.92,
+    "intent": "none_or_unclear",
+    "intent_conf": 1.0,
+    "urgency": 0.0,
+    "attitude": "neutral",
+    "primary": "nobody",
+    "primary_conf": 1.0,
+    "input_tokens": 1430
+   },
+   {
+    "item": "u058",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "and what about you did you ever leave the village",
+    "category": "continuation",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.89,
+     "Jeff": 0.06,
+     "Anna": 0.06
+    },
+    "group": 0.09,
+    "nobody": 0.1,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.63,
+    "attitude": "friendly",
+    "primary": "Hanna",
+    "primary_conf": 0.99,
+    "input_tokens": 1684
+   },
+   {
+    "item": "u059",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "no i meant the other one",
+    "category": "continuation",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.83,
+     "Jeff": 0.06,
+     "Anna": 0.11
+    },
+    "group": 0.07,
+    "nobody": 0.17,
+    "intent": "request_or_command",
+    "intent_conf": 0.64,
+    "urgency": 0.92,
+    "attitude": "neutral",
+    "primary": "Hanna",
+    "primary_conf": 0.94,
+    "input_tokens": 1677
+   },
+   {
+    "item": "u060",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "um thanks see you tomorrow",
+    "category": "continuation",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "farewell",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.85,
+     "Elara": 0.06,
+     "Jeff": 0.05
+    },
+    "group": 0.1,
+    "nobody": 0.16,
+    "intent": "farewell",
+    "intent_conf": 1.0,
+    "urgency": 0.01,
+    "attitude": "friendly",
+    "primary": "Marcus",
+    "primary_conf": 0.99,
+    "input_tokens": 1647
+   },
+   {
+    "item": "u061",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "fine lead the way",
+    "category": "continuation",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "pred": {
+     "Jeff": 0.89,
+     "Biscuit": 0.04
+    },
+    "group": 0.09,
+    "nobody": 0.09,
+    "intent": "request_or_command",
+    "intent_conf": 0.99,
+    "urgency": 0.85,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 0.99,
+    "input_tokens": 1440
+   },
+   {
+    "item": "u062",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "really then why is it already rusting",
+    "category": "continuation_with_mention",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true,
+     "Marcus": false,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true,
+     "Marcus": true,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.04,
+     "Jeff": 0.04,
+     "Anna": 0.85,
+     "Marcus": 0.19,
+     "Elara": 0.03
+    },
+    "group": 0.08,
+    "nobody": 0.12,
+    "intent": "question",
+    "intent_conf": 0.92,
+    "urgency": 0.93,
+    "attitude": "hostile",
+    "primary": "Anna",
+    "primary_conf": 0.94,
+    "input_tokens": 2106
+   },
+   {
+    "item": "u063",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "um you there come here",
+    "category": "facing_deixis",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.05,
+     "Jeff": 0.9,
+     "Anna": 0.05
+    },
+    "group": 0.08,
+    "nobody": 0.08,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.02,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 1.0,
+    "input_tokens": 1637
+   },
+   {
+    "item": "u064",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "excuse me do you know where the healer is",
+    "category": "facing_deixis_role_mentioned",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.04,
+     "Jeff": 0.03,
+     "Anna": 0.03,
+     "Marcus": 0.89,
+     "Elara": 0.04
+    },
+    "group": 0.06,
+    "nobody": 0.05,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.96,
+    "attitude": "friendly",
+    "primary": "Marcus",
+    "primary_conf": 0.98,
+    "input_tokens": 2071
+   },
+   {
+    "item": "u065",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "are you the one who fixed my leg last spring",
+    "category": "facing_deixis",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": false,
+     "Elara": true,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Marcus": false,
+     "Elara": true,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.02,
+     "Elara": 0.95,
+     "Jeff": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.04,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.74,
+    "attitude": "neutral",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 1649
+   },
+   {
+    "item": "u066",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "um who's a good boy you are",
+    "category": "facing_deixis",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.03,
+     "Biscuit": 0.95
+    },
+    "group": 0.04,
+    "nobody": 0.05,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.86,
+    "urgency": 0.01,
+    "attitude": "friendly",
+    "primary": "Biscuit",
+    "primary_conf": 0.99,
+    "input_tokens": 1442
+   },
+   {
+    "item": "u067",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "i think ana that your prices are too high",
+    "category": "mid_sentence_vocative",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.04,
+     "Jeff": 0.02,
+     "Anna": 0.93
+    },
+    "group": 0.03,
+    "nobody": 0.08,
+    "intent": "statement_or_smalltalk",
+    "intent_conf": 0.99,
+    "urgency": 0.83,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 1.0,
+    "input_tokens": 1640
+   },
+   {
+    "item": "u068",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "honestly markus i expected better",
+    "category": "mid_sentence_vocative",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "statement_or_smalltalk",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.93,
+     "Elara": 0.03,
+     "Jeff": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.09,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.69,
+    "urgency": 0.82,
+    "attitude": "hostile",
+    "primary": "Marcus",
+    "primary_conf": 0.99,
+    "input_tokens": 1645
+   },
+   {
+    "item": "u069",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "um could you ilara take a look at this rash",
+    "category": "mid_sentence_vocative",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": false,
+     "Elara": true
+    },
+    "pred": {
+     "Hanna": 0.02,
+     "Jeff": 0.02,
+     "Anna": 0.03,
+     "Marcus": 0.02,
+     "Elara": 0.95
+    },
+    "group": 0.02,
+    "nobody": 0.04,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.01,
+    "attitude": "friendly",
+    "primary": "Elara",
+    "primary_conf": 1.0,
+    "input_tokens": 2071
+   },
+   {
+    "item": "u070",
+    "variant": "stt_misheard",
+    "scene": "forge",
+    "text": "is markus here oh there you are markus i need horseshoes",
+    "category": "mention_then_address",
+    "ambiguous": false,
+    "truth": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Marcus": true,
+     "Elara": false,
+     "Jeff": false
+    },
+    "pred": {
+     "Marcus": 0.96,
+     "Elara": 0.03,
+     "Jeff": 0.03
+    },
+    "group": 0.03,
+    "nobody": 0.06,
+    "intent": "request_or_command",
+    "intent_conf": 0.99,
+    "urgency": 0.98,
+    "attitude": "neutral",
+    "primary": "Marcus",
+    "primary_conf": 0.98,
+    "input_tokens": 1652
+   },
+   {
+    "item": "u071",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "geoff if you touch my bag again i'll break your fingers",
+    "category": "threat",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "threat_or_insult",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.85,
+     "Anna": 0.03
+    },
+    "group": 0.02,
+    "nobody": 0.2,
+    "intent": "threat_or_insult",
+    "intent_conf": 1.0,
+    "urgency": 1.85,
+    "attitude": "hostile",
+    "primary": "Jeff",
+    "primary_conf": 0.95,
+    "input_tokens": 1644
+   },
+   {
+    "item": "u072",
+    "variant": "stt_misheard",
+    "scene": "square",
+    "text": "um get out of my way markus or i'll move you myself",
+    "category": "threat",
+    "ambiguous": false,
+    "truth": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "threat_or_insult",
+    "baseline": {
+     "Hanna": false,
+     "Jeff": false,
+     "Anna": false,
+     "Marcus": true,
+     "Elara": false
+    },
+    "pred": {
+     "Hanna": 0.03,
+     "Jeff": 0.03,
+     "Anna": 0.02,
+     "Marcus": 0.96,
+     "Elara": 0.02
+    },
+    "group": 0.02,
+    "nobody": 0.05,
+    "intent": "threat_or_insult",
+    "intent_conf": 0.81,
+    "urgency": 1.87,
+    "attitude": "hostile",
+    "primary": "Marcus",
+    "primary_conf": 1.0,
+    "input_tokens": 2074
+   },
+   {
+    "item": "u073",
+    "variant": "stt_misheard",
+    "scene": "shop",
+    "text": "ana you're a thief and everyone knows it",
+    "category": "insult",
+    "ambiguous": false,
+    "truth": {
+     "Anna": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "threat_or_insult",
+    "baseline": {
+     "Anna": true,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.83,
+     "Elara": 0.05
+    },
+    "group": 0.06,
+    "nobody": 0.17,
+    "intent": "threat_or_insult",
+    "intent_conf": 1.0,
+    "urgency": 1.08,
+    "attitude": "hostile",
+    "primary": "Anna",
+    "primary_conf": 0.93,
+    "input_tokens": 1432
+   },
+   {
+    "item": "u074",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "biscut here boy",
+    "category": "direct_single",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.03,
+     "Biscuit": 0.93
+    },
+    "group": 0.04,
+    "nobody": 0.06,
+    "intent": "request_or_command",
+    "intent_conf": 0.96,
+    "urgency": 0.08,
+    "attitude": "friendly",
+    "primary": "Biscuit",
+    "primary_conf": 0.98,
+    "input_tokens": 1436
+   },
+   {
+    "item": "u075",
+    "variant": "stt_misheard",
+    "scene": "road",
+    "text": "um geoff does your dog bite",
+    "category": "mention_only",
+    "ambiguous": false,
+    "truth": {
+     "Jeff": true,
+     "Biscuit": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Jeff": false,
+     "Biscuit": true
+    },
+    "pred": {
+     "Jeff": 0.92,
+     "Biscuit": 0.03
+    },
+    "group": 0.04,
+    "nobody": 0.04,
+    "intent": "question",
+    "intent_conf": 1.0,
+    "urgency": 0.83,
+    "attitude": "neutral",
+    "primary": "Jeff",
+    "primary_conf": 0.99,
+    "input_tokens": 1438
+   },
+   {
+    "item": "u076",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "everyone except geoff come with me",
+    "category": "exclusion",
+    "ambiguous": true,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "truth_group": true,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.88,
+     "Jeff": 0.18,
+     "Anna": 0.87
+    },
+    "group": 0.39,
+    "nobody": 0.09,
+    "intent": "request_or_command",
+    "intent_conf": 1.0,
+    "urgency": 1.34,
+    "attitude": "neutral",
+    "primary": "everyone",
+    "primary_conf": 0.86,
+    "input_tokens": 1638
+   },
+   {
+    "item": "u077",
+    "variant": "stt_misheard",
+    "scene": "tavern",
+    "text": "i'm not talking to you geoff hannah another round",
+    "category": "negated_address",
+    "ambiguous": true,
+    "truth": {
+     "Hanna": true,
+     "Jeff": true,
+     "Anna": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "request_or_command",
+    "baseline": {
+     "Hanna": true,
+     "Jeff": false,
+     "Anna": true
+    },
+    "pred": {
+     "Hanna": 0.72,
+     "Jeff": 0.56,
+     "Anna": 0.13
+    },
+    "group": 0.05,
+    "nobody": 0.1,
+    "intent": "request_or_command",
+    "intent_conf": 0.93,
+    "urgency": 0.71,
+    "attitude": "hostile",
+    "primary": "Hanna",
+    "primary_conf": 0.78,
+    "input_tokens": 1643
+   },
+   {
+    "item": "u078",
+    "variant": "stt_misheard",
+    "scene": "shop",
+    "text": "um ilara no wait ana you're the merchant right",
+    "category": "self_correction",
+    "ambiguous": true,
+    "truth": {
+     "Anna": true,
+     "Elara": false
+    },
+    "truth_group": false,
+    "truth_nobody": false,
+    "truth_intent": "question",
+    "baseline": {
+     "Anna": true,
+     "Elara": true
+    },
+    "pred": {
+     "Anna": 0.76,
+     "Elara": 0.33
+    },
+    "group": 0.04,
+    "nobody": 0.07,
+    "intent": "question",
+    "intent_conf": 0.96,
+    "urgency": 0.48,
+    "attitude": "neutral",
+    "primary": "Anna",
+    "primary_conf": 0.58,
+    "input_tokens": 1434
+   }
+  ]
+ }
+}

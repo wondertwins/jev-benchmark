@@ -1,0 +1,74 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "2bqkb1r/1p1pp2p/nr3p2/p5p1/PQp1P2P/1P1P1BB1/2P2PP1/RN2K1NR w KQk - 0 15",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Qxe7+': None, 'Qd6': None, 'Qxb6': None, 'Qc5': None, 'Qb5': None, 'Qxa5': None, 'Qxc4': None, 'Qc3': None, 'Qa3': None, 'Qd2': None, 'Bb8': None, 'Bc7': None, 'Bd6': None, 'Be5': None, 'Bf4': None, 'Bh2': None, 'Bh5+': None, 'Bg4': None, 'Be2': None, 'Bd1': None, 'Rh3': None, 'Rh2': None, 'Nh3': None, 'Ne2': None, 'Ke2': None, 'Kd2': None, 'Kf1': None, 'Kd1': None, 'Nc3': None, 'Na3': None, 'Nd2': None, 'Ra3': None, 'Ra2': None, 'hxg5': None, 'dxc4': None, 'bxc4': None, 'h5': None, 'e5': None, 'd4': None, 'c3': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_022"
+ },
+ "latency_s": 0.24347370798932388,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxe7+",
+    "confidence": 0.18,
+    "probabilities": {
+     "Qd2": 0.01,
+     "e5": 0.02,
+     "hxg5": 0.04,
+     "Bh5+": 0.08,
+     "Qd6": 0.03,
+     "Nd2": 0.01,
+     "Bg4": 0.01,
+     "bxc4": 0.05,
+     "Qc5": 0.02,
+     "Ra3": 0.01,
+     "Rh3": 0.01,
+     "Nc3": 0.01,
+     "d4": 0.01,
+     "h5": 0.0,
+     "Qxe7+": 0.21000000000000002,
+     "Ke2": 0.01,
+     "Qxb6": 0.06,
+     "Rh2": 0.0,
+     "Bd1": 0.0,
+     "Qb5": 0.02,
+     "Bf4": 0.01,
+     "Be5": 0.01,
+     "Ra2": 0.0,
+     "Be2": 0.0,
+     "Bh2": 0.01,
+     "Nh3": 0.01,
+     "Ne2": 0.01,
+     "Qa3": 0.01,
+     "Bb8": 0.01,
+     "Kd1": 0.01,
+     "Qc3": 0.01,
+     "Bd6": 0.03,
+     "c3": 0.01,
+     "Kd2": 0.01,
+     "Na3": 0.01,
+     "Kf1": 0.01,
+     "Bc7": 0.03,
+     "Qxc4": 0.09999999999999999,
+     "dxc4": 0.05,
+     "Qxa5": 0.04
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 734,
+   "output_tokens": 352
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r1b2b1r/pp1k1n1p/n1p2Pp1/4p3/3P3P/qP6/P1P1PP2/RNQ1K1NR b KQ - 2 11",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': None, 'Bg7': None, 'Be7': None, 'Bh6': None, 'Bd6': None, 'Bc5': None, 'Bb4+': None, 'Rb8': None, 'Nd8': None, 'Nh6': None, 'Nd6': None, 'Ng5': None, 'Ke8': None, 'Kd8': None, 'Kc7': None, 'Ke6': None, 'Kd6': None, 'Nb8': None, 'Nc7': None, 'Nc5': None, 'Nb4': None, 'Qe7': None, 'Qd6': None, 'Qc5': None, 'Qa5+': None, 'Qb4+': None, 'Qa4': None, 'Qxb3': None, 'Qb2': None, 'Qxa2': None, 'Qxc1+': None, 'exd4': None, 'h6': None, 'b6': None, 'g5': None, 'c5': None, 'e4': None, 'h5': None, 'b5': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_007"
+ },
+ "latency_s": 0.20457816601265222,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxc1+",
+    "confidence": 0.22,
+    "probabilities": {
+     "Bd6": 0.01,
+     "Rg8": 0.01,
+     "Qxc1+": 0.24,
+     "Be7": 0.0,
+     "h6": 0.01,
+     "Nh6": 0.01,
+     "Qe7": 0.0,
+     "Qd6": 0.01,
+     "Ng5": 0.02,
+     "Bb4+": 0.06,
+     "Nb4": 0.02,
+     "Kd8": 0.01,
+     "Qb2": 0.01,
+     "Qb4+": 0.06,
+     "Nd8": 0.0,
+     "b5": 0.01,
+     "Ke6": 0.01,
+     "Qxa2": 0.05,
+     "Nc7": 0.01,
+     "c5": 0.01,
+     "b6": 0.0,
+     "Rb8": 0.01,
+     "Bc5": 0.02,
+     "Nd6": 0.04,
+     "g5": 0.01,
+     "Bg7": 0.01,
+     "Qc5": 0.01,
+     "Ke8": 0.0,
+     "exd4": 0.06,
+     "Kd6": 0.01,
+     "Bh6": 0.01,
+     "Qa4": 0.02,
+     "e4": 0.03,
+     "Nc5": 0.02,
+     "Nb8": 0.0,
+     "Qa5+": 0.06,
+     "h5": 0.0,
+     "Kc7": 0.01,
+     "Qxb3": 0.12
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 723,
+   "output_tokens": 341
+  }
+ }
+}

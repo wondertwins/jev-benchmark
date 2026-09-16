@@ -1,0 +1,63 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "rnbq1rk1/pp2bppp/4pn2/2pp4/3P4/PP1BPN2/2P1QPPP/RNB1K2R b KQ - 0 7",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Kh8': None, 'Re8': None, 'Qe8': None, 'Qd7': None, 'Qc7': None, 'Qd6': None, 'Qb6': None, 'Qa5+': None, 'Bd7': None, 'Nbd7': None, 'Nc6': None, 'Na6': None, 'Bd6': None, 'Ne8': None, 'Nfd7': None, 'Nh5': None, 'Ng4': None, 'Ne4': None, 'cxd4': None, 'h6': None, 'g6': None, 'b6': None, 'a6': None, 'e5': None, 'c4': None, 'h5': None, 'g5': None, 'b5': None, 'a5': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "fen",
+  "pos": "real_028"
+ },
+ "latency_s": 0.1513069579959847,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "cxd4",
+    "confidence": 0.27,
+    "probabilities": {
+     "c4": 0.03,
+     "Qb6": 0.05,
+     "b6": 0.0,
+     "Ne8": 0.0,
+     "Re8": 0.01,
+     "Qc7": 0.02,
+     "Ne4": 0.09,
+     "Bd6": 0.02,
+     "Qe8": 0.01,
+     "b5": 0.01,
+     "g5": 0.01,
+     "Qd6": 0.03,
+     "Nfd7": 0.01,
+     "cxd4": 0.31,
+     "e5": 0.03,
+     "a6": 0.01,
+     "Qa5+": 0.2,
+     "g6": 0.0,
+     "a5": 0.0,
+     "h6": 0.0,
+     "Ng4": 0.06,
+     "Na6": 0.01,
+     "Nh5": 0.01,
+     "Bd7": 0.02,
+     "Nbd7": 0.01,
+     "h5": 0.01,
+     "Nc6": 0.03,
+     "Kh8": 0.0,
+     "Qd7": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 642,
+   "output_tokens": 258
+  }
+ }
+}

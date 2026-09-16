@@ -1,0 +1,68 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r3kbnr/pp2pppp/2b5/2pqN3/3Pp3/2P5/PP3PPP/RNBQ1RK1 b kq d3 0 8",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Nh6': None, 'Nf6': None, 'Kd8': None, 'Rd8': None, 'Rc8': None, 'Rb8': None, 'Bd7': None, 'Bb5': None, 'Ba4': None, 'Qd8': None, 'Qd7': None, 'Qe6': None, 'Qd6': None, 'Qxe5': None, 'Qxd4': None, 'Qc4': None, 'Qb3': None, 'Qxa2': None, 'O-O-O': None, 'cxd4': None, 'h6': None, 'g6': None, 'f6': None, 'e6': None, 'b6': None, 'a6': None, 'c4': None, 'e3': None, 'h5': None, 'g5': None, 'f5': None, 'b5': None, 'a5': None, 'exd3': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "fen",
+  "pos": "real_015"
+ },
+ "latency_s": 0.17607229197164997,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "exd3",
+    "confidence": 0.27,
+    "probabilities": {
+     "Nh6": 0.01,
+     "h5": 0.0,
+     "Bb5": 0.01,
+     "Qd7": 0.01,
+     "Ba4": 0.01,
+     "Bd7": 0.01,
+     "Qxe5": 0.14,
+     "Nf6": 0.01,
+     "f6": 0.0,
+     "cxd4": 0.09,
+     "Qc4": 0.02,
+     "b5": 0.01,
+     "g5": 0.01,
+     "Qe6": 0.01,
+     "g6": 0.01,
+     "b6": 0.0,
+     "Qd8": 0.0,
+     "f5": 0.0,
+     "Qxd4": 0.13,
+     "Rc8": 0.01,
+     "h6": 0.0,
+     "a5": 0.0,
+     "Rb8": 0.0,
+     "a6": 0.0,
+     "c4": 0.03,
+     "O-O-O": 0.06,
+     "exd3": 0.3,
+     "Qd6": 0.01,
+     "e3": 0.02,
+     "Kd8": 0.0,
+     "Rd8": 0.01,
+     "Qb3": 0.03,
+     "Qxa2": 0.05,
+     "e6": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 678,
+   "output_tokens": 303
+  }
+ }
+}

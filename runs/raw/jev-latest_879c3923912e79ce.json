@@ -1,0 +1,77 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . b . . b . r\n7 p p . k . n . p\n6 n . p . . P p .\n5 . . . . p . . .\n4 . . . P . . . P\n3 q P . . . . . .\n2 P . P . P P . .\n1 R N Q . K . N R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r1b2b1r/pp1k1n1p/n1p2Pp1/4p3/3P3P/qP6/P1P1PP2/RNQ1K1NR b KQ - 2 11",
+   "move_history": "1. g3 e5 2. g4 f6 3. b3 g6 4. Bh3 Nh6 5. g5 Na6 6. Ba3 c6 7. Bxd7+ Kxd7 8. d4 Qe7 9. gxf6 Qxa3 10. h4 Nf7 11. Qc1",
+   "castling_rights": "KQ"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Rg8': 'rook h8 to g8', 'Bg7': 'bishop f8 to g7', 'Be7': 'bishop f8 to e7', 'Bh6': 'bishop f8 to h6', 'Bd6': 'bishop f8 to d6', 'Bc5': 'bishop f8 to c5', 'Bb4+': 'bishop f8 to b4, gives check', 'Rb8': 'rook a8 to b8', 'Nd8': 'knight f7 to d8', 'Nh6': 'knight f7 to h6', 'Nd6': 'knight f7 to d6', 'Ng5': 'knight f7 to g5', 'Ke8': 'king d7 to e8', 'Kd8': 'king d7 to d8', 'Kc7': 'king d7 to c7', 'Ke6': 'king d7 to e6', 'Kd6': 'king d7 to d6', 'Nb8': 'knight a6 to b8', 'Nc7': 'knight a6 to c7', 'Nc5': 'knight a6 to c5', 'Nb4': 'knight a6 to b4', 'Qe7': 'queen a3 to e7', 'Qd6': 'queen a3 to d6', 'Qc5': 'queen a3 to c5', 'Qa5+': 'queen a3 to a5, gives check', 'Qb4+': 'queen a3 to b4, gives check', 'Qa4': 'queen a3 to a4', 'Qxb3': 'queen a3 to b3, captures pawn', 'Qb2': 'queen a3 to b2', 'Qxa2': 'queen a3 to a2, captures pawn', 'Qxc1+': 'queen a3 to c1, captures queen, gives check', 'exd4': 'pawn e5 to d4, captures pawn', 'h6': 'pawn h7 to h6', 'b6': 'pawn b7 to b6', 'g5': 'pawn g6 to g5', 'c5': 'pawn c6 to c5', 'e4': 'pawn e5 to e4', 'h5': 'pawn h7 to h5', 'b5': 'pawn b7 to b5'}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "ascii",
+  "pos": "mate1_007"
+ },
+ "latency_s": 0.31922816700534895,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxc1+",
+    "confidence": 0.84,
+    "probabilities": {
+     "Qd6": 0.0,
+     "Rb8": 0.0,
+     "b5": 0.0,
+     "Bg7": 0.0,
+     "c5": 0.0,
+     "Nc5": 0.0,
+     "Nd6": 0.0,
+     "Bb4+": 0.01,
+     "Kd8": 0.0,
+     "Be7": 0.0,
+     "exd4": 0.03,
+     "Qb4+": 0.04,
+     "Qe7": 0.0,
+     "Ke8": 0.0,
+     "Kc7": 0.0,
+     "h5": 0.0,
+     "b6": 0.0,
+     "Qc5": 0.0,
+     "Qa4": 0.0,
+     "Bd6": 0.0,
+     "Ke6": 0.0,
+     "Qxa2": 0.02,
+     "Nh6": 0.0,
+     "Qxb3": 0.03,
+     "g5": 0.0,
+     "Bh6": 0.0,
+     "Ng5": 0.0,
+     "Nd8": 0.0,
+     "h6": 0.0,
+     "Qb2": 0.0,
+     "Nc7": 0.0,
+     "Qxc1+": 0.85,
+     "Bc5": 0.0,
+     "Qa5+": 0.02,
+     "e4": 0.0,
+     "Nb4": 0.0,
+     "Nb8": 0.0,
+     "Rg8": 0.0,
+     "Kd6": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1440,
+   "output_tokens": 341
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r1bqkb1r/n1ppp3/1p2P1pQ/p3p3/PP6/3Pn1PP/2P2P2/RNB1KB1R w Kkq - 1 19",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Qxh8': None, 'Qxf8+': None, 'Qh7': None, 'Qg7': None, 'Qxg6+': None, 'Qh5': None, 'Qg5': None, 'Qh4': None, 'Qf4': None, 'Qxe3': None, 'Rh2': None, 'Rg1': None, 'Bg2': None, 'Be2': None, 'Ke2': None, 'Kd2': None, 'Bxe3': None, 'Ba3': None, 'Bd2': None, 'Bb2': None, 'Nc3': None, 'Na3': None, 'Nd2': None, 'Ra3': None, 'Ra2': None, 'exd7+': None, 'bxa5': None, 'fxe3': None, 'b5': None, 'h4': None, 'g4': None, 'd4': None, 'f3': None, 'c3': None, 'f4': None, 'c4': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_021"
+ },
+ "latency_s": 0.17369804094778374,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxg6+",
+    "confidence": 0.16,
+    "probabilities": {
+     "f3": 0.01,
+     "Ke2": 0.01,
+     "Qxf8+": 0.1,
+     "Ba3": 0.01,
+     "Be2": 0.0,
+     "Rg1": 0.01,
+     "Qxg6+": 0.16999999999999998,
+     "Qf4": 0.02,
+     "bxa5": 0.01,
+     "h4": 0.01,
+     "c4": 0.01,
+     "Na3": 0.01,
+     "Qxe3": 0.11,
+     "b5": 0.01,
+     "Qh5": 0.04,
+     "Qh4": 0.01,
+     "f4": 0.01,
+     "Kd2": 0.01,
+     "Qh7": 0.02,
+     "Bd2": 0.01,
+     "Qg5": 0.01,
+     "Bxe3": 0.06,
+     "exd7+": 0.09,
+     "Qg7": 0.02,
+     "fxe3": 0.09,
+     "Nc3": 0.01,
+     "Bb2": 0.01,
+     "Nd2": 0.01,
+     "Ra2": 0.01,
+     "Bg2": 0.01,
+     "g4": 0.02,
+     "Ra3": 0.01,
+     "Qxh8": 0.04,
+     "c3": 0.01,
+     "d4": 0.01,
+     "Rh2": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 703,
+   "output_tokens": 322
+  }
+ }
+}

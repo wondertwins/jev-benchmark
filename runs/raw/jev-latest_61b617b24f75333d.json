@@ -1,0 +1,117 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r . . . . r k .\n7 p b q . b p p .\n6 . . n . . n . p\n5 . N . . . . . .\n4 . P . . N . . .\n3 . . P . . . . .\n2 . . . . B P P P\n1 R Q B . . R K .\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "r4rk1/pbq1bpp1/2n2n1p/1N6/1P2N3/2P5/4BPPP/RQB2RK1 b - - 0 16",
+   "move_history": "1. e4 e6 2. c3 Nf6 3. d3 Be7 4. a3 c5 5. Be2 Nc6 6. Nd2 Qc7 7. b4 cxb4 8. axb4 b5 9. Ngf3 O-O 10. Qc2 h6 11. O-O d5 12. Qb1 e5 13. d4 exd4 14. Nxd4 dxe4 15. Nxe4 Bb7 16. Nxb5",
+   "castling_rights": "none",
+   "pieces": {
+    "white": {
+     "queen": [
+      "b1"
+     ],
+     "rook": [
+      "a1",
+      "f1"
+     ],
+     "bishop": [
+      "c1",
+      "e2"
+     ],
+     "knight": [
+      "e4",
+      "b5"
+     ],
+     "pawn": [
+      "f2",
+      "g2",
+      "h2",
+      "c3",
+      "b4"
+     ],
+     "king": [
+      "g1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "c7"
+     ],
+     "rook": [
+      "a8",
+      "f8"
+     ],
+     "knight": [
+      "c6",
+      "f6"
+     ],
+     "bishop": [
+      "b7",
+      "e7"
+     ],
+     "pawn": [
+      "h6",
+      "a7",
+      "f7",
+      "g7"
+     ],
+     "king": [
+      "g8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "queen on c7 (attacked by knight, undefended)"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 36,
+     "black": 35,
+     "white_minus_black": 1
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'Qd8': 'queen c7 to d8; the moved piece is safe from immediate capture', 'Qc8': 'queen c7 to c8; the moved piece is safe from immediate capture', 'Qb8': 'queen c7 to b8; the moved piece is safe from immediate capture', 'Qd7': 'queen c7 to d7; the moved piece is safe from immediate capture', 'Qd6': 'queen c7 to d6; afterwards this queen can be captured by a knight (defended)', 'Qb6': 'queen c7 to b6; the moved piece is safe from immediate capture', 'Qe5': 'queen c7 to e5; the moved piece is safe from immediate capture', 'Qa5': 'queen c7 to a5; afterwards this queen can be captured by a pawn (defended)', 'Qf4': 'queen c7 to f4; afterwards this queen can be captured by a bishop (undefended)', 'Qg3': 'queen c7 to g3; afterwards this queen can be captured by a pawn (undefended)', 'Qxh2+': 'queen c7 to h2, captures pawn, gives check; afterwards this queen can be captured by a king (undefended)'}, instructions={'question': 'Black has decided to move the queen on c7. Which move should it make?', 'goal': 'Pick the destination that gives Black the best chance to win.'})"
+  }
+ },
+ "meta": {
+  "exp": "C2",
+  "pos": "real_002"
+ },
+ "latency_s": 0.177798124961555,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxh2+",
+    "confidence": 0.11,
+    "probabilities": {
+     "Qd6": 0.03,
+     "Qxh2+": 0.2,
+     "Qb6": 0.17,
+     "Qf4": 0.04,
+     "Qd7": 0.09,
+     "Qb8": 0.1,
+     "Qc8": 0.07,
+     "Qg3": 0.04,
+     "Qd8": 0.11,
+     "Qa5": 0.03,
+     "Qe5": 0.12
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 1319,
+   "output_tokens": 116
+  }
+ }
+}

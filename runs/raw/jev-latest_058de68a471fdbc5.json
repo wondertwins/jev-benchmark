@@ -1,0 +1,84 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "3rr1k1/pp3p1p/4R1pP/3p1n2/1q4P1/2b2Q2/PP3P2/R1B2NK1 b - - 0 21",
+   "side_to_move": "Black"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Kh8': None, 'Kf8': None, 'Rf8': None, 'Re7': None, 'Rxe6': None, 'Rc8': None, 'Rb8': None, 'Ra8': None, 'Rd7': None, 'Rd6': None, 'Ng7': None, 'Ne7': None, 'Nxh6': None, 'Nd6': None, 'Nh4': None, 'Nd4': None, 'Ng3': None, 'Ne3': None, 'Qf8': None, 'Qe7': None, 'Qd6': None, 'Qb6': None, 'Qc5': None, 'Qb5': None, 'Qa5': None, 'Qxg4+': None, 'Qf4': None, 'Qe4': None, 'Qd4': None, 'Qc4': None, 'Qa4': None, 'Qb3': None, 'Qa3': None, 'Qxb2': None, 'Bh8': None, 'Bg7': None, 'Bf6': None, 'Be5': None, 'Bd4': None, 'Bd2': None, 'Bxb2': None, 'Be1': None, 'fxe6': None, 'f6': None, 'b6': None, 'a6': None, 'g5': None, 'd4': None, 'b5': None, 'a5': None}, instructions={'question': 'Which legal move should Black play now?', 'goal': 'Pick the move that gives Black the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "fen",
+  "pos": "real_006"
+ },
+ "latency_s": 0.23380041698692366,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxg4+",
+    "confidence": 0.2,
+    "probabilities": {
+     "Kh8": 0.0,
+     "a5": 0.0,
+     "Bxb2": 0.05,
+     "Qe7": 0.01,
+     "Qxg4+": 0.23,
+     "d4": 0.01,
+     "Ng3": 0.02,
+     "Be1": 0.01,
+     "g5": 0.01,
+     "Rd6": 0.02,
+     "Qb3": 0.01,
+     "Rxe6": 0.11,
+     "Rf8": 0.01,
+     "Nd6": 0.01,
+     "Kf8": 0.0,
+     "Qd4": 0.01,
+     "Qa3": 0.01,
+     "Qd6": 0.01,
+     "Rc8": 0.01,
+     "Bg7": 0.01,
+     "Qe4": 0.02,
+     "Qb6": 0.01,
+     "Bd2": 0.0,
+     "fxe6": 0.07,
+     "Nh4": 0.01,
+     "Ra8": 0.0,
+     "Ne3": 0.04,
+     "Ne7": 0.01,
+     "Re7": 0.01,
+     "b6": 0.0,
+     "Bh8": 0.0,
+     "Qf4": 0.03,
+     "Qa5": 0.01,
+     "f6": 0.0,
+     "Rd7": 0.01,
+     "Qc5": 0.01,
+     "Qb5": 0.01,
+     "Qc4": 0.01,
+     "Bd4": 0.01,
+     "Nxh6": 0.03,
+     "Be5": 0.01,
+     "a6": 0.0,
+     "Rb8": 0.0,
+     "Qf8": 0.01,
+     "b5": 0.0,
+     "Nd4": 0.04,
+     "Qa4": 0.02,
+     "Qxb2": 0.07,
+     "Ng7": 0.0,
+     "Bf6": 0.01
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 804,
+   "output_tokens": 439
+  }
+ }
+}

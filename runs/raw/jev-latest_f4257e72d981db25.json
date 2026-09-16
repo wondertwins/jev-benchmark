@@ -1,0 +1,91 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "1B1r1b2/8/B2p3k/2p1Q1N1/P4NP1/1PP1K3/4N3/3R4 w - - 1 76",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Bc7': None, 'Ba7': None, 'Bxd6': None, 'Bc8': None, 'Bb7': None, 'Bb5': None, 'Bc4': None, 'Bd3': None, 'Nh7': None, 'Nf7+': None, 'Nge6': None, 'Ne4': None, 'Ngh3': None, 'Nf3': None, 'Qh8+': None, 'Qe8': None, 'Qg7+': None, 'Qe7': None, 'Qf6+': None, 'Qe6+': None, 'Qxd6+': None, 'Qf5': None, 'Qd5': None, 'Qxc5': None, 'Qe4': None, 'Qd4': None, 'Ng6': None, 'Nfe6': None, 'Nh5': None, 'Nd5': None, 'Nfh3': None, 'Nd3': None, 'Ng2': None, 'Ke4': None, 'Kf3': None, 'Kd3': None, 'Kf2': None, 'Kd2': None, 'Nd4': None, 'Ng3': None, 'Ng1': None, 'Nc1': None, 'Rxd6+': None, 'Rd5': None, 'Rd4': None, 'Rd3': None, 'Rd2': None, 'Rh1+': None, 'Rg1': None, 'Rf1': None, 'Re1': None, 'Rc1': None, 'Rb1': None, 'Ra1': None, 'a5': None, 'c4': None, 'b4': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "E",
+  "level": "fen",
+  "pos": "mate1_002"
+ },
+ "latency_s": 0.26261645898921415,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Qxd6+",
+    "confidence": 0.14,
+    "probabilities": {
+     "Bd3": 0.0,
+     "Nh5": 0.01,
+     "Kd2": 0.01,
+     "Ngh3": 0.0,
+     "Nf7+": 0.05,
+     "Rd2": 0.0,
+     "Qe6+": 0.07,
+     "b4": 0.01,
+     "Ne4": 0.01,
+     "Ng2": 0.0,
+     "Rd3": 0.01,
+     "Rd4": 0.01,
+     "Nf3": 0.0,
+     "Qxc5": 0.05,
+     "Ng6": 0.01,
+     "Nfh3": 0.0,
+     "Kd3": 0.0,
+     "Qe8": 0.01,
+     "Rxd6+": 0.08,
+     "Bb5": 0.0,
+     "Nh7": 0.0,
+     "Nd5": 0.01,
+     "Qh8+": 0.06,
+     "Rg1": 0.01,
+     "Rd5": 0.01,
+     "Rb1": 0.01,
+     "Rc1": 0.01,
+     "Nfe6": 0.01,
+     "c4": 0.01,
+     "Kf2": 0.01,
+     "Rh1+": 0.04,
+     "Kf3": 0.01,
+     "Qf6+": 0.03,
+     "Nd4": 0.02,
+     "Bb7": 0.01,
+     "Qe7": 0.02,
+     "Bc4": 0.01,
+     "Qe4": 0.01,
+     "Rf1": 0.01,
+     "Re1": 0.01,
+     "Ra1": 0.0,
+     "Qf5": 0.01,
+     "Bc7": 0.01,
+     "Qg7+": 0.07,
+     "Ng1": 0.0,
+     "Nge6": 0.01,
+     "Nc1": 0.0,
+     "Qxd6+": 0.15,
+     "Ba7": 0.01,
+     "Ke4": 0.01,
+     "a5": 0.0,
+     "Qd5": 0.01,
+     "Qd4": 0.01,
+     "Bc8": 0.01,
+     "Bxd6": 0.05,
+     "Ng3": 0.01,
+     "Nd3": 0.0
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 857,
+   "output_tokens": 497
+  }
+ }
+}

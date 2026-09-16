@@ -1,0 +1,67 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "fen": "r1bqk2r/1ppnb1pp/3p3n/p2Ppp2/2P5/P1N1PN2/1P2BPPP/R1BQ1RK1 w kq - 1 10",
+   "side_to_move": "White"
+  },
+  "questions": {
+   "move": "Choice(criteria={'Ng5': None, 'Nxe5': None, 'Nh4': None, 'Nd4': None, 'Nd2': None, 'Ne1': None, 'Nb5': None, 'Ne4': None, 'Na4': None, 'Na2': None, 'Nb1': None, 'Bd3': None, 'Kh1': None, 'Re1': None, 'Qd4': None, 'Qa4': None, 'Qd3': None, 'Qb3': None, 'Qd2': None, 'Qc2': None, 'Qe1': None, 'Bd2': None, 'Ra2': None, 'Rb1': None, 'c5': None, 'e4': None, 'a4': None, 'h3': None, 'g3': None, 'b3': None, 'h4': None, 'g4': None, 'b4': None}, instructions={'question': 'Which legal move should White play now?', 'goal': 'Pick the move that gives White the best chance to win the game. Prefer moves that deliver checkmate, win material safely, or create strong threats; avoid moves that lose material or allow the opponent a checkmate or a winning capture.', 'options': 'Every option is a legal move in standard algebraic notation with a plain description.'})"
+  }
+ },
+ "meta": {
+  "exp": "A",
+  "level": "fen",
+  "pos": "real_004"
+ },
+ "latency_s": 0.1581185829709284,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "Nxe5",
+    "confidence": 0.22,
+    "probabilities": {
+     "g3": 0.0,
+     "Qc2": 0.01,
+     "Qd4": 0.1,
+     "b4": 0.01,
+     "Ne1": 0.01,
+     "Rb1": 0.01,
+     "Bd3": 0.02,
+     "Ra2": 0.01,
+     "b3": 0.01,
+     "Qe1": 0.01,
+     "Nb5": 0.02,
+     "c5": 0.08,
+     "Nd4": 0.05,
+     "h4": 0.01,
+     "Bd2": 0.02,
+     "Nd2": 0.01,
+     "Kh1": 0.01,
+     "Qd2": 0.01,
+     "Ng5": 0.07,
+     "Qd3": 0.03,
+     "Na2": 0.0,
+     "h3": 0.01,
+     "Nb1": 0.0,
+     "g4": 0.01,
+     "e4": 0.06,
+     "a4": 0.01,
+     "Nxe5": 0.24,
+     "Na4": 0.01,
+     "Re1": 0.01,
+     "Qb3": 0.05,
+     "Nh4": 0.01,
+     "Qa4": 0.04,
+     "Ne4": 0.05
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 672,
+   "output_tokens": 289
+  }
+ }
+}

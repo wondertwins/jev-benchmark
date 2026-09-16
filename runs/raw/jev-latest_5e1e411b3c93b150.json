@@ -1,0 +1,115 @@
+{
+ "request": {
+  "model": "jev-latest",
+  "state": {
+   "side_to_move": "Black",
+   "board": "8 r n b q . r k .\n7 p p . . b p p p\n6 . . . . p n . .\n5 . . p p . . . .\n4 . . . P . . . .\n3 P P . B P N . .\n2 . . P . Q P P P\n1 R N B . K . . R\n  a b c d e f g h",
+   "board_legend": "Uppercase = White pieces, lowercase = Black pieces, '.' = empty. K king, Q queen, R rook, B bishop, N knight, P pawn. Rank 8 is at the top.",
+   "fen": "rnbq1rk1/pp2bppp/4pn2/2pp4/3P4/PP1BPN2/2P1QPPP/RNB1K2R b KQ - 0 7",
+   "move_history": "1. e3 d5 2. d4 Nf6 3. Nf3 e6 4. b3 Be7 5. Bd3 c5 6. Qe2 O-O 7. a3",
+   "castling_rights": "KQ",
+   "pieces": {
+    "white": {
+     "queen": [
+      "e2"
+     ],
+     "rook": [
+      "a1",
+      "h1"
+     ],
+     "knight": [
+      "b1",
+      "f3"
+     ],
+     "bishop": [
+      "c1",
+      "d3"
+     ],
+     "pawn": [
+      "c2",
+      "f2",
+      "g2",
+      "h2",
+      "a3",
+      "b3",
+      "e3",
+      "d4"
+     ],
+     "king": [
+      "e1"
+     ]
+    },
+    "black": {
+     "queen": [
+      "d8"
+     ],
+     "rook": [
+      "a8",
+      "f8"
+     ],
+     "knight": [
+      "f6",
+      "b8"
+     ],
+     "bishop": [
+      "e7",
+      "c8"
+     ],
+     "pawn": [
+      "c5",
+      "d5",
+      "e6",
+      "a7",
+      "b7",
+      "f7",
+      "g7",
+      "h7"
+     ],
+     "king": [
+      "g8"
+     ]
+    }
+   },
+   "facts_for_side_to_move": {
+    "side_to_move_in_check": false,
+    "our_pieces_in_danger": [
+     "none"
+    ],
+    "enemy_pieces_we_can_win": [
+     "none"
+    ],
+    "material": {
+     "white": 39,
+     "black": 39,
+     "white_minus_black": 0
+    }
+   }
+  },
+  "questions": {
+   "move": "Choice(criteria={'cxd4': 'pawn c5 to d4, captures pawn; afterwards this pawn can be captured by a pawn (undefended)', 'c4': 'pawn c5 to c4; afterwards this pawn can be captured by a pawn (defended)'}, instructions={'question': 'Black has decided to move the pawn on c5. Which move should it make?', 'goal': 'Pick the destination that gives Black the best chance to win.'})"
+  }
+ },
+ "meta": {
+  "exp": "C2",
+  "pos": "real_028"
+ },
+ "latency_s": 0.20545058394782245,
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "move": {
+    "type": "choice",
+    "choice": "c4",
+    "confidence": 0.03,
+    "probabilities": {
+     "cxd4": 0.49,
+     "c4": 0.51
+    }
+   }
+  },
+  "usage": {
+   "input_tokens": 996,
+   "output_tokens": 35
+  }
+ }
+}
