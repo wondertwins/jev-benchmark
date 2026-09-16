@@ -59,8 +59,12 @@ Mate-in-one puzzles: 6 of 25 solved, at every state level. Random baseline is 3%
 
 ### Full games (rich state, Jev as White)
 
+![Jev vs random mover: every move with Jev's probability distribution and Stockfish's verdict](runs/media/jev_vs_random_jev-latest.gif)
+
 - vs random mover: **won by checkmate** in 23 moves, mean cp loss 90.
 - vs Stockfish skill level 0: **lost by checkmate** in 36 moves. Sacrificed a bishop on move 5 and later shuffled its queen into four losing squares. My "is the moved piece safe?" annotation only looked at direct attackers of the landing square, so forks and discovered attacks slipped through. That's the obvious next lever: more exact computation in code, zero extra tokens.
+
+The loss is animated too: [`runs/media/jev_vs_sf0_jev-latest.gif`](runs/media/jev_vs_sf0_jev-latest.gif). Watch the flat distribution on move 5 when it sacrifices the bishop. MP4 versions sit alongside.
 
 Confidence was only weakly predictive of blunders (Spearman -0.24). `jev-preview` scored marginally better than `jev-latest` (129 vs 144 mean cp loss), within noise at n=30.
 
@@ -186,6 +190,9 @@ uv run python -m npcaddress.run --model jev-latest
 
 # interactive playground
 uv run python -m npcaddress.demo tavern
+
+# animate a recorded game (needs the optional media group: pillow + cairosvg, and ffmpeg for MP4)
+uv run --group media python -m jevchess.gif --game random
 ```
 
 Every request and response is written to `runs/raw/` keyed by request hash, so nothing needs re-fetching to re-analyze.
@@ -199,6 +206,7 @@ jevchess/                chess benchmark
   experiments.py         A–G: Choice, Score fan-out, hierarchical, perception, mate-in-1, eval, full games
   engine.py positions.py Stockfish ground truth; position generation
   run.py report.py       CLI and Markdown report
+  gif.py                 animate a recorded game with per-move probabilities
 npcaddress/              addressee benchmark
   dataset.py             79 labeled utterances, scenes, transcript variants
   questions.py           state + questions for one utterance
@@ -209,6 +217,7 @@ runs/
   results/*.json                      per-row results for every experiment
   raw/*.json                          every raw request and response
   REPORT_*.md                         generated reports
+  media/                              GIF + MP4 of the recorded games
 ```
 
 ## Caveats
